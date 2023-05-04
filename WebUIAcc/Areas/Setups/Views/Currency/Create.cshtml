@@ -1,0 +1,246 @@
+﻿@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiForgeryToken
+@model Application.ViewModel.GBAcc.Setups.CurrencyVM
+@{
+    var token = antiForgeryToken.GetAndStoreTokens(Context);
+    ViewData[PageInfo.PageHeader] = "Currency";
+    ViewData[PageInfo.PageTitle] = "Currency";
+}
+
+<div class="card card-primary">
+    <form id="frmCurrency">
+        <input type="hidden" asp-for="CurrencyID" />
+        <div class="row m-0">
+          
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0 required" asp-for="CurrencyName"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="CurrencyName" placeholder="Currency Name" autocomplete="off">
+                    <span asp-validation-for="CurrencyName" class="span-form-validation text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="Symbol"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="Symbol" placeholder="Symbol" autocomplete="off">
+                    <span asp-validation-for="Symbol" class="span-form-validation "></span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="ShortName"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="ShortName" placeholder="Short Name" autocomplete="off">
+                    <span asp-validation-for="ShortName" class="span-form-validation "></span>
+                </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <label class="col-form-label-sm m-0">&nbsp;</label>
+                <div class="form-group" style="text-align:center">
+                    <input type="button" class="btn btn-sm btn-success" id="btnSave" value="Save">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="row m-0">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="grid">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            GetCurrencyList();
+            $('#btnSave').click(function () {
+
+                if ($('#frmCurrency').valid()) {
+                    let currencyID = RtnNumber($("#CurrencyID").val());//
+                    let shortName = $("#ShortName").val();
+                    let currencyName = $('#CurrencyName').val();
+                    let symbol = $('#Symbol').val();//Abbreviation
+                obj = {
+                    CurrencyID: currencyID,
+                    CurrencyName: currencyName,
+                    Symbol: symbol,
+                    ShortName: shortName,
+                    }
+                    debugger
+                    if (obj.CurrencyID>0) {
+                        HttpRequest.Ajax("PUT", '/Setups/Currency/CurrencyUpdate', { "currencyDTM": obj , '@token.HeaderName': '@token.RequestToken'}, saveSuccess);
+                } else {
+                        HttpRequest.Ajax("POST", '/Setups/Currency/CurrencyCreate', { "currencyDTM": obj , '@token.HeaderName': '@token.RequestToken'}, saveSuccess);
+                }
+            }
+        })
+    })
+
+        function saveSuccess(data) {
+            debugger
+            if (data.result == 1) {
+                $.alert.open({
+                    type: 'Success',
+                    content: data.message,
+                    callback: function () {
+                        Clear();
+                        GetCurrencyList();
+                          $("#btnSave").val('Save');
+                        // window.location.href = '/setup/CompanyInfo/Index';
+                    }
+                });
+            }
+            else {
+                $.alert.open("error", data.message);
+            }
+        }
+
+        function GetCurrencyList() {
+
+            var url = "/Setups/Currency/GetCurrencyList";
+
+       // var dataGridrow;
+        var dataGrid =   $("#grid").dxDataGrid({
+            dataSource: DevExpress.data.AspNet.createStore({
+                key: "CurrencyID",
+                loadUrl: url,
+            }),
+
+            remoteOperations: {
+                paging: true,
+                sorting: true,
+                filtering: true,
+            },
+            showColumnLines: false,
+            showRowLines: true,
+            showBorders:true,
+            paging: {
+                pageSize: 10
+            },
+            pager: {
+                showInfo: true,
+                allowedPageSizes: [10,20, 40, 100, 500],
+                showPageSizeSelector: true,
+            },
+            loadingIndicator: {
+                enabled: true
+            },
+            selection: { mode: 'single' },
+            headerFilter: { visible: false  ,allowSearch: true },
+            filterRow: { visible: false },
+            wordWrapEnabled: true,
+            columns: [
+                {
+                    dataField: "CurrencyID",
+                    visible: false,
+                },
+                {
+                    width: "5%",
+                    caption: "SL",
+                    alignment: 'center',
+                    cellTemplate: function (cellElement, cellInfo) {
+                        var index = dataGrid.pageIndex() * dataGrid.pageSize() + cellInfo.rowIndex + 1;
+                        cellElement.text(index)
+                    }
+
+                },
+
+
+                {
+
+                    caption: "Currency",
+                    wordWrapEnabled: false,
+                    alignment: 'center',
+                    allowFiltering: false,
+                    dataField: "CurrencyName",
+                },
+                {
+
+                    caption: "Symbol",
+                    wordWrapEnabled: false,
+                    alignment: 'center',
+                    allowFiltering: false,
+                    dataField: "Symbol",
+
+                },
+                {
+
+                    caption: "Short Name",
+                    wordWrapEnabled: false,
+                    alignment: 'center',
+                    allowFiltering: false,
+                    dataField: "ShortName",
+
+                },
+
+                {
+                    width: "10%",
+                    caption: "Action",
+                    alignment: 'center',
+                    headerCellTemplate: function (header, info) {
+                        $('<div>').html(info.column.caption).css('font-weight', 'bold').appendTo(header);
+                    },
+                    cellTemplate: function (container, options) {
+
+                        var returnText = `<button class="btn btn-xs btn-warning" > <i class="fa fa-edit" ></i></button>`;
+                        $(returnText).on('dxclick', function () {
+                            DataEdit(options.data.CurrencyID, options.data.CurrencyName, options.data.Symbol, options.data.ShortName,);
+                        }).appendTo(container);
+
+                        var returnText = `<span>&nbsp</span><button class="btn btn-xs btn-danger" > <i class="fa fa-trash"></i></button>`;
+                        returnText = returnText + '</div>';
+                        $(returnText).on('dxclick', function () {
+                            DataDelete(options.data.CurrencyID);
+                        }).appendTo(container);
+                    },
+                },
+            ],
+
+          //  groupPanel: { visible: true },
+
+            height: 520,
+
+        }).dxDataGrid("instance");
+    }
+        function Clear() {
+            $("#CurrencyID").val('');
+            $("#CurrencyName").val('');
+            $('#Symbol').val('');
+            $('#ShortName').val('');
+        }
+        function DataEdit(currencyID,name,symbol,shortNane) {
+            $("#CurrencyID").val(currencyID);
+            $("#CurrencyName").val(name);
+            $('#Symbol').val(symbol);
+            $('#ShortName').val(shortNane);
+            $('#btnSave').val('Update');
+        }
+        function DataDelete(currencyId) {
+            $.alert.open('confirm', 'Are you sure to delete this record?', function (button) {
+                if (button == 'yes') {
+                    HttpRequest.Ajax("DELETE", '/Setups/Currency/CurrencyDataDelete', { currencyID: currencyId}, DeleteSuccess);
+
+                } else {
+                    return false;
+                }
+            });
+        }
+        function DeleteSuccess(data) {
+            debugger
+            if (data.result == 1) {
+                $.alert.open({
+                    type: 'Success',
+                    content: data.message,
+                    callback: function () {
+                        GetCurrencyList();
+                    }
+                });
+            }
+            else {
+                $.alert.open("error", data.message);
+            }
+        }
+    </script>
+}
+

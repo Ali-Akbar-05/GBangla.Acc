@@ -1,0 +1,141 @@
+﻿@model Application.ViewModel.GBAcc.AccReports.ChartOfAccounts.ItemAccountSearch.ItemAccountSearchVM
+@{
+    ViewData[PageInfo.PageHeader] = "Item Account Search";
+    ViewData[PageInfo.PageTitle] = "Item Account Search";
+}
+
+<form id="FrmItemAccountSearch">
+    <div class="row m-0">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label class="col-form-label-sm m-0 required" asp-for="AccCategoryID"></label>
+                <select asp-for="AccCategoryID" asp-items="Model.DDLAccCategory" class="form-control form-control-sm "></select>
+                <span asp-validation-for="AccCategoryID" class="span-form-validation"></span>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label class="col-form-label-sm m-0 required" asp-for="SubCategoryID"></label>
+                <select asp-for="SubCategoryID" asp-items="Model.DDLAccSubCategory" disableS class="form-control form-control-sm "></select>
+                <span asp-validation-for="SubCategoryID" class="span-form-validation"></span>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label class="col-form-label-sm m-0 required" asp-for="BroadGroupID"></label>
+                <select asp-for="BroadGroupID" asp-items="Model.DDLAccBroadGroup" class="form-control form-control-sm "></select>
+                <span asp-validation-for="BroadGroupID" class="span-form-validation"></span>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row m-0">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label class="col-form-label-sm m-0 required" asp-for="NarrowGroupID"></label>
+                <select asp-for="NarrowGroupID" asp-items="Model.DDLAccNarroGroup" class="form-control form-control-sm "></select>
+                <span asp-validation-for="NarrowGroupID" class="span-form-validation"></span>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label class="col-form-label-sm m-0 required" asp-for="IdentificationID"></label>
+                <select asp-for="IdentificationID" asp-items="Model.DDLAccIdentification" class="form-control form-control-sm "></select>
+                <span asp-validation-for="IdentificationID" class="span-form-validation"></span>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label class="col-form-label-sm m-0 required" asp-for="ItemID"></label>
+                <select asp-for="ItemID" asp-items="Model.DDLAccItem" class="form-control form-control-sm "></select>
+                <span asp-validation-for="ItemID" class="span-form-validation"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label class="col-form-label-sm m-0 required" asp-for="ReportTypeID"></label>
+                <select asp-for="ReportTypeID" asp-items="Model.DDLReportType" class="form-control form-control-sm "></select>
+                <span asp-validation-for="ReportTypeID" class="span-form-validation"></span>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label class="col-form-label-sm m-0" asp-for="GLStartDate"></label>
+                <input type="text" class="form-control form-control-sm dateField" readonly asp-for="GLStartDate">
+                <span asp-validation-for="GLStartDate" class="span-form-validation "></span>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+                <label class="col-form-label-sm m-0" asp-for="GLEndDate"></label>
+                <input type="text" class="form-control form-control-sm dateField" readonly asp-for="GLEndDate">
+                <span asp-validation-for="GLEndDate" class="span-form-validation "></span>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0">
+        <div class="col-sm-3 col-md-3 col-lg-3">
+            @*<label>&nbsp;</label>*@
+            <div class="form-group">
+
+                <input type="button" class="btn btn-primary btn-sm" id="btnSearch" value="Search">
+
+            </div>
+        </div>
+    </div>
+</form>
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $("#ItemID").select2();
+        /*  DDLChange();*/
+            $("#AccCategoryID").change(function () {
+                debugger
+                let  AccCategoryID = this.value;
+                HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLCategoryWiseSubCategory', { CategoryID: AccCategoryID }, 'SubCategoryID', false);
+                $("#SubCategoryID").trigger("change");
+            });
+
+            $("#SubCategoryID").change(function () {
+                let SubCategoryID = this.value;
+                HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLSubCategoryWiseBroadGroup', { SubCategoryID: SubCategoryID }, 'BroadGroupID', false);
+                $("#BroadGroupID").trigger("change");
+            });
+
+            $("#BroadGroupID").change(function () {
+                let BroadGroupID = this.value;
+                HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLBroadGroupWiseNarrowGroup', { BroadGroupID: BroadGroupID }, 'NarrowGroupID', false);
+                $("#NarrowGroupID").trigger('change');
+            });
+            $("#NarrowGroupID").change(function () {
+                let NarrowGroupID = this.value;
+                HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLNarrowGroupWiseIdentification', { NarrowGroupID: NarrowGroupID }, 'IdentificationID', false);
+                $("#IdentificationID").trigger('change');
+            });
+            $("#IdentificationID").change(function () {
+                const NarrowGroupID = this.value;
+                HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLIdentificationWiseItem', { IdentificationID: NarrowGroupID }, 'ItemID', false);
+            });
+
+            $("#btnSearch").click(function () {
+                if ($('#FrmItemAccountSearch').valid()) {
+                    let glStartDate = $("#GLStartDate").val();
+                    let glEndDate = $("#GLEndDate").val();
+                    let accountID = RtnNumber($("#ItemID").val());
+                    let reportFormat = ("@Application.Common.Utilities.ReportExportFormat.PdfFormat.ToString()");
+                    var url = `/AccReports/ChartOfAccounts/GetAccountLedgerReportPage?fromDate=${glStartDate}&toDate=${glEndDate}&accountID=${accountID}&ReportFormat=${reportFormat}`
+                    window.open(url);
+
+                }
+            })
+        })
+
+    </script>
+
+}
+
+

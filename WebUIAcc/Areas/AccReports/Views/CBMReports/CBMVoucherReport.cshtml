@@ -1,0 +1,181 @@
+﻿@model Application.ViewModel.GBAcc.AccReports.CBMReports.CBMReportsVM
+@{
+    ViewData[PageInfo.PageHeader] = "CBM Reports";
+    ViewData[PageInfo.PageTitle] = "Voucher List";
+}
+
+<div class="card card-primary">
+    <form id="frmCbmVoucherReport">
+        
+        <div class="row m-0">
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0 required" asp-for="VoucherType"></label>
+                    <select class="form-control form-control-sm" asp-for="VoucherType" asp-items="Model.DDLVoucherType"></select>
+                    <span asp-validation-for="VoucherType" class="span-form-validation "></span>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="DateFrom"></label>
+                    <input type="text" class="form-control form-control-sm dateField" readonly asp-for="DateFrom">
+                    <span asp-validation-for="DateFrom" class="span-form-validation "></span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="DateTo"></label>
+                    <input type="text" class="form-control form-control-sm dateField" readonly asp-for="DateTo">
+                    <span asp-validation-for="DateTo" class="span-form-validation "></span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="VoucherID"></label>
+                    <select class="form-control form-control-sm" asp-for="VoucherID" asp-items="Model.DDLVoucherNumber"></select>
+                    <span asp-validation-for="VoucherID" class="span-form-validation "></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="row m-0">
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <div class="form-group">
+                    <input type="button" class="btn btn-sm btn-success" id="btnSearch" value="Search">
+                </div>
+            </div>
+           
+        </div>
+    </form>
+    <div class="row m-0" id="VoucherListDiv" style="display:none">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            @*style="max-height:300px; overflow:auto"*@
+            <table class="table table-sm table-bordered table-responsive-sm text-center" style="font-size:12px" width="100">
+                <thead class="bg-dark">
+                    <tr>
+                       
+                        <th>SL</th>
+                        <th colspan="3">Voucher Number</th>
+                        <th colspan="3">Voucher Date</th>
+                        <th colspan="5">Action</th>
+                       
+                    </tr>
+                </thead>
+                <tbody class="" id="VoucherListTbody">
+                </tbody>
+                @*<tfoot>
+                    <tr>
+                        <td colspan="2">Set selected cheques' status to </td>
+                        <td colspan="2"><select class="form-control form-control-sm" id="SelchequesStatus" asp-items="Model.DDLStatus"></select></td>
+                        <td>Clearing Date</td>
+                        <td colspan="2"><input type="text" class="form-control form-control-sm dateField ClearingDate" asp-for="ClearingDate" id="ClearingDate" readonly></td>
+                        <td><input type="button" class="btn btn-sm btn-success" id="btnSave" value="Set Status"></td>
+                    </tr>
+                </tfoot>*@
+            </table>
+        </div>
+    </div>
+    
+    &nbsp;
+    @*<input onclick="" />*@
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            GetVoucherListForReportGenerate();
+            $("#VoucherID").select2({
+                allowClear: true,
+            });
+
+            $('#VoucherType').change(function () {
+                    DDLGetVoucherNumber();
+                })
+            $('#DateFrom').change(function () {
+                DDLGetVoucherNumber();
+            })
+            $('#DateTo').change(function () {
+                DDLGetVoucherNumber();
+            })
+
+
+
+            $("#btnSearch").click(function () {
+            GetVoucherListForReportGenerate();
+
+            })
+            })
+        function DDLGetVoucherNumber() {
+            let voucherType = RtnNumber($("#VoucherType").val());
+            let dateFrom = $("#DateFrom").val();//
+            let dateTo = $("#DateTo").val();//
+            HttpRequest.DropDown('GET', '/AccReports/CBMReports/GetVoucherNumber', { dateFrom: dateFrom, dateTo: dateTo, voucherTypeID: voucherType }, 'VoucherID')
+        }
+            function saveSuccess(data) {
+                debugger
+                if (data.result == 1) {
+                    $.alert.open({
+                        type: 'Success',
+                        content: data.message,
+                        callback: function () {
+                            GetPrintedCheque();
+                          //  window.location.href = '/Business/PrintedChequesStatus/PrintedStatusSet';
+                        }
+                    });
+                }
+                else {
+                    $.alert.open("error", data.message);
+                }
+            }
+
+        function GetVoucherListForReportGenerate() {
+                let voucherType = RtnNumber($("#VoucherType").val());
+               let voucherId = RtnNumber($("#VoucherID").val())
+                let dateFrom = $("#DateFrom").val();
+                let dateTo = $("#DateTo").val();
+              //  let paidTo = $("#PaidTo").val();
+
+                $.ajax({
+                    url: "/AccReports/CBMReports/GetVoucherListForReportGenerate",
+                    type: 'GET',
+                    dataType: 'json', // added data type
+                    cache: false,
+                    data: { voucherID: voucherId, VoucherType: voucherType, dateFrom: dateFrom, dateTo: dateTo},
+                    success: function (data) {
+                        let strTbody = ``;
+                        if (data.length > 0) {
+                            $("#VoucherListDiv").show()
+                          //  $("#PrintedChequeSaveDiv").show();
+                            $("#VoucherListTbody").html('');
+                            $.each(data, function (i, v) {
+                                strTbody += `<tr class="VoucherListTR">
+                                    <td>${i + 1}<input type="hidden"value=""class=""id="" /></td>
+                                    <td colspan="3">${v.VoucherNumber}</td>
+                                    <td colspan="3">${v.VoucherDate}</td>
+                                    <td colspan="5">
+                                         <a><button type="button" onclick="CBMVoucherReport(${v.VoucherID},${v.VoucherType})" class="btn btn-sm btn-success btn-xs"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;Print Cheque</button></a>&nbsp;
+                                         <a><button type="button" onclick="CBMVoucherReport(${v.VoucherID},${v.VoucherType})" class="btn btn-sm btn-success btn-xs"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;Print Tax Challan</button></a>&nbsp;
+                                        <a><button type="button" onclick="CBMVoucherReport(${v.VoucherID},${v.VoucherType})" class="btn btn-sm btn-success btn-xs"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;Print</button></a>
+                                    </td>
+
+                               </tr>`
+                            })
+                            $("#VoucherListTbody").html(strTbody);
+                        }
+                        else {
+                            $("#VoucherListDiv").hide()
+                          //  $("#PrintedChequeSaveDiv").hide();
+                          //  $.alert.open('error','There is no Voucher')
+                        }
+                    }
+                });
+            }
+
+        function CBMVoucherReport(VoucherID, VoucherType) {
+            let reportFormat = ("@Application.Common.Utilities.ReportExportFormat.PdfFormat.ToString()");
+            var url = `/AccReports/CBMReports/GetCBMVoucherReportPage?voucherID=${VoucherID}&VoucherType=${VoucherType}&ReportFormat=${reportFormat}`
+            window.open(url);
+        }
+
+    </script>
+}

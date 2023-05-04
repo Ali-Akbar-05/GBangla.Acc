@@ -1,0 +1,629 @@
+﻿@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiForgeryToken
+@model Application.ViewModel.GBAcc.Business.SupplierInvoiceVoucherCon.Create.SupplierInvoiceVoucherCreateViewModel
+
+@{
+    var token = antiForgeryToken.GetAndStoreTokens(Context);
+    ViewData[PageInfo.PageHeader] = "Supplier Invoice Voucher";
+    ViewData[PageInfo.PageTitle] = "Supplier Invoice Voucher";
+    var slDebit = 1;
+    var cntIntex = 1;
+}
+<style type="text/css">
+    .select2font {
+         font-size:10px !important;
+         width:100%;        
+    }
+</style>
+<div class="row ajt-control">
+    <form id="frmSupplierInvoiceVoucher" class="col-sm-12 col-md-12">
+        <div class="col-sm-12 col-md-12">
+            <div class="card card-success text-sm">
+                <div class="card-header text-xs">
+                    <h6 class="card-title">Voucher Information</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row m-0">
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="VoucherDate"></label>
+                                <input type="text" readonly class="form-control form-control-sm dateField" asp-for="VoucherDate" placeholder="Voucher Date" autocomplete="off">
+                                <span asp-validation-for="VoucherDate" class="span-form-validation"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="LocationID"></label><br />
+                                <select class="form-control form-control-sm" asp-for="LocationID" asp-items="@Model.DDLLocation"></select>
+                                <span asp-validation-for="LocationID" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="CurrencyID"></label>
+                                <select class="form-control form-control-sm " asp-for="CurrencyID" asp-items="@Model.DDLCurrency"></select>
+                                <span asp-validation-for="CurrencyID" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="ExchangeRate"></label>
+                                <input type="text" readonly class="form-control form-control-sm " asp-for="ExchangeRate" placeholder="Rate" autocomplete="off">
+                                <span asp-validation-for="ExchangeRate" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-0">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="Description"></label>
+                                <input type="text" class="form-control form-control-sm " asp-for="Description" placeholder="Voucher Description" autocomplete="off">
+                                <span asp-validation-for="Description" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-success text-sm">
+                <div class="card-header text-xs">
+                    <h6 class="card-title">Credit Information </h6>
+                </div>
+                <div class="card-body">
+                    <div class="row m-0">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="SupplierID"></label>
+                                <select class="form-control form-control-sm " asp-for="SupplierID" asp-items="@Model.DDLSupplier"></select>
+                                <span asp-validation-for="SupplierID" class="span-form-validation"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="BillNo"></label>
+                                <input type="text" class="form-control form-control-sm " asp-for="BillNo" placeholder="Bill No" autocomplete="off">
+                                <span asp-validation-for="BillNo" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="BillDate"></label>
+                                <input type="text" class="form-control form-control-sm dateField" readonly asp-for="BillDate" placeholder="Bill Date" autocomplete="off">
+                                <span asp-validation-for="BillDate" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-0">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="CostCenter"></label>
+                                <select class="form-control form-control-sm " asp-for="CostCenter" asp-items="@Model.DDLCreditCostCenter"></select>
+                                <span asp-validation-for="CostCenter" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="Activity"></label>
+                                <select class="form-control form-control-sm " asp-for="Activity" asp-items="@Model.DDLCreditActivity"></select>
+                                <span asp-validation-for="Activity" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-success text-sm">
+                <div class="card-header text-xs">
+                    <h6 class="card-title">Debit Information </h6>
+                </div>
+                <div class="card-body">
+
+                    <div class="row m-0">
+
+                        <div class="col-12">
+                            <table class="table table-sm table-responsive-sm" style="font-size:10px;" width="100">
+                                <thead>
+                                    <tr class="text-center text-xs">
+                                        <th rowspan="1" width="2%" class="" style="vertical-align:text-top">Sl</th>
+                                        <th rowspan="1" width="17%" class="required" style="vertical-align:text-top">Account</th>
+                                        <th rowspan="1" width="10%" class="required" style="vertical-align:text-top">Cost Center</th>
+                                        <th rowspan="1" width="10%" class="required" style="vertical-align:text-top">Activity</th>
+                                        <th rowspan="1" width="10%" class="" style="vertical-align:text-top">Narration</th>
+                                        <th rowspan="1" width="8%" class="" style="vertical-align:text-top">P.O.Ref.</th>
+                                        <th rowspan="1" width="6%" class="" style="vertical-align:text-top">Quantity</th>
+                                        <th rowspan="1" width="5%" class="" style="vertical-align:text-top">Rate</th>
+                                        <th rowspan="1" width="5%" class="" style="vertical-align:text-top">Disc.(%)</th>
+                                        <th rowspan="1" width="7%" class="" style="vertical-align:text-top">Gross Amount</th>
+                                        <th rowspan="1" width="5%" class="" style="vertical-align:text-top">Dis.<br/>Amt</th>
+                                        <th rowspan="1" width="7%" class="" style="vertical-align:text-top">Net Amount</th>
+                                        <th rowspan="1" width="5%" class="" style="vertical-align:text-top">Comms.</th>
+                                        <th rowspan="1" width="3%" class="" style="vertical-align:text-top">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tbodyDebitInformation text-xs" >
+                                    <tr class="trDebitInformation text-xs">
+                                        <td><span class="slNo">@slDebit</span></td>
+                                        @*asp-items="@Model.DDLDebitAccount"*@
+                                        <td><select class="form-control form-control-xs1 select2   DebitAccount"></select></td>
+                                        <td><select  class="form-control form-control-xs1  DebitCostCenter" onchange="GetActiity(this)" id="" asp-items="@Model.DDLCreditCostCenter"></select> </td>
+                                        <td><select  class="form-control form-control-xs1  DebitActivity" asp-items="@Model.DDLCreditActivity"></select></td>
+                                        <td><input type="text" class="form-control form-control-xs1 Narration" placeholder="Narration" autocomplete="off"></td>
+                                        <td><input type="text" class="form-control form-control-xs1 PORef" placeholder="P.O. Ref" autocomplete="off"></td>
+                                        <td><input type="text" class="form-control form-control-xs1 text-right Quantity" onkeydown="numericsOnly()" onkeyup="UpdateGrossAmount(this)" placeholder="Quantity" autocomplete="off"></td>
+                                        <td><input type="text" class="form-control form-control-xs1 text-right Rate" id="Rate@slDebit" onkeydown="numericsOnly()" onkeyup="UpdateGrossAmount(this)" placeholder="Rate" autocomplete="off"></td>
+                                        <td><input type="text" class="form-control form-control-xs1 text-right Discount" onkeydown="checkDecimal(event)" onkeyup="UpdateGrossAmount(this)" placeholder="Disc%" autocomplete="off"></td>
+                                        <td><input type="text" class="form-control form-control-xs1 text-right GrossAmount" onkeydown="checkDecimal(event)" onChange="UpdateGrossSingleAmount(this)" onkeyup="UpdateNetAmount(this)" placeholder="Gross" autocomplete="off"></td>
+                                        <td><input type="text" class="form-control form-control-xs1 text-right DiscountAmount" onkeydown="checkDecimal(event)" onkeyup="UpdateDiscountPercent(this)" placeholder="Dis.Amt" autocomplete="off"></td>
+                                        <td><input type="text" class="form-control form-control-xs1 NetAmount NetAmount text-right" onkeydown="checkDecimal(event)" readonly placeholder="Net" autocomplete="off"></td>
+                                        <td><input type="text" class="form-control form-control-xs1 Comments" placeholder="Comments" autocomplete="off"></td>
+                                        @*<td><input type="button" class="btn-danger btn-xs btn-sm rtnRemove" onclick="RemoveDebitTR(this)" value="Remove"></td>*@
+                                        <td><button class="btn btn-xs btn-danger" onclick="RemoveDebitTR(this)"> <i class="fa fa-trash fa-xs" aria-hidden="true"></i></button></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+
+                                    <tr class="text-center">
+                                        <td colspan="14">Total Amount : <label class="TotalAmount">0</label></td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td colspan="14"><input type="button" onclick="AddNewDebitInformation(this)" class="btn-warning btn-xs btn-sm rtnAddNew" value="Add New"></td>
+                                        @*<td colspan="4">Total Amount : <label class="TotalAmount">0</label></td>*@
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0 text-center">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+                    <input type="button" class="btn btn-sm btn-success" id="btnSave" value="Save">
+
+                </div>
+            </div>
+          
+        </div>
+    </form>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+
+       
+
+        $(function () {
+            $(".select2SingleFilter").select2({
+                maximumSelectionLength: 1
+            });
+
+            $("#SupplierID").select2({
+                allowClear: true,
+            });
+            DebitAccountInitilization($(".tbodyDebitInformation").find(".DebitAccount").last());
+            $('#CurrencyID').change(function () {
+                GetCurrencyExchangeRate()
+            })
+            $('#CurrencyID').trigger('change');
+            $('#CostCenter').change(function () {
+                let costCenter = RtnNumber($('#CostCenter').val());
+               
+                HttpRequest.DropDown('GET', '/Setups/ChartOfAccounts/DDLActivity', { CostCenterID: costCenter }, 'Activity')
+            })
+
+            $("#btnSave").click(function () {
+                debugger;
+                if ($('#frmSupplierInvoiceVoucher').valid()) {
+                    debugger;
+                    let description = $('#Description').val();
+                    let voucherDate = $('#VoucherDate').val();
+                    let locationID = RtnNumber($('#LocationID').val());
+                    let creditCostCenterID = RtnNumber($('#CostCenter').val());//
+                    let creditActivityID = RtnNumber($('#Activity').val());//
+                    let currencyID = RtnNumber($('#CurrencyID').val());
+                    let creditAccountID = RtnNumber($('#SupplierID').val());
+                    let creditAmount = RtnFloatUpToPrecision($('.TotalAmount').text(), 2)//
+                    let billNo = $("#BillNo").val();
+                    let billDate = $("#BillDate").val();
+                    let currency = RtnFloatUpToPrecision($('#ExchangeRate').val(), 2)
+                    //let tcreditAmount = RtnFloatUpToPrecision((creditAmount * currency), 2);
+                    let index = 0
+                    let tQuantity = 0;
+                    let totalGrossAmount = 0;
+                    let totalNetAmount = 0;
+                    var voucherDetails = new Array();
+                    var voucherGeneralInfo = new Array();
+                    let journalVoucherInfo = new Array();
+
+                 
+                  
+                    if (ValidData() == true) {
+
+                        $('.trDebitInformation').each(function (i, v) {
+
+                            let that = $(this);
+                            // index += that.length;
+                            let debitAccount = RtnNumber(that.find('.DebitAccount').val());
+                            let debitCostCenter = RtnNumber(that.find('.DebitCostCenter').val());
+                            let debitActivity = RtnNumber(that.find('.DebitActivity').val());
+                            let grossAmount = RtnFloatUpToPrecision(that.find('.GrossAmount').val(), 2)
+                            let tGrossAmount = RtnFloatUpToPrecision((grossAmount * currency), 2)
+                            totalGrossAmount += tGrossAmount;
+                            // let discountedAmount = RtnFloatUpToPrecision(that.find('.DiscountAmount' + index).val(), 2)
+                            let netAmount = RtnFloatUpToPrecision(that.find('.NetAmount').val(), 2)//
+                            let tNetAmount = RtnFloatUpToPrecision((netAmount * currency), 2)
+                            totalNetAmount += tNetAmount;
+                            // let amount = RtnFloatUpToPrecision((grossAmount - discountedAmount) * currency, 2);
+                            let narration = that.find('.Narration').val();
+                            let comments = that.find('.Comments').val();
+                            let referenceNo = that.find('.PORef').val();
+                            let quantity = RtnNumber(that.find('.Quantity').val());
+                            tQuantity += quantity;
+                            let rate = RtnFloatUpToPrecision((that.find('.Rate').val()), 2);
+                            let rateAmount = RtnFloatUpToPrecision((rate * currency), 2)
+                            let discountPercent = RtnFloatUpToPrecision(that.find('.Discount').val(), 2);
+
+
+                            // Voucher Details
+                            let vDetailsDebitObj = {
+                                AccountID: debitAccount,
+                                Amount: tNetAmount,
+                                LocationID: locationID,
+                                Costcenter: debitCostCenter,
+                                Activity: debitActivity,
+                                VIndex: (++i), //index,
+                                Status: 50,
+                                EntryType: 1
+                            }
+                            voucherDetails.push(vDetailsDebitObj);
+                            //VoucherGeneralInfo
+                            let vGeneralInfoDebitObj = {
+                                AccountID: debitAccount,
+                                Description: narration,
+                                Billno: billNo,
+                                Billdate: billDate,
+                                ReferenceNo: referenceNo,
+                                DiscountPercent: discountPercent,
+                                //InTaxPercent
+                                Quantity: quantity,
+                                QuantityRate: rateAmount,
+                                GrossAmount: tGrossAmount,
+                                NetAmount: tNetAmount,
+                                Comments: comments,
+                                CurrencyID: currencyID,
+                                ConversionRate: currency,
+                                InvoiceEffect: 0,
+                                VIndex: i,
+                            }
+                            voucherGeneralInfo.push(vGeneralInfoDebitObj);
+                            //JournalVoucherInfo
+
+                            let jernalVoucherDebitInfo = {
+                                ItemID: debitAccount,
+                                Quantity: quantity,
+                                Rate: rateAmount,
+                                Vindex: index
+                            }
+                            journalVoucherInfo.push(jernalVoucherDebitInfo);
+                        });
+
+                        let vDetailsCreditObj = {
+                            AccountID: creditAccountID,
+                            Amount: (creditAmount * (-1)),//tcreditAmount
+                            LocationID: locationID,
+                            Costcenter: creditCostCenterID,
+                            Activity: creditActivityID,
+                            VIndex: 301,
+                            Status: 50,
+                            EntryType: 2
+                        }
+                        voucherDetails.push(vDetailsCreditObj);
+
+                        let vGeneralInfoCredit = {
+                            AccountID: creditAccountID,
+                            Description: description,
+                            //Billno: billNo,
+                            Billdate: billDate,
+                            //ReferenceNo: referenceNo,
+                            //DiscountPercent: discountPercent,
+                            ////InTaxPercent
+                            Quantity: tQuantity,
+                            //QuantityRate: rate,
+                            GrossAmount: totalGrossAmount,
+                            NetAmount: totalNetAmount,
+                            //Comments: comments,
+                            CurrencyID: currencyID,
+                            ConversionRate: currency,
+                            InvoiceEffect: 0,
+                            VIndex: 301,
+                        }
+                        voucherGeneralInfo.push(vGeneralInfoCredit);
+
+                        let journalvoucherCreditObj = {
+                            ItemID: creditAccountID,
+                            Quantity: tQuantity,
+                            Rate: 0,
+                            Vindex: 301
+                        }
+                        journalVoucherInfo.push(journalvoucherCreditObj)
+
+                        let voucherDTMObj = {
+                            VoucherDate: voucherDate,
+                            LocationID: locationID,
+                            VoucherDescription: description,
+                            VoucherDetail: voucherDetails,
+                            VoucherGeneralInfo: voucherGeneralInfo,
+                            JournalVoucherInfo: journalVoucherInfo,
+                            CurrencyID: currencyID,
+                            CRate: currency,
+                            //  FiscalYear	:"",
+                            //   CompanyID	:0,
+                            //  BusinessID	:0,
+                            // PreparedBy	:0,
+                            //  IndividualVoucherID	:"",
+                            //  PrepareDate	:"",
+                            //   SystemVoucher	:"",
+
+
+                        }
+
+                        HttpRequest.Ajax("POST", '/Business/SupplierInvoiceVoucher/SaveSupplierInvoiceVoucher', { "voucherDTM": voucherDTMObj, '@token.HeaderName': '@token.RequestToken' }, saveSuccess);
+
+                    } else {
+                        $.alert.open("error", "Required Debit Information");
+                    }
+
+                }
+            })
+        })
+
+        function AddNewDebitInformation(that) {
+
+                let trLength = $('.trDebitInformation').length;
+        //    let ddlDabitAccount = HttpRequest.DropDownOptions('GET', '/Setups/SupplierInvoiceVoucher/GetAccountList')
+            let ddlDebitCostCenter = HttpRequest.DropDownOptions('GET', '/Setups/ChartOfAccounts/DDLCostCenter')
+            let ddlDefault = `<option value=""> Please Select </option>`;
+            var narration = $("#Description").val();
+            let cntIntex = trLength + 1;
+            /*${ ddlDabitAccount }*/
+                let tbodyTR=`<tr class="trDebitInformation text-xs">
+                        <td><span class="slNo">${trLength+1}</span></td>
+                        <td><select class="form-control form-control-xs1 select2  DebitAccount"></select></td>
+                        <td><select class="form-control form-control-xs1  DebitCostCenter" onchange="GetActiity(this)">${ddlDebitCostCenter}</select> </td>
+                        <td><select class="form-control form-control-xs1  DebitActivity">${ddlDefault}</select></td>
+                        <td><input type="text" class="form-control form-control-xs1 Narration" placeholder="Narration" autocomplete="off" value="${narration}"></td>
+                        <td><input type="text" class="form-control form-control-xs1 PORef" placeholder="P.O. Ref" autocomplete="off"></td>
+                        <td><input type="text" class="form-control form-control-xs1 text-right Quantity"  onkeyup="UpdateGrossAmount(this)" placeholder="Quantity" autocomplete="off"></td>
+                        <td><input type="text" class="form-control form-control-xs1 text-right Rate" onkeyup="UpdateGrossAmount(this)" placeholder="Rate" autocomplete="off"></td>
+                        <td><input type="text" class="form-control form-control-xs1 text-right Discount" onkeyup="UpdateGrossAmount(this)" placeholder="Discount" autocomplete="off"></td>
+                        <td><input type="text" class="form-control form-control-xs1 text-right GrossAmount" onChange="UpdateGrossSingleAmount(this)" onkeyup="UpdateNetAmount(this)" placeholder="Gross" autocomplete="off"></td>
+                        <td><input type="text" class="form-control form-control-xs1 text-right DiscountAmount" onkeyup="UpdateDiscountPercent(this)" placeholder="Disc.Amount" autocomplete="off"></td>
+                        <td><input type="text" class="form-control form-control-xs1 text-right NetAmount NetAmount" readonly placeholder="Net" autocomplete="off"></td>
+                        <td><input type="text" class="form-control form-control-xs1 Comments" placeholder="Comments" autocomplete="off"></td>
+                        <td><button class="btn btn-xs btn-danger" onclick="RemoveDebitTR(this)"> <i class="fa fa-trash fa-xs" aria-hidden="true"></i></button></td>
+                    </tr>`
+
+            $('.tbodyDebitInformation').append(tbodyTR);
+            var newSelect = $(".tbodyDebitInformation").find(".select2").last();
+            DebitAccountInitilization($(".tbodyDebitInformation").find(".DebitAccount").last());
+        }
+
+        function GetActiity(that) {
+
+            let parentId = $(that).val();
+           // let parentId = thisval[0];
+            var activityData = HttpRequest.DropDownOptions('GET', '/Setups/ChartOfAccounts/DDLActivity', { CostCenterID: parentId })
+            $(that).parent().parent().find('.DebitActivity').html(activityData);
+        }
+        function GetCurrencyExchangeRate() {
+            let currencyId = RtnNumber($("#CurrencyID").val());
+            $.ajax({
+                type: "GET",
+                url: "/Business/SupplierInvoiceVoucher/GetCurrencyExchangeRateByCurrencyIDQuery",
+                data: { currencyID: currencyId },
+                cache: false,
+                success: function (data) {
+                    $("#ExchangeRate").val(data);
+                }
+            });
+        }
+
+        function RemoveDebitTR(that) {
+            let slno = 0;
+            $(that).parent().parent().remove();
+            $('.trDebitInformation').each(function () {
+                let trCount = $(this).length;
+                slno += trCount
+                $(this).find('.slNo').text(slno);
+            })
+            UpdateTotalAmount();
+        }
+        function UpdateGrossAmount(that) {
+            debugger;
+            let thatTR = $(that).parent().parent();
+            let quantity = RtnNumber(thatTR.find('.Quantity').val());
+            let rate = RtnFloatUpToPrecision(thatTR.find('.Rate').val(), 2);
+            let grossAmount = RtnFloatUpToPrecision(thatTR.find('.GrossAmount').val(), 2);
+
+            if (quantity > 0 && rate > 0) {
+                let grossAmount = RtnFloatUpToPrecision((quantity * rate), 3);
+                thatTR.find('.GrossAmount').val(grossAmount)
+            } else if (grossAmount>0) {
+
+            }
+            else {
+                thatTR.find('.GrossAmount').val("")
+            }
+            UpdateDiscountAmount(that);
+            UpdateNetAmount(that);
+
+        }
+
+        function UpdateDiscountAmount(that) {
+            let thatTR = $(that).parent().parent();
+            let grossAmount = RtnFloatUpToPrecision(thatTR.find('.GrossAmount').val(),3);
+            let discountPer = RtnFloatUpToPrecision(thatTR.find('.Discount').val(), 2);
+            if (grossAmount > 0 && discountPer > 0) {
+                let discountAmount = RtnFloatUpToPrecision((grossAmount * discountPer / 100), 3);
+                thatTR.find('.DiscountAmount').val(discountAmount)
+            } else {
+                thatTR.find('.DiscountAmount').val("")
+            }
+
+        }
+        function UpdateNetAmount(that) {
+            let thatTR = $(that).parent().parent();
+            let grossAmount = RtnFloatUpToPrecision(thatTR.find('.GrossAmount').val(), 3);
+            let discountAmount = RtnFloatUpToPrecision(thatTR.find('.DiscountAmount').val(), 3)
+            if (grossAmount > discountAmount ) {
+                let netAmount = grossAmount - discountAmount
+                thatTR.find('.NetAmount').val(netAmount);
+            } else {
+                thatTR.find('.NetAmount').val("");
+            }
+            UpdateTotalAmount();
+        }
+
+        function UpdateDiscountPercent(that) {
+            let thatTR = $(that).parent().parent();
+            let grossAmount = RtnFloatUpToPrecision(thatTR.find('.GrossAmount').val(), 3);
+            let discountAmount = RtnFloatUpToPrecision(thatTR.find('.DiscountAmount').val(), 3)
+            if (grossAmount > discountAmount) {
+                let discountPercent = RtnFloatUpToPrecision(( discountAmount * 100 / grossAmount),2);
+                thatTR.find('.Discount').val(discountPercent);
+                UpdateNetAmount(that)
+            } else {
+                $.alert.open("error", "Discount Amount does not greater then Gross Amount")
+                thatTR.find('.Discount').val("");
+                thatTR.find('.DiscountAmount').val("")
+                UpdateNetAmount(that)
+            }
+
+
+        }
+
+        function UpdateGrossSingleAmount(that) {
+            let thatTR = $(that).parent().parent();
+            thatTR.find('.Quantity').val("");
+            thatTR.find('.Rate').val("");
+            UpdateDiscountAmount(that);
+            UpdateNetAmount(that);
+          //  $('.NetAmount' + index).val(grossAmount)
+           // $('.DiscountAmount' + index).val("")
+           // $('.Discount' + index).val("")
+            
+            UpdateTotalAmount();
+        }
+        function UpdateTotalAmount() {
+
+            let totalAmount = 0;
+            $('.trDebitInformation').each(function () {
+               // let index
+
+                let thisVal = $(this);
+                totalAmount += RtnFloatUpToPrecision(thisVal.find('.NetAmount').val(),2)
+                if (totalAmount!=0) {
+                    $('.TotalAmount').text(totalAmount);
+                }
+
+            })
+            if (totalAmount >= 0) {
+                $('.TotalAmount').text(totalAmount);
+            }
+        }
+
+        function ValidData() {
+            let isValid=false
+            $('.trDebitInformation').each(function () {
+               
+                let thisVal = $(this);
+               
+                let debitAccount = RtnNumber(thisVal.find(".DebitAccount").val());
+                
+                if (debitAccount != 0) {
+                    let debitActitvity = RtnNumber(thisVal.find(".DebitActivity").val());
+                    if (debitActitvity != 0) {
+                        let netAmount = RtnFloatUpToPrecision(thisVal.find('.NetAmount').val(), 2)
+                        if (netAmount != 0) {
+                            isValid = true
+                        } else {
+                            isValid = false
+                            return false;
+                        }
+                    } else {
+                        isValid = false
+                        return false;
+                    }
+                    
+                } else {
+                    isValid=false
+                    return false;
+                }
+
+            })
+            return isValid
+
+        }
+
+
+        function saveSuccess(data) {
+            debugger
+            if (data.result == 1) {
+                $.alert.open({
+                    type: 'Success',
+                    content: data.message,
+                    callback: function () {
+                       Clear();
+                        //GetCBMBranchList();
+                        //$("#btnSave").val('Save');
+                       // window.location.href = '/Setups/Supplier/Index';
+                    }
+                });
+            }
+            else {
+                $.alert.open("error", data.message);
+            }
+        }
+
+        function Clear() {
+            debugger
+            $('#Description').val('');
+            $('#VoucherDate').val('@Model.VoucherDate');
+            $('#LocationID').val('');
+            $('#CostCenter').val('');//
+            $('#Activity').val('');//
+            $('#CurrencyID').val(1);
+           // $('#SupplierID').val('');
+            $("#SupplierID").val('').trigger('change')
+            $('.TotalAmount').text(0);//
+             $("#BillNo").val('');
+            $("#BillDate").val('@Model.BillDate');
+            let index = 0;
+            $('.trDebitInformation').each(function () {
+                debugger
+                let that = $(this);
+                index += that.length;
+                that.find('.DebitAccount').val('');
+                that.find('.DebitCostCenter').val('');
+                that.find('.DebitActivity').val('');
+                that.find('.GrossAmount' + index).val('');
+                that.find('.NetAmount' + index).val('')//
+                that.find('.Narration' + index).val('');
+                that.find('.Comments' + index).val('');
+                that.find('.PORef' + index).val('');
+                that.find('.Quantity' + index).val('');
+                that.find('.Rate' + index).val('');
+                that.find('.Discount' + index).val('');
+                that.find('.DiscountAmount' + index).val('');
+
+            })
+
+
+
+        }
+
+        function DebitAccountInitilization(controlClass) {
+            HttpRequest.DropDownSelect2TagGroup('GET', '/Setups/ChartOfAccounts/DDLCOAItem', {}, controlClass,"select2font")
+        }
+    </script>
+}

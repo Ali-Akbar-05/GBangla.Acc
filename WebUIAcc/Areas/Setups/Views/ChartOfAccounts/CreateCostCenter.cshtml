@@ -1,0 +1,215 @@
+﻿@model Application.ViewModel.GBAcc.Setups.ChartOfAccounts.CreateCostCenter.CostCenterVM
+@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiForgeryToken
+@{
+    var token = antiForgeryToken.GetAndStoreTokens(Context);
+    ViewData[PageInfo.PageHeader] = "Create CostCenter";
+    ViewData[PageInfo.PageTitle] = "CostCenter";
+}
+
+<div class="card card-primary">
+    <form id="frmCostCenter">
+        <input type="hidden" asp-for="LevelID" />
+        <input type="hidden" asp-for="CostCenterID" />
+        <div class="row m-0">
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0 required" asp-for="BusinessID"></label>
+                    <select asp-for="BusinessID" class="form-control form-control-sm" asp-items="Model.DDLBusiness"></select>
+                    <span asp-validation-for="BusinessID" class="span-form-validation text-danger"></span>
+                </div>
+            </div>
+          
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0 required" asp-for="CostCenter"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="CostCenter" placeholder="Cost Center" autocomplete="off">
+                    <span asp-validation-for="CostCenter" class="span-form-validation "></span>
+                </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <label class="col-form-label-sm m-0">&nbsp;</label>
+                <div class="form-group" style="text-align:center">
+                    <input type="button" class="btn btn-sm btn-success" id="btnSave" value="Save">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="row m-0">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="grid">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{ 
+    <script type="text/javascript">
+          $(function () {
+            GetCostCenterList();
+              $('#btnSave').click(function () {
+            debugger
+                  if ($('#frmCostCenter').valid()) {
+                      let AccID = RtnNumber($("#CostCenterID").val())
+                      let businessID = RtnNumber($("#BusinessID").val());//
+                      let costCenter = $('#CostCenter').val();
+                      let levelID = RtnNumber($("#LevelID").val());
+               
+                obj = {
+                    AccID: AccID,
+                   AccName: costCenter,
+                   ParentID: businessID,
+                    LevelID: levelID 
+                }
+                      if (obj.AccID>0) {
+                          HttpRequest.Ajax("PUT", '/Setups/ChartOfAccounts/BasicCoaUpdate', { "ReqModel": obj , '@token.HeaderName': '@token.RequestToken'}, saveSuccess);
+                } else {
+                          HttpRequest.Ajax("POST", '/Setups/ChartOfAccounts/BasicCoaSave', { "ReqModel": obj , '@token.HeaderName': '@token.RequestToken'}, saveSuccess);
+                }
+            }
+        })
+          })
+        function saveSuccess(data) {
+            debugger
+            if (data.result == 1) {
+                $.alert.open({
+                    type: 'Success',
+                    content: data.message,
+                    callback: function () {
+                        Clear();
+                        GetCostCenterList();
+                        $("#btnSave").val('Save');
+                        // window.location.href = '/setup/CompanyInfo/Index';
+                    }
+                });
+            }
+            else {
+                $.alert.open("error", data.message);
+            }
+        }
+
+        function GetCostCenterList() {
+
+            var url = "/Setups/ChartOfAccounts/GetCostCenterList";
+         
+            var dataGrid = $("#grid").dxDataGrid({
+                dataSource: DevExpress.data.AspNet.createStore({
+                    key: "CostCenterID",
+                    loadUrl: url,
+                   // loadParams: requestModel
+                }),
+
+                remoteOperations: {
+                    paging: true,
+                    sorting: true,
+                    filtering: true,
+                },
+                showColumnLines: false,
+                showRowLines: true,
+                showBorders: true,
+                paging: {
+                    pageSize: 10
+                },
+                pager: {
+                    showInfo: true,
+                    allowedPageSizes: [10, 20, 40, 100, 500],
+                    showPageSizeSelector: true,
+                },
+                loadingIndicator: {
+                    enabled: true
+                },
+                selection: { mode: 'single' },
+                headerFilter: { visible: false, allowSearch: true },
+                filterRow: { visible: false },
+                wordWrapEnabled: true,
+                columns: [
+                    {
+                        dataField: "CostCenterID",
+                        visible: false,
+                    },
+                    {
+                        width: "5%",
+                        caption: "SL",
+                        alignment: 'center',
+                        cellTemplate: function (cellElement, cellInfo) {
+                            var index = dataGrid.pageIndex() * dataGrid.pageSize() + cellInfo.rowIndex + 1;
+                            cellElement.text(index)
+                        }
+
+                    },
+
+
+                    {
+
+                        caption: "Company",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        dataField: "CompanyName",
+                    },
+                    {
+
+                        caption: "Business",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        dataField: "Business",
+
+                    },
+                    {
+
+                        caption: "Cost Center",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        dataField: "CostCenter",
+
+                    },
+
+                    {
+                        width: "10%",
+                        caption: "Action",
+                        alignment: 'center',
+                        headerCellTemplate: function (header, info) {
+                            $('<div>').html(info.column.caption).css('font-weight', 'bold').appendTo(header);
+                        },
+                        cellTemplate: function (container, options) {
+
+                            var returnText = `<button class="btn btn-xs btn-warning" > <i class="fa fa-edit" ></i></button>`;
+                            $(returnText).on('dxclick', function () {
+                                DataEdit(options.data.BusinessID, options.data.CostCenterID, options.data.CostCenter, options.data.LevelID );
+                            }).appendTo(container);
+
+                            //var returnText = `<span>&nbsp</span><button class="btn btn-xs btn-danger" > <i class="fa fa-trash"></i></button>`;
+                            //returnText = returnText + '</div>';
+                            //$(returnText).on('dxclick', function () {
+                            //   // DataDelete(options.data.BankID);
+                            //}).appendTo(container);
+
+
+                        },
+                    },
+                ],
+
+                //  groupPanel: { visible: true },
+
+                height: 520,
+
+            }).dxDataGrid("instance");
+        }
+        function Clear() {
+          $("#BusinessID").val('');
+            $('#CostCenter').val('');
+           
+        }
+        function DataEdit(BusinessID, CostCenterID, CostCenter, LevelID) {
+            $("#LevelID").val(LevelID)
+            $("#BusinessID").val(BusinessID);
+            $("#CostCenterID").val(CostCenterID);//
+            $('#CostCenter').val(CostCenter);
+            $("#btnSave").val('Update');
+        }
+    </script>
+
+}

@@ -1,0 +1,956 @@
+﻿@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiForgeryToken
+@using Application.ViewModel.GBAcc.Setups.ViewComponentModel
+@model Application.ViewModel.GBAcc.Business.ChallanInvoiceMap.Create.ChallanInvoiceMapViewModel
+@{
+    var token = antiForgeryToken.GetAndStoreTokens(Context);
+    ViewData[PageInfo.PageHeader] = "Challan Invoice Map";
+    ViewData[PageInfo.PageTitle] = "Challan Map";
+    var vcRequestModel = new DebitNoteRequestVCM()
+    {
+        Serial = 1,
+        //  ItemID = Model.SupplierID
+    };
+}
+
+<div class="row ajt-control">
+    <form id="frmVoucherInvoiceMap" class="" role="form">
+        <div class="col-sm-12 col-md-12">
+            <div class="card card-success text-sm">
+                <div class="card-header text-xs">
+                    <h6 class="card-title">Challan Map</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row m-0">
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="LocationID"></label><br />
+                                <select class="form-control form-control-sm" asp-for="LocationID" asp-items="@Model.DDLLocation"></select>
+                                <span asp-validation-for="LocationID" class="span-form-validation "></span>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="DateFrom"></label>
+                                <input type="text" readonly class="form-control form-control-sm dateField" asp-for="DateFrom" autocomplete="off">
+                                <span asp-validation-for="DateFrom" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="DateTo"></label>
+                                <input type="text" readonly class="form-control form-control-sm dateField" asp-for="DateTo" autocomplete="off">
+                                <span asp-validation-for="DateTo" class="span-form-validation "></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row m-0">
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="PaymentModeID"></label><br />
+                                <select class="form-control form-control-sm" asp-for="PaymentModeID" asp-items="@Model.DDLPaymentMode"></select>
+                                <span asp-validation-for="PaymentModeID" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="CurrencyID"></label>
+                                <select class="form-control form-control-sm " asp-for="CurrencyID" asp-items="@Model.DDLCurrency"></select>
+                                <span asp-validation-for="CurrencyID" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="ExchangeRate"></label>
+                                <input type="text" readonly class="form-control form-control-sm " asp-for="ExchangeRate" placeholder="Rate" autocomplete="off">
+                                <span asp-validation-for="ExchangeRate" class="span-form-validation "></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row m-0">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="CustomerID"></label>
+                                <select class="form-control form-control-sm" asp-for="CustomerID" asp-items="@Model.DDLCustomer"></select>
+                                <span asp-validation-for="CustomerID" class="span-form-validation"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="IssueNumber"></label>
+                                <select class="form-control form-control-sm PONumber" multiple="multiple" asp-for="IssueNumber" asp-items="@Model.DDLIssueNumber"></select>
+                                <span asp-validation-for="IssueNumber" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-0 text-center">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <input type="button" class="btn btn-sm btn-warning" id="btnVoucher" value="Get Voucher">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-cyan text-sm InvoiceMapping">
+                <div class="card-header text-xs">
+                    <h6 class="card-title">Single Invoice Mapping with multiple Grvs </h6>
+                </div>
+                <div class="card-body">
+
+                    <div class="row m-0">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <table class="table table-sm table-responsive-sm text-sm" width="100">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th width="13%" class="required" style="vertical-align:text-top">Invoice Number(a)</th>
+                                        <th width="10%" class="required" style="vertical-align:text-top">Date (b)</th>
+                                        <th width="11%" class="required" style="vertical-align:text-top">Amount Excluding Tax (c)</th>
+                                        <th width="11%" class="" style="vertical-align:text-top">Advance Given</th>
+                                        <th width="11%" class="" style="vertical-align:text-top">Sales Tax Percent(d)</th>
+                                        <th width="11%" class="" style="vertical-align:text-top">Sales Tax Amount(e)c*d %</th>
+                                        <th width="11%" class="" style="vertical-align:text-top">Special Excise Duty Percent(f)</th>
+                                        <th width="11%" class="" style="vertical-align:text-top">Special Excise Duty Amount(g) c * f %</th>
+                                        <th width="11%" class="" style="vertical-align:text-top">Amount Including Tax(h) c + e + g</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tbodyInvoiceMapping">
+                                    <tr class="trInvoiceMapping">
+                                        <td rowspan="1"><input type="text" class="form-control form-control-sm InvoiceNumber" placeholder="Invoice Number" autocomplete="off"></td>
+                                        <td rowspan="1"><input type="text" readonly class="form-control form-control-sm dateField InvoiceDate" asp-for="DateFrom" autocomplete="off"></td>
+                                        <td rowspan="1"><input type="text" value="0" onkeydown="checkDecimal(event)" onkeyup="CalcInvoiceTotal(this),SumSelectedVouchers()" class="form-control form-control-sm AmountExcludingTax text-right" autocomplete="off"></td>
+                                        @*,AmountIncludeTaxCalculate(this)*@
+                                        <td rowspan="1"><input type="text" readonly value="0" class="form-control form-control-sm AdvanceGiven text-right" autocomplete="off"></td>
+                                        <td rowspan="1"><input type="text" value="0" onkeydown="checkDecimal(event)" onkeyup="AmountIncludeTaxCalculate(this)" class="form-control form-control-sm SalesTaxPercent text-right" autocomplete="off"></td>
+                                        <td rowspan="1"><input type="text" value="0" readonly class="form-control form-control-sm SalesTaxAmount text-right" autocomplete="off"></td>
+                                        <td rowspan="1"><input type="text" value="0" onkeydown="checkDecimal(event)" onkeyup="AmountIncludeTaxCalculate(this)" class="form-control form-control-sm SpecialExciseDutyPercent text-right" autocomplete="off"></td>
+                                        <td rowspan="1"><input type="text" value="0" readonly class="form-control form-control-sm SpecialExciseDutyAmount text-right" autocomplete="off"></td>
+                                        <td rowspan="1"><input type="text" value="0" readonly class="form-control form-control-sm AmountIncludingTax text-right" autocomplete="off"></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row m-0">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <table class="table table-sm table-responsive-sm text-xs">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th colspan="17" class="bg-dark"><h6>Due Payables Detail</h6> </th>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <th width="4%" class="" style="vertical-align:text-top">Check </th>
+                                        <th width="6%" class="" style="vertical-align:text-top">PO Number</th>
+                                        <th width="7%" class="" style="vertical-align:text-top">PO Date </th>
+                                        <th width="5%" class="" style="vertical-align:text-top">DC Number</th>
+                                        @*<th width="5%" class="" style="vertical-align:text-top">DC Date </th>*@
+                                        <th width="5%" class="" style="vertical-align:text-top">GRN Number </th>
+                                        <th width="5%" class="" style="vertical-align:text-top">GRN Date </th>
+                                        <th width="5%" class="" style="vertical-align:text-top">Voucher Number </th>
+                                        <th width="7%" class="" style="vertical-align:text-top">Voucher Date</th>
+                                        <th width="5%" class="" style="vertical-align:text-top">Gross Amount</th>
+                                        <th width="5%" class="" style="vertical-align:text-top">Discount Amount</th>
+                                        <th width="8%" class="" style="vertical-align:text-top" title="Net Amount Excluding Tax Amount">Net Amount<br />Exc. Tax </th>
+                                        @*<th width="5%" class="" style="vertical-align:text-top">Sales Tax Amount </th>
+                                            <th width="5%" class="" style="vertical-align:text-top">Special Excise Duty Amount </th>*@
+                                        <th width="8%" class="" style="vertical-align:text-top" title="Net Amount Including Tax">Net Amount<br />Inc. Tax</th>
+                                        <th width="8%" class="" style="vertical-align:text-top" title="Net Amount Foreign Currency">Amount <br />in $ </th>
+                                        <th width="5%" class="" style="vertical-align:text-top">Advance Adjusted </th>
+                                        <th width="3%" class="" style="vertical-align:text-top" title="Effect Ledger">Eff.<br />Ledg </th>
+                                        <th width="3%" class="" style="vertical-align:text-top" title="Effect Invoice">Eff.<br />Inv </th>
+                                        <th width="5%" class="" style="vertical-align:text-top">Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tbodyDuePayablesDetail">
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row m-0">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <table class="table table-sm table-responsive-sm text-sm" width="100">
+                                <thead class="bg-dark">
+                                    <tr class="text-center">
+                                        <th>Invoice Number  </th>
+                                        <th>Amount Excluding Tax </th>
+                                        <th>Sales Tax  </th>
+                                        <th>Special Excise Duty </th>
+                                        <th>Amount including Tax </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center AdvancedPayment">
+                                    <tr>
+                                        <td class="tdInitialInvoiceNumber font-weight-bold"></td>
+                                        <td class="tdInititalInvoiceAmountExST">0</td>
+                                        <td class="tdInititalInvoiceST">0</td>
+                                        <td class="tdInititalInvoiceExdty">0</td>
+                                        <td class="tdInititalInvoiceAmountInExdty">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Selected Vouchers Sum</td>
+                                        <td colspan="4">  </td>
+                                        @*<td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>*@
+                                    </tr>
+                                    <tr>
+                                        <td>Goods Reciepts</td>
+                                        <td class="tdGRVAmountExST"> 0 </td>
+                                        <td class="tdGRVST">0</td>
+                                        <td class="tdGRVExDty">0</td>
+                                        <td class="tdGRVAmountInExDty">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Debit/Credit Notes</td>
+                                        <td class="tdDCNAmountExST"> 0 </td>
+                                        <td class="tdDCNST">0</td>
+                                        <td class="tdDCNExDty">0</td>
+                                        <td class="tdDCNAmountInExDty">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Voucher Sum Available For Map </td>
+                                        <td class="tdVoucherSumAmountExST"> 0 </td>
+                                        <td class="tdVoucherSumST">0</td>
+                                        <td class="tdVoucherSumExDty">0</td>
+                                        <td class="tdVoucherSumAmountInExDty">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdAdjustedInvoiceNumber font-weight-bold"></td>
+                                        <td class="tdAdjustedInvoiceAmountExST">0</td>
+                                        <td class="tdAdjustedInvoiceST">0</td>
+                                        <td class="tdAdjustedInvoiceExDty">0</td>
+                                        <td class="tdAdjustedInvoiceAmountInExDty">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdFinalInvoiceNumber font-weight-bold"></td>
+                                        <td class="tdFinalAmountExST">0</td>
+                                        <td class="tdFinalST">0</td>
+                                        <td class="tdFinalExDty">0</td>
+                                        <td class="tdFinalAmountInExDty">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Excess/Shortage </td>
+                                        <td class="tdExcessShortageAmountExST">0</td>
+                                        <td class="tdExcessShortageST">0</td>
+                                        <td class="tdExcessShortageExDty">0</td>
+                                        <td class="tdExcessShortageAmountInExDty">0</td>
+                                    </tr>
+
+                                </tbody>
+                                <tfoot>
+                                </tfoot>
+                            </table>
+
+                            <table class="tblPoAdvanceInfo table table-sm table-bordered">
+                                <thead>
+                                    <tr class="bg-dark">
+                                        <th colspan="2">PO Number</th>
+                                        <th colspan="1">Paid Amount</th>
+                                        <th colspan="1">Remain Amount</th>
+
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody class="tblPOAdvanceBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="display:none" class="card card-success text-sm generateDebitNote">@await Component.InvokeAsync("DebitNote", vcRequestModel)</div>
+            <div class="row m-0 text-center">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <input type="button" class="btn btn-sm btn-success" id="btnSave" value="Save">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <input type="hidden" class="VoucherID" value="" />
+
+
+    </form>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $("#CustomerID").select2();
+            $("#LocationID").select2();
+            $("#IssueNumber").select2({
+                placeholder: {
+                    text: 'Select Issue Number'
+                }
+            });
+            $(".InvoiceNumber").blur(function () {
+                SetInitialInvoiceNumber();
+            });
+            $('#CurrencyID').change(function () {
+                GetCurrencyExchangeRate()
+            })
+            $('#CurrencyID').trigger('change');
+            $("#CustomerID").change(function () {
+                let customerID = RtnNumber($("#CustomerID").val());
+                let dateFrom = $("#DateFrom").val();
+                let dateTo = $("#DateTo").val();
+                HttpRequest.DropDownSelect2("GET", '/Business/ChallanInvoiceMap/GetIssueNumber', { customerID: customerID, dateFrom: dateFrom, dateTo: dateTo }, 'IssueNumber', true);
+            });
+            $("#DateFrom,#DateTo").change(function () {
+                $("#CustomerID").trigger("change")
+            });
+            $("#btnVoucher").click(function () {
+                buttonDisabled($(this));
+                var issueNumberlist = $('#IssueNumber').val();
+                let customerID = RtnNumber($("#CustomerID").val());
+                if (customerID==0) {
+                    $.alert.open("error", "Please Select Customer.");
+                    $("#CustomerID").focus();
+                    return false;
+                }
+                if (issueNumber == null || issueNumber=="") {
+                    $.alert.open("error", "Please Select Issue Number")
+                    return false;
+                }
+                let issueNumber = issueNumberlist.join();
+                if (issueNumber != null && customerID > 0) {
+                    GetPoAdvancedAmount();
+                    GetVendorVoucher();
+                } else {
+                    $.alert.open("error", "Please Select Issue Number")
+                }
+            });
+            $("#btnSave").click(function () {
+                debugger
+                buttonDisabled($(this));
+                if ($('#frmVoucherInvoiceMap').valid()) {
+                    debugger;
+                    let invoiceNumver = $(".InvoiceNumber").val();
+                    let invoiceDate = $(".InvoiceDate").val();
+                    var pONumber_array = $('#PONumber').val();//Aapatoto kore ghalam
+                    let pONumber = pONumber_array.join();
+                    let customerID = RtnNumber($("#CustomerID").val());
+                    let AmountIncludingTax = RtnFloatUpToPrecision($(".AmountIncludingTax").val(), 2);
+                    let grossAmount = CalculateAmountWRTcurrency(AmountIncludingTax, 0, 1);
+                    let specialExciseDutyAmount = RtnFloatUpToPrecision($(".SpecialExciseDutyAmount").val(), 2);
+                    let SalesTaxAmount = RtnFloatUpToPrecision($(".SalesTaxAmount").val(), 2);
+
+                    let salesTaxPercent = RtnFloatUpToPrecision($(".SalesTaxPercent").val(), 2);
+                    let specialExciseDutyPercent = RtnFloatUpToPrecision($(".SpecialExciseDutyPercent").val(), 2);
+                    let currency = RtnFloatUpToPrecision($("#ExchangeRate").val(), 2);
+                    let currencyID = RtnNumber($("#CurrencyID").val());
+                    let advAdjusted = RtnFloatUpToPrecision($(".AdvanceGiven").val(), 2);
+                    let netAmount = CalculateAmountWRTcurrency(AmountIncludingTax + specialExciseDutyAmount + SalesTaxAmount, 0, 1); //currency 0
+                    let locationID = RtnNumber($('#LocationID').val());
+                    let paymentMode = $("#PaymentModeID").val();
+                    let excessShortageAmountIncTex = RtnFloatUpToPrecision($(".tdExcessShortageAmountInExDty").text(), 2);
+
+                    let InvoiceDetail = new Array();
+                    let grvLength = 0;
+                    let wcRate = 0
+                    let twcRate = 0
+                    let dcRate = 0
+                    $('.chkGrv:checkbox:checked').each(function () {
+                        let thatVal = $(this).parent();
+                        grvLength += $(this).length;
+                        let VoucherID = RtnNumber(thatVal.find(".VoucherID").val());
+                        let amtForeignCurrency = RtnFloat(thatVal.find('.netAmtForeignCurrency').text());
+                        let voucherSumAmountExST = RtnFloat($('.tdVoucherSumAmountExST').text());
+                        let poRate = RtnNumber(thatVal.find(".txtHdnPORate").val());
+                        if (voucherSumAmountExST == 0) {
+                            dcRate = amtForeignCurrency;
+                        } else {
+                            dcRate = amtForeignCurrency / voucherSumAmountExST;
+                        }
+                        wcRate = dcRate * poRate;
+                        twcRate += wcRate;
+
+                        let invoiceDetail = {
+                            InvoiceID: 0,
+                            VoucherID: VoucherID,
+                            InvoiceEffect: 1
+                        }
+                        InvoiceDetail.push(invoiceDetail);
+                    });
+                    if (currency != 1) {
+                        if (twcRate==0) {
+                            rate = currency;
+                        } else {
+                            rate = twcRate;
+                        }
+                    } else {
+                        rate = 1;
+                    }
+                    if (grvLength > 0) {
+
+                        if (ValidData() == true) {
+                            let invoiceMainObj = {
+                                InvoiceSystemID: 0,
+                                InvoiceNumber: invoiceNumver,
+                                InvoiceDate: invoiceDate,
+                                GrossAmount: grossAmount,
+                                NetAmount: netAmount,
+                                TaxRate: salesTaxPercent,
+                                PONum: pONumber,
+                                SupplierID: accountId,
+                                CompanyID: 0,
+                                ExDtyRate: specialExciseDutyPercent,
+                                InvoiceType: 0,
+                                CurrencyID: currencyID,
+                                CurrencyRate: currency,
+                                AdvAdjusted: advAdjusted,
+                                AmtInDoller: AmountIncludingTax,
+                                APM_Invoice_Detail: InvoiceDetail
+                            }
+
+                            let CbmRfpObj = {
+                                RFPNum: "",
+                                RFPDate: invoiceDate,
+                                LocationID: locationID,
+                                RFPDescription: "",
+                                PaymentMode: paymentMode,
+                                NetAmount: specialExciseDutyAmount,
+                                SupplierID: accountId,
+                                IsAdvanceAdjusted: 0,
+                            }
+                            let VoucherObj = {};
+                            if (excessShortageAmountIncTex < 0) {
+
+                                let VoucherDetail = new Array();
+                                let VoucherGeneralInfo = new Array();
+                                let salesTax = 0;
+                                let exciseDuty = 0;
+                                let excessShortageST = RtnFloatUpToPrecision($(".tdExcessShortageST").text(), 2);
+                                let excessShortageExDty = RtnFloatUpToPrecision($(".tdExcessShortageExDty").text(), 2);
+                                let excessShortageAmountExST = RtnFloatUpToPrecision($(".tdExcessShortageAmountExST").text(), 2);
+
+                                let AdjustedInvoiceSalesTax = RtnFloatUpToPrecision($(".AdjustedInvoiceSalesTax").text(), 2);
+                                let AdjustedExciseDuty = RtnFloatUpToPrecision($(".AdjustedExciseDuty").text(), 2);
+
+
+                                //let netAmount = RtnFloatUpToPrecision((excessShortageAmountExST + AdjustedInvoiceSalesTax + AdjustedExciseDuty) * currency, 2)// changed by jj
+
+
+                                let netAmount = RtnFloatUpToPrecision((Math.abs(excessShortageST) + Math.abs(excessShortageExDty) + Math.abs(excessShortageAmountExST)) * currency, 2);
+                                let DiscountItemID = RtnNumber($("#AccItem1").val());
+
+                                if (DiscountItemID == "" || DiscountItemID == 0) {
+                                    $.alert.open("error", "Debit Not Item Select");
+                                    return false;
+                                }
+                                if (excessShortageAmountExST != 0) {
+                                    salesTax = RtnFloatUpToPrecision(((AdjustedInvoiceSalesTax * 100) / excessShortageAmountExST), 2);
+                                    exciseDuty = RtnFloatUpToPrecision(((AdjustedExciseDuty * 100) / excessShortageAmountExST), 2);
+                                }
+                                let voucherDetailDebitObj = {
+                                    VDetailsID: 0,
+                                    VoucherID: 0,
+                                    AccountID: accountId,
+                                    Amount: netAmount,    //(-1) * RtnFloatUpToPrecision((excessShortageAmountExST * currency), 2),//excessShortageAmountIncTex,
+                                    LocationID: locationID,
+                                    Costcenter: 0,
+                                    Activity: 0,
+                                    VIndex: 1,
+                                    Status: 1,
+                                    //EntryType
+                                }
+                                VoucherDetail.push(voucherDetailDebitObj);
+                                let voucherDetailCreditObj = {
+                                    VDetailsID: 0,
+                                    VoucherID: 0,
+                                    AccountID: DiscountItemID,
+                                    Amount: (-1)*netAmount,//RtnFloatUpToPrecision(((-1) * excessShortageAmountExST * currency), 2),//////////
+                                    LocationID: locationID,
+                                    Costcenter: 0,
+                                    Activity: 0,
+                                    VIndex: 301,
+                                    Status: 1,
+                                    //EntryType
+                                }
+                                VoucherDetail.push(voucherDetailCreditObj);
+
+                                let voucherGeneralInfoDebitObj = {
+                                    ID: 0,
+                                    VoucherID: 0,
+                                    AccountID: accountId,
+                                    Description: "To Record Excess Amounts",
+                                    Billno: invoiceNumver,
+                                    //Billdate
+                                    ReferenceNo: pONumber,
+                                    DiscountPercent: 0,
+                                    InTaxPercent: salesTax,
+                                    Quantity: 0,
+                                    QuantityRate: 0,
+                                    GrossAmount: netAmount,
+                                    NetAmount: netAmount,
+                                    //Comments
+                                    CurrencyID: currencyID,
+                                    ConversionRate: currency,
+                                    //SupplierDONumber
+                                    //PODate
+                                    //GRNDate
+                                    //DCDate
+                                    //InvoiceEffect
+                                    VIndex: 1,
+                                    ExciseDuty: exciseDuty,
+                                    //LCNumber
+                                    //LCID
+                                    //BankAccID
+
+
+                                }
+                                VoucherGeneralInfo.push(voucherGeneralInfoDebitObj);
+                                let voucherGeneralInfoCreditObj = {
+                                    ID: 0,
+                                    VoucherID: 0,
+                                    AccountID: DiscountItemID,
+                                    Description: "To Record Excess Amounts",
+                                    Billno: invoiceNumver,
+                                    //Billdate
+                                    ReferenceNo: pONumber,
+                                    DiscountPercent: 0,
+                                    InTaxPercent: salesTax,
+                                    Quantity: 0,
+                                    QuantityRate: 0,
+                                    GrossAmount: RtnFloatUpToPrecision((excessShortageAmountExST * currency), 2),
+                                    NetAmount: RtnFloatUpToPrecision((excessShortageAmountExST * currency), 2),
+                                    //Comments
+                                    CurrencyID: currencyID,
+                                    ConversionRate: currency,
+                                    //SupplierDONumber
+                                    //PODate
+                                    //GRNDate
+                                    //DCDate
+                                    //InvoiceEffect
+                                    VIndex: 301,
+                                    ExciseDuty: exciseDuty,
+                                    //LCNumber
+                                    //LCID
+                                    //BankAccID
+                                }
+                                VoucherGeneralInfo.push(voucherGeneralInfoCreditObj);
+                                debugger
+                                VoucherObj = {
+                                    VoucherID: 0,
+                                    VoucherNumber: "",
+                                    VoucherType: 17,
+                                    VoucherDescription: "To Record Excess Amounts",
+                                    CurrencyID: currencyID,
+                                    CRate: currency,
+                                    LocationID: locationID,
+                                    VoucherDetail: VoucherDetail,
+                                    VoucherGeneralInfo: VoucherGeneralInfo
+                                }
+
+                            }
+                            debugger
+                            let voucherInvoiceMapDTM = {
+                                DebitNoteAmount: excessShortageAmountIncTex,
+                                APM_Invoice_Main: invoiceMainObj,
+                                CBM_RFP: CbmRfpObj,
+                                Voucher: VoucherObj
+                            }
+                            if (voucherInvoiceMapDTM != null) {
+                                HttpRequest.Ajax("POST", '/Business/VoucherInvoiceMap/SaveVoucherInvoiceMap', { "voucherInvoiceMapDTM": voucherInvoiceMapDTM, '@token.HeaderName': '@token.RequestToken' }, saveSuccess,null,true);
+                            }
+                        } else {
+                            $.alert.open("error", "Invoice Number Required");
+                        }
+                    }
+                    else {
+                        $.alert.open("error", "Please Select Grv Voucher");
+                    }
+
+
+                }
+            });
+        });
+
+        function ValidData() {
+            let isValid = false;
+            let invoiceNumber = $(".InvoiceNumber").val();
+            if (invoiceNumber !="") {
+                isValid=true
+            }
+            return isValid;
+        }
+        function GetPoAdvancedAmount() {
+            var poNlist = $('#PONumber').val();
+            let poNumber = poNlist.join();
+            let customerID = RtnNumber($("#CustomerID").val());
+            $.ajax({
+                type: "GET",
+                url: "/Business/VoucherInvoiceMap/GetAdvancedPO",
+                data: { supplierID: supplierId, poNumber: poNumber, },
+                cache: false,
+                success: function (data) {
+                    if (data != null) {
+                        let strAdvabcePymentTR = ``;
+                        $('.tblPOAdvanceBody').html("");
+                        $.each(data, function (i, v) {
+                            let poNumver = 'PoNumber' + v.PoNumber;
+                            let remaing = 'Remaining' + v.PoNumber;
+                            let paidAmount = 'Paid' + v.PoNumber;
+                            strAdvabcePymentTR += `<tr class="AdvancedPaymentTotalTR">
+                                            <td class="${poNumver}" colspan="2">${v.PoNumber}</td>
+                                            <td class="${paidAmount}" colspan="1">0</td>
+                                            <td class="${remaing}" colspan="1">${v.AdvanceAmount}</td>
+                                            <td></td>
+                                        </tr>`
+                        })
+                        $('.tblPOAdvanceBody').append(strAdvabcePymentTR);
+
+                    }
+                }
+            });
+        }
+
+        function GetVendorVoucher() {
+            $(".loadingImage").show();
+            let currency = RtnFloatUpToPrecision($("#ExchangeRate").val(), 2);
+            var poNlist = $('#PONumber').val();
+            let poNumber = poNlist.join();
+            let customerID = RtnNumber($("#CustomerID").val());
+            let dateFrom = $('#DateFrom').val();
+            let dateTo = $('#DateTo').val();
+
+            $.ajax({
+                type: "GET",
+                url: "/Business/VoucherInvoiceMap/GetVendorVoucher",
+                data: { accountID: accountId, dateFrom: dateFrom, dateTo: dateTo, poNumber: poNumber, },
+                cache: false,
+                success: function (data) {
+                    $(".loadingImage").hide();
+                    let stringTR = ``;
+                    if (data != null) {
+                        $(".tbodyDuePayablesDetail").html("");
+                        $.each(data, function (i, v) {
+                            let grossamount = 0;
+                            // let  lll = 0;
+                            let totalGross = RtnFloatUpToPrecision((v.GrossAmount + v.DiscountAmount), 2)
+                            let discountAmount = CalculateAmountWRTcurrency(v.DiscountAmount, 0, 0);
+                            //  let totalDisAmt = RtnFloatUpToPrecision(v.DiscountAmount, 2);
+                            if ((totalGross + discountAmount)>= 0) {
+                                grossamount = CalculateAmountWRTcurrency((v.GrossAmount + v.DiscountAmount), 0, 0);
+                            } else {
+                                grossamount = (-1) * CalculateAmountWRTcurrency((v.GrossAmount + v.DiscountAmount), 0, 0); //rate always 0 basis on Existing Code
+                            }
+
+                            let totalvoucherNetAmount = RtnFloatUpToPrecision(v.VoucherNetAmount, 2);
+                            let voucherNetAmount = 0;
+                            if (totalvoucherNetAmount >= 0) {
+                                voucherNetAmount = CalculateAmountWRTcurrency(v.VoucherNetAmount, 0, 0); //rate always 0 basis on Existing Code
+                            } else {
+                                voucherNetAmount = (-1) * CalculateAmountWRTcurrency(v.VoucherNetAmount, 0, 0); //rate always 0 basis on Existing Code
+                            }
+                            debugger;
+                            let voucherTotalAmt = RtnFloatUpToPrecision(v.VoucherTotalAmount, 2);
+                            let netAmtForeignCurrency = 0;
+                            if (voucherTotalAmt >= 0) {
+                                //voucherTotalAmt = voucherTotalAmt
+                                netAmtForeignCurrency = voucherTotalAmt;
+                            } else {
+                                voucherTotalAmt = CalculateAmountWRTcurrency(((-1) * v.VoucherTotalAmount), 0, 0);
+                                netAmtForeignCurrency = CalculateAmountWRTcurrency(((-1) * v.VoucherTotalAmount), currency, 0);
+                            }
+
+
+                            let advanceAmount = 0;
+                            let remainingAmount = 0;
+                            let paidAmount = 0;
+                            if (v.POReferenceNo != null) {
+
+                                remainingAmount = RtnFloatUpToPrecision($('.Remaining' + v.POReferenceNo).text(), 2);
+                                //  let totalAmt = CalculateAmountWRTcurrency(((-1) * v.VoucherTotalAmount), currency, 0);
+                                if (remainingAmount > 0 && remainingAmount > voucherTotalAmt) {
+                                    remainingAmount = remainingAmount - voucherTotalAmt;
+                                    paidAmount = RtnFloatUpToPrecision($('.Paid' + v.POReferenceNo).text(), 2);
+                                    paidAmount = paidAmount + voucherTotalAmt;
+                                    $('.Remaining' + v.POReferenceNo).text(remainingAmount);
+                                    $('.Paid' + v.POReferenceNo).text(paidAmount);
+                                    advanceAmount = voucherTotalAmt;
+                                    netAmtForeignCurrency = 0;
+                                } else {
+                                    advanceAmount = CalculateAmountWRTcurrency(voucherTotalAmt, v.CurrencyRate, 0) - remainingAmount;
+                                    paidAmount = RtnFloatUpToPrecision($('.Paid' + v.POReferenceNo).text(), 2);
+                                    paidAmount = paidAmount + remainingAmount;
+                                    $('.Paid' + v.POReferenceNo).text(paidAmount);
+                                    $('.Remaining' + v.POReferenceNo).text(0);
+                                    netAmtForeignCurrency = advanceAmount;
+                                    advanceAmount = remainingAmount;
+
+                                }
+                            } else {
+                                advanceAmount = 0;
+                            }
+
+                            stringTR += `<tr class="trDuePayablesDetail">
+                                            <td><input type="checkbox" class="chkGrv" onchange="SelectVoucher(this)" />
+                                                 <input type="hidden" class="VoucherID" value="${v.VoucherID}" />
+                                                 <input class="txtHdnPORate" type="hidden" value="${v.CurrencyRate}" name="txtHdnPORate">
+                                                 <input class="txtHdnVoucherTypeID" type="hidden" value="${v.VoucherType}" name="txtHdnVoucherTypeID">
+                                            </td>
+                                            <td class="POReferenceNo text-center">${v.POReferenceNo}</td>
+                                            <td class="StrPODate text-center">${v.StrPODate}</td>
+                                            <td class="SupplierDONumber text-center">${v.SupplierDONumber}</td>
+
+                                            <td class="GRNNo text-center">${v.GRNNo}</td>
+                                            <td class="StrGRNDate text-center">${v.StrGRNDate}</td>
+                                            <td class="VoucherNumber text-center">${v.VoucherNumber}</td>
+                                            <td class="StrVoucherDate text-center">${v.StrVoucherDate}</td>`;
+                            if ((v.GrossAmount + v.DiscountAmount) >= 0) {
+                                stringTR += `<td class="grossamount text-center">(${grossamount.toFixed(2)})</td>`;
+                            } else {
+                                stringTR += `<td class="grossamount text-center">${grossamount.toFixed(2)}</td>`;
+                            }
+
+                            stringTR += `<td class="discountAmount text-center">${discountAmount}</td>`;
+                            if (v.VoucherNetAmount>=0) {
+                                stringTR += `<td class="voucherNetAmount text-center" >(${voucherNetAmount.toFixed(2)})</td>`;
+                            } else {
+                                stringTR += `<td class="voucherNetAmount text-center" >${voucherNetAmount.toFixed(2)}</td>`;
+                            }
+
+                            if (v.VoucherTotalAmount>=0) {
+                                stringTR += ` <td class="voucherTotalAmt text-center">(${voucherTotalAmt})</td>
+                                                <td class="netAmtForeignCurrency text-center">${netAmtForeignCurrency}</td>`;
+                            } else {
+                                stringTR += ` <td class="voucherTotalAmt text-center">${voucherTotalAmt}</td>
+                                        <td class="netAmtForeignCurrency text-center">${netAmtForeignCurrency}</td>`;
+                            }
+
+
+                            stringTR += `<td class="advancedAdjusted text-center">${advanceAmount}</td>
+                                            <td class="text-center GLEffect">${v.GLEffect}</td>
+                                            <td class="text-center tdchkInvoiceEffect"><input class="chkInvoiceEffect" name="chkInvoiceEffect" type="checkbox" /></td>
+                                            <td class="VoucherQuantity text-center">${v.VoucherQuantity}</td>
+                                        </tr>`;
+                        })
+                        $(".tbodyDuePayablesDetail").append(stringTR);
+                    } else {
+                        $.alert.open("error", "There is no GRV Voucher against Po Number")
+                    }
+                }
+            });
+
+        }
+
+        function GetAdvancedGiven(that) {
+            debugger;
+            let advanceGivenAmount = 0;
+            let grvTRlength = 0;
+            let TotalVoucherAmount = 0;
+            let givenAmount = RtnFloatUpToPrecision($(".AmountExcludingTax").val(), 2);
+            $('.chkGrv:checkbox:checked').each(function () {
+                grvTRlength += $(this).length;
+                let thatVal = $(this).parent().parent();
+                let advancedAmount =  RtnFloatUpToPrecision(thatVal.find(".AdvancedAdjusted").text(), 2);
+                let vTotalAmt = RtnFloatUpToPrecision(thatVal.find(".voucherTotalAmt").text(), 2);
+                if (advancedAmount > 0) {
+                    advanceGivenAmount += advancedAmount;
+                    TotalVoucherAmount += vTotalAmt;
+                }
+            })
+            $(".AdvanceGiven ").val(advanceGivenAmount);
+            $(".AmountIncludingTax ").val((-1)*advanceGivenAmount)
+            $(".AdjustedInvoiceAmount ").text(((-1) * TotalVoucherAmount) + givenAmount);
+            $(".FinalAmount ").text(((-1) * TotalVoucherAmount) + givenAmount);
+            $(".tdExcessShortageAmountExST").text(((-1) * TotalVoucherAmount) + givenAmount);
+
+            $(".AdjustedInvoiceAmountIncTex ").text(((-1) * TotalVoucherAmount) + givenAmount);
+            $(".FinalAmountIncTex ").text(((-1) * TotalVoucherAmount) + givenAmount);
+            $(".excessShortageAmountIncTex ").text(((-1) * TotalVoucherAmount) + givenAmount);
+            $(".InitialInvoiceAmountIncTex ").text(((-1) * TotalVoucherAmount) + givenAmount);
+            //
+            if (grvTRlength > 0) {
+                $(".generateDebitNote").show();
+            } else {
+                $(".generateDebitNote").hide();
+            }
+        }
+
+        function CalcInvoiceTotal(that) {
+            let amountExcludingTex = RtnFloatUpToPrecision($(that).val(), 2);
+            let TotalVoucherAmount = 0;
+            $('.chkGrv:checkbox:checked').each(function () {
+                let thatVal = $(this).parent().parent();
+                TotalVoucherAmount += RtnFloatUpToPrecision(thatVal.find(".voucherTotalAmt").text(), 2);
+            })
+            if (amountExcludingTex < TotalVoucherAmount) {
+                $(".generateDebitNote").show();
+            } else {
+                $(".generateDebitNote").hide();
+            }
+            $(".InitialInvoiceAmountExist").text(amountExcludingTex);
+            $(".AdjustedInvoiceAmount ").text(((-1) * TotalVoucherAmount) + amountExcludingTex);
+            $(".FinalAmount ").text(((-1) * TotalVoucherAmount) + amountExcludingTex);
+            $(".tdExcessShortageAmountExST").text(((-1) * TotalVoucherAmount) + amountExcludingTex);
+
+            $(".AdjustedInvoiceAmountIncTex ").text(((-1) * TotalVoucherAmount) + amountExcludingTex);
+            $(".FinalAmountIncTex ").text(((-1) * TotalVoucherAmount) + amountExcludingTex);
+            $(".excessShortageAmountIncTex ").text(((-1) * TotalVoucherAmount) + amountExcludingTex);
+            $(".InitialInvoiceAmountIncTex ").text(((-1) * TotalVoucherAmount) + amountExcludingTex);
+        }
+        function GetCurrencyExchangeRate() {
+            let currencyId = RtnNumber($("#CurrencyID").val());
+            $.ajax({
+                type: "GET",
+                url: "/Business/SupplierInvoiceVoucher/GetCurrencyExchangeRateByCurrencyIDQuery",
+                data: { currencyID: currencyId },
+                cache: false,
+                success: function (data) {
+                    $("#ExchangeRate").val(data);
+                }
+            });
+        }
+        function CalculateAmountWRTcurrency(Amount, EXRate, Type) {
+
+            Amount = RtnFloatUpToPrecision(Amount, 4)
+            EXRate = RtnFloatUpToPrecision(EXRate, 4)
+            Type = RtnNumber(Type);
+            var FinalAmount = 0;
+            if (Type == 0) //for display
+            {
+                if (EXRate != 0)
+                    FinalAmount = RtnFloatUpToPrecision((Amount / EXRate), 4)
+                else
+                    FinalAmount = RtnFloatUpToPrecision(Amount, 4)
+            }
+            else  // for save xml
+            {
+                if (EXRate != 0)
+                    FinalAmount = RtnFloatUpToPrecision((Amount * EXRate), 4)
+                else
+                    FinalAmount = RtnFloatUpToPrecision(Amount, 4)
+            }
+            return RtnFloatUpToPrecision(FinalAmount, 4);
+        }
+        
+        function saveSuccess(data) {
+            debugger
+            if (data.result == 1) {
+                $.alert.open({
+                    type: 'Success',
+                    content: data.message,
+                    callback: function () {
+                       // Clear();
+                        //GetCBMBranchList();
+                        //$("#btnSave").val('Save');
+                        window.location.href = '/Business/VoucherInvoiceMap/Create';
+                    }
+                });
+            }
+            else {
+                $.alert.open("error", data.message);
+            }
+        }
+        function CalculateAmountIncludingTax() {
+            debugger;
+            let amountExcludingTax = RtnFloat($(".AmountExcludingTax ").val());
+            let specialExciseDutyAmount = RtnFloat($(".SpecialExciseDutyAmount").val());
+            let salesTaxAmount = RtnFloat($(".SalesTaxAmount").val());
+            let advanceGiven = RtnFloat($(".AdvanceGiven").val());
+
+            let amtIncludingTax = (amountExcludingTax + specialExciseDutyAmount + salesTaxAmount) - advanceGiven;
+            $(".tdInititalInvoiceAmountInExdty").text(amtIncludingTax);
+            $(".AmountIncludingTax").val(amtIncludingTax);
+
+        }
+
+        function SumSelectedVouchers()
+        {
+            let dollerRate = 1
+            let advAmount = 0;
+            let totalAmount = 0;
+            let adjTotalSum = 0;
+            let discountAmount = 0;
+            let amountInForeignCurency = 0;
+            let amountExcludingTax = RtnFloat($(".AmountExcludingTax").val());
+            if ($("#ExchangeRate").val() > 1) {
+                dollerRate = $("#ExchangeRate").val();
+            }
+
+            $(".tbodyDuePayablesDetail .chkGrv:checkbox:checked").each(function () {
+                var row = $(this).parent().parent();
+                if (dollerRate == 1) {
+                    dollerRate = row.find(".txtHdnPORate").val();
+                    if (dollerRate == null) {
+                        dollerRate = 1;
+                    }
+                }
+                let totalAmt = row.find('.voucherTotalAmt').text();
+
+                if (totalAmt.includes("(")) {
+                    totalAmount += RtnFloat(totalAmt * dollerRate);
+                } else {
+                    adjTotalSum += RtnFloat(totalAmt * dollerRate);
+                }
+
+                advAmount += RtnFloat(row.find('.advancedAdjusted').text());
+                amountInForeignCurency += (RtnFloat(row.find('.netAmtForeignCurrency').text()) * dollerRate);
+            });
+            debugger;
+            $('.tdInititalInvoiceAmountExST').text(amountExcludingTax);
+            $(".AdvanceGiven").val(advAmount);
+            $('.tdGRVAmountExST').text(amountInForeignCurency);
+            $('.tdGRVAmountInExDty').text(amountInForeignCurency);
+            CalculateAmountIncludingTax();
+
+            let inititalInvoiceAmountInExdty= $(".tdInititalInvoiceAmountInExdty").text();
+
+            $(".tdVoucherSumAmountExST").text(amountInForeignCurency);
+            $(".tdVoucherSumAmountInExDty").text(amountInForeignCurency);
+
+            $(".tdAdjustedInvoiceAmountExST").text(inititalInvoiceAmountInExdty);
+            $(".tdAdjustedInvoiceAmountInExDty").text(inititalInvoiceAmountInExdty);
+
+            $(".tdFinalAmountExST").text(inititalInvoiceAmountInExdty);
+            $(".tdFinalAmountInExDty").text(inititalInvoiceAmountInExdty);
+
+            $(".tdExcessShortageAmountExST").text(inititalInvoiceAmountInExdty - amountInForeignCurency);
+            $(".tdExcessShortageAmountInExDty").text(inititalInvoiceAmountInExdty - amountInForeignCurency);
+
+            //$(".tdExcessShortageAmountExST").text(amountExcludingTax-(amountInForeignCurency - (inititalInvoiceAmountInExdty)));
+            //$(".tdExcessShortageAmountInExDty").text(amountExcludingTax-(amountInForeignCurency - (inititalInvoiceAmountInExdty)));
+
+
+        }
+        function SetInitialInvoiceNumber() {
+            let invNo = $(".InvoiceNumber").val();
+            $(".tdInitialInvoiceNumber").text(invNo);
+            $(".tdAdjustedInvoiceNumber").text(invNo);
+            $(".tdFinalInvoiceNumber").text(invNo);
+
+        }
+        function SelectVoucher(that) {
+            debugger;
+            if ($(that).is(":checked"))
+                $(that).parent().parent().find('.chkInvoiceEffect').prop('checked', true);
+            else
+                $(that).parent().parent().find('.chkInvoiceEffect').prop('checked', false);
+
+            //SetInitialInvoiceNumber();
+            SumSelectedVouchers();
+        }
+    </script>
+}

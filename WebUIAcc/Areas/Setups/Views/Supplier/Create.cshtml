@@ -1,0 +1,451 @@
+﻿@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiForgeryToken
+@using Application.ViewModel.GBAcc.Setups.ViewComponentModel
+@model Application.ViewModel.GBAcc.Setups.Suppliers.Create.SupplierVM
+@{
+    var token = antiForgeryToken.GetAndStoreTokens(Context);
+    ViewData[PageInfo.PageHeader] = "Supplier";
+    ViewData[PageInfo.PageTitle] = "Supplier";
+    var slContact = 1;
+    var slBankInfo = 1;
+    var vcRequestModel = new ChartOfAccountRequestVCM()
+    {
+        Serial=1,
+        ItemID=Model.SupplierID
+    };
+   
+    ViewData[PageInfo.btnText1] = "Back To List";
+    ViewData[PageInfo.PageLink1] = "/Setups/Supplier/Index";
+    ViewData[PageInfo.btnClass1] = "btn-warning";
+}
+
+<div class="row ajt-control">
+    <div class="col-md-12">
+        <div class="card card-primary ">
+            <form id="frmSupplier">
+                <div class="card-header" style=" background-color: #007bff;color:white">
+                    <h4 class="card-title">Chart Of Accounts</h4>
+                </div>
+                <div>
+                    @await Component.InvokeAsync("ChartOfAccounts", vcRequestModel)
+                </div>
+                <div class="row m-0">
+
+                </div>
+
+                <div class="card-header" style=" background-color: #007bff;color:white">
+                    <h4 class="card-title">Vendor Information</h4>
+                </div>
+                <input type="hidden" asp-for="SupplierID" />
+
+                <div class="row m-0">
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="col-form-label-sm m-0 required" asp-for="CompanyName"></label>
+                            <input type="text" class="form-control form-control-sm" asp-for="CompanyName" placeholder="Supplier Name" autocomplete="off">
+                            <span asp-validation-for="CompanyName" class="span-form-validation"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="col-form-label-sm m-0" asp-for="Address"></label>
+                            <input type="text" class="form-control form-control-sm " asp-for="Address" placeholder="Address" autocomplete="off">
+                            <span asp-validation-for="Address" class="span-form-validation "></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="col-form-label-sm m-0" asp-for="TelephoneNumber"></label>
+                            <input type="text" class="form-control form-control-sm " asp-for="TelephoneNumber" placeholder="Telephone Number" autocomplete="off">
+                            <span asp-validation-for="TelephoneNumber" class="span-form-validation "></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="col-form-label-sm m-0" asp-for="MobileNumber"></label>
+                            <input type="text" class="form-control form-control-sm " asp-for="MobileNumber" placeholder="Mobile Number" autocomplete="off">
+                            <span asp-validation-for="MobileNumber" class="span-form-validation "></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="col-form-label-sm m-0" asp-for="FaxNumber"></label>
+                            <input type="text" class="form-control form-control-sm " asp-for="FaxNumber" placeholder="Fax Number" autocomplete="off">
+                            <span asp-validation-for="FaxNumber" class="span-form-validation "></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="col-form-label-sm m-0" asp-for="Email"></label>
+                            <input type="text" class="form-control form-control-sm " asp-for="Email" placeholder="Email" autocomplete="off">
+                            <span asp-validation-for="Email" class="span-form-validation "></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="col-form-label-sm m-0" asp-for="SalesTaxRegNumber"></label>
+                            <input type="text" class="form-control form-control-sm " asp-for="SalesTaxRegNumber" placeholder="Sales Tax Registration Number" autocomplete="off">
+                            <span asp-validation-for="SalesTaxRegNumber" class="span-form-validation "></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label class="col-form-label-sm m-0" asp-for="NTNNumber"></label>
+                            <input type="text" class="form-control form-control-sm " asp-for="NTNNumber" placeholder="National Tax Payer Number" autocomplete="off">
+                            <span asp-validation-for="NTNNumber" class="span-form-validation "></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <div class="col-sm-5 col-md-5 col-lg-5">
+                        <div class="form-group">
+                            <label class="col-form-label-sm m-0" asp-for="Comments"></label>
+                            <input type="text" class="form-control form-control-sm " asp-for="Comments" placeholder="Comments" autocomplete="off">
+                            <span asp-validation-for="Comments" class="span-form-validation "></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-header" style=" background-color: #007bff;color:white">
+                    <h4 class="card-title">Contacts</h4>
+                </div>
+                <div class="row m-0">
+                    <table class="table table-sm table-bordered">
+                        <tbody class="tbodyContact">
+                            @if (Model.SupplierID > 0)
+                            {
+                                foreach (var details in Model.SupplierDetail)
+                                {
+                                    <tr class="trSupplierDetails">
+                                        <td class="slNo"> @slContact </td>
+                                        <td> <label class="col-form-label-sm m-0">Contact</label> </td>
+                                        <td>
+                                            <input type="text" class="form-control form-control-sm ContactPerson" value="@details.ContactPerson" placeholder="Contact Person" autocomplete="off">
+                                            <input type="hidden" class="ID" value="@details.ID"/>
+                                        </td>
+                                        <td> <label class="col-form-label-sm m-0">Designation</label> </td>
+                                        <td><input type="text" class="form-control form-control-sm Designation" value="@details.Designation" placeholder="Designation" autocomplete="off"> </td>
+                                        <td> <label class="col-form-label-sm m-0">Phone</label> </td>
+                                        <td><input type="text" class="form-control form-control-sm PhoneNumber" value="@details.CellNumber" placeholder="Phone Number" autocomplete="off"> </td>
+                                        <td> <label class="col-form-label-sm m-0">Email</label> </td>
+                                        <td><input type="text" class="form-control form-control-sm Email" value="@details.ContactEmail" placeholder="Email" autocomplete="off"> </td>
+                                        <td class="text-center">
+                                            <input type="button" class="btn btn-xs btn-sm btn-danger" onclick="RemoveContactTR(this)" id="btnRemove" value="Remove">
+                                        </td>
+                                    </tr>
+                                    slContact++;
+                                }
+                            }
+                            else
+                            {
+                                <tr class="trSupplierDetails">
+                                    <td class="slNo"> @slContact </td>
+                                    <td> <label class="col-form-label-sm m-0">Contact</label> </td>
+                                    <td>
+                                        <input type="text" class="form-control form-control-sm ContactPerson" placeholder="Contact Person" autocomplete="off">
+                                        <input type="hidden" class="ID" value="" />
+                                    </td>
+                                    <td> <label class="col-form-label-sm m-0">Designation</label> </td>
+                                    <td><input type="text" class="form-control form-control-sm Designation" placeholder="Designation" autocomplete="off"> </td>
+                                    <td> <label class="col-form-label-sm m-0">Phone</label> </td>
+                                    <td><input type="text" class="form-control form-control-sm PhoneNumber" placeholder="Phone Number" autocomplete="off"> </td>
+                                    <td> <label class="col-form-label-sm m-0">Email</label> </td>
+                                    <td><input type="text" class="form-control form-control-sm Email" placeholder="Email" autocomplete="off"> </td>
+                                    <td class="text-center">
+                                        <input type="button" class="btn btn-xs btn-sm btn-danger" onclick="RemoveContactTR(this)" id="btnRemove" value="Remove">
+                                    </td>
+                                </tr>
+                            }
+
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="10" class="text-center">
+                                    <input type="button" class="btn btn-xs btn-sm btn-warning" onclick="AddContactTR()" id="btnAdd" value="Add New">
+                                </td>
+                            </tr>
+                        </tfoot>
+
+                    </table>
+                </div>
+                <div class="card-header" style=" background-color: #007bff;color:white">
+                    <h4 class="card-title">Bank A/Cs Detail</h4>
+                </div>
+                <div class="row m-0">
+                    <table class="table table-sm table-bordered">
+                        <tbody class="tbodyBankAccount">
+                            @if (Model.SupplierID > 0)
+                            {
+                                foreach (var bankInfo in Model.SupplierBankInfo)
+                                {
+                                    <tr class="trSupplierBankInfo">
+                                        <td class="slbankInfoNo"> @slBankInfo </td>
+                                        <td> <label class="col-form-label-sm m-0">Bank</label> </td>
+                                        <td>
+                                        <input type="text" class="form-control form-control-sm BankName" value="@bankInfo.BankName" placeholder="Bank Name" autocomplete="off">
+                                            <input type="hidden"class="ID" value="@bankInfo.ID"/>
+                                        </td>
+                                        <td> <label class="col-form-label-sm m-0">Branch</label> </td>
+                                        <td><input type="text" class="form-control form-control-sm BranchName" value="@bankInfo.BranchName" placeholder="Branch Name" autocomplete="off"> </td>
+                                        <td> <label class="col-form-label-sm m-0">Account</label> </td>
+                                        <td><input type="text" class="form-control form-control-sm BankAccountNo" value="@bankInfo.AccountNumber" placeholder="Bank Account No." autocomplete="off"> </td>
+                                        <td> <label class="col-form-label-sm m-0">Routing</label> </td>
+                                        <td><input type="text" class="form-control form-control-sm RoutingNo" value="@bankInfo.RoutingNo" placeholder="Routing No" autocomplete="off"> </td>
+                                        <td> <label class="col-form-label-sm m-0">Swift</label> </td>
+                                        <td><input type="text" class="form-control form-control-sm SwiftNo" value="@bankInfo.SwiftNo" placeholder="SwiftNo" autocomplete="off"> </td>
+                                        <td class="text-center">
+                                            <input type="button" class="btn btn-xs btn-sm btn-danger" onclick="RemoveBankInfoTR(this)" id="btnRemove" value="Remove">
+                                        </td>
+                                    </tr>
+                                    slBankInfo++;
+                                }
+
+                            }
+                            else
+                            {
+                                <tr class="trSupplierBankInfo">
+                                    <td class="slbankInfoNo"> @slBankInfo </td>
+                                    <td> <label class="col-form-label-sm m-0">Bank</label> </td>
+                                    <td>
+                                        <input type="text" class="form-control form-control-sm BankName" placeholder="Bank Name" autocomplete="off">
+                                        <input type="hidden" class="ID" value="" />
+                                    </td>
+                                    <td> <label class="col-form-label-sm m-0">Branch</label> </td>
+                                    <td><input type="text" class="form-control form-control-sm BranchName" placeholder="Branch Name" autocomplete="off"> </td>
+                                    <td> <label class="col-form-label-sm m-0">Account</label> </td>
+                                    <td><input type="text" class="form-control form-control-sm BankAccountNo" placeholder="Bank Account No." autocomplete="off"> </td>
+                                    <td> <label class="col-form-label-sm m-0">Routing</label> </td>
+                                    <td><input type="text" class="form-control form-control-sm RoutingNo" placeholder="Routing No" autocomplete="off"> </td>
+                                    <td> <label class="col-form-label-sm m-0">Swift</label> </td>
+                                    <td><input type="text" class="form-control form-control-sm SwiftNo" placeholder="SwiftNo" autocomplete="off"> </td>
+                                    <td class="text-center">
+                                        <input type="button" class="btn btn-xs btn-sm btn-danger" onclick="RemoveBankInfoTR(this)" id="btnRemove" value="Remove">
+                                    </td>
+                                </tr>
+                            }
+
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="12" class="text-center">
+                                    <input type="button" class="btn btn-xs btn-sm btn-warning" onclick="AddSupplierBankInfoTR()" id="btnAdd" value="Add New">
+                                </td>
+                            </tr>
+                        </tfoot>
+
+                    </table>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    @* <label class="col-form-label-sm m-0">&nbsp;</label>*@
+                    <div class="form-group" style="text-align:center">
+                        <input type="button" class="btn btn-sm btn-success" id="btnSave" value="Save">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        if ('@Model.SupplierID'>0) {
+            $("#btnSave").val('Update')
+        }
+        $('#btnSave').click(function () {
+            debugger
+            if ($('#frmSupplier').valid()) {
+                let parentID = RtnNumber($("#AccIdentification1").val());//
+                let supplierID = RtnNumber($("#SupplierID").val());
+                let companyName = $("#CompanyName").val();
+                let address = $('#Address').val();
+                let telephoneNumber = $('#TelephoneNumber').val();
+                let mobileNumber = $('#MobileNumber').val();
+                let faxNumber = $('#FaxNumber').val();
+                let salesTaxRegNumber = $('#SalesTaxRegNumber').val();
+                let supplierEmail = $("#Email").val();
+                let nTNNumber = $('#NTNNumber').val();
+                let comments = $('#Comments').val();
+
+                //// Supplier Details
+                var SupplierDetails = new Array();
+                $('.trSupplierDetails').each(function () {
+                    debugger
+                    let thatTR = $(this);
+                    let id =RtnNumber(thatTR.find('.ID').val());
+                    let contactPerson = thatTR.find('.ContactPerson').val();
+                    let designation = thatTR.find('.Designation').val();
+                    let phoneNumber = thatTR.find('.PhoneNumber').val();
+                    let email = thatTR.find('.Email').val();
+                    if (contactPerson!='') {
+                        let supplierDetailsObj = {
+                            ID: id,
+                            SupplierID: supplierID,
+                            ContactPerson: contactPerson,
+                            Designation: designation,
+                            CellNumber: phoneNumber,
+                            ContactEmail: email,
+                        }
+                        SupplierDetails.push(supplierDetailsObj);
+                    }
+
+                })
+                //// Supplier Details
+
+                 //// Supplier BankInfo
+                var SupplierBankInfo = new Array();
+                $('.trSupplierBankInfo').each(function () {
+                    debugger
+                    let thatTR = $(this);
+                    let id = RtnNumber(thatTR.find('.ID').val());
+                    let bankName = thatTR.find('.BankName').val();
+                    let branchName = thatTR.find('.BranchName').val();
+                    let bankAccountNo = thatTR.find('.BankAccountNo').val();
+                    let routingNo = thatTR.find('.RoutingNo').val();//
+                    let swiftNo = thatTR.find('.SwiftNo').val();
+                    if (bankName!='') {
+                        let supplierBankInfoObj = {
+                            ID: id,
+                            SupplierID: supplierID,
+                            BankName: bankName,
+                            BranchName: branchName,
+                            AccountNumber: bankAccountNo,
+                            RoutingNo: routingNo,
+                            SwiftNo: swiftNo,
+                        }
+                        SupplierBankInfo.push(supplierBankInfoObj);
+                    }
+
+                })
+                //// Supplier BankInfo
+                let supplierObj = {
+                    SupplierID: supplierID,
+                    ParentID: parentID,
+                    CompanyName: companyName,
+                    Address: address,
+                    TelephoneNumber: telephoneNumber,
+                    MobileNumber: mobileNumber,
+                    FaxNumber: faxNumber,
+                    Email: supplierEmail,
+                    SalesTaxRegNumber: salesTaxRegNumber,
+                    NTNNumber: nTNNumber,
+                    Comments: comments,
+                    SupplierDetail: SupplierDetails,
+                    SupplierBankInfo: SupplierBankInfo,
+                }
+
+                if (supplierObj.SupplierID > 0) {
+                    HttpRequest.Ajax("PUT", '/Setups/Supplier/SupplierUpdate', { "supplierDTM": supplierObj, '@token.HeaderName': '@token.RequestToken' }, saveSuccess);
+                } else {
+                   HttpRequest.Ajax("POST", '/Setups/Supplier/SupplierCreate', { "supplierDTM": supplierObj, '@token.HeaderName': '@token.RequestToken' }, saveSuccess);
+                }
+            }
+        })
+    })
+
+    function saveSuccess(data) {
+        debugger
+        if (data.result == 1) {
+            $.alert.open({
+                type: 'Success',
+                content: data.message,
+                callback: function () {
+                    Clear();
+                    //GetCBMBranchList();
+                    //$("#btnSave").val('Save');
+                     window.location.href = '/Setups/Supplier/Index';
+                }
+            });
+        }
+        else {
+            $.alert.open("error", data.message);
+        }
+    }
+
+    function Clear() {
+
+
+
+    }
+
+    function AddContactTR() {
+
+        let trLength = $('.trSupplierDetails').length;
+        let tbodyTR =`<tr class="trSupplierDetails">
+                                <td class="slNo">${trLength+1}  </td>
+                                <td> <label class="col-form-label-sm m-0">Contact</label> </td>
+                                <td>
+<input type="text" class="form-control form-control-sm ContactPerson" placeholder="Contact Person" autocomplete="off">
+<input type="hidden" class="ID" value="" />
+</td>
+                                <td> <label class="col-form-label-sm m-0">Designation</label> </td>
+                                <td><input type="text" class="form-control form-control-sm Designation" placeholder="Designation" autocomplete="off"> </td>
+                                <td> <label class="col-form-label-sm m-0">Phone</label> </td>
+                                <td><input type="text" class="form-control form-control-sm PhoneNumber" placeholder="Phone Number" autocomplete="off"> </td>
+                                <td> <label class="col-form-label-sm m-0">Email</label> </td>
+                                <td><input type="text" class="form-control form-control-sm Email" placeholder="Email" autocomplete="off"> </td>
+                                <td class="text-center">
+                                    <input type="button" class="btn btn-xs btn-sm btn-danger" onclick="RemoveContactTR(this)"  id="btnRemove" value="Remove">
+                                </td>
+                            </tr>`
+        $('.tbodyContact').append(tbodyTR);
+    }
+
+    function AddSupplierBankInfoTR() {
+        let trLength = $('.trSupplierBankInfo').length;
+        let tbodyTR = `<tr class="trSupplierBankInfo">
+                                <td class="slbankInfoNo"> ${trLength+1} </td>
+                                <td> <label class="col-form-label-sm m-0">Bank</label> </td>
+                                <td><input type="text" class="form-control form-control-sm BankName" placeholder="Bank Name" autocomplete="off"> 
+                                    <input type="hidden" class="ID" value="" />
+                                </td>
+                                <td> <label class="col-form-label-sm m-0">Branch</label> </td>
+                                <td><input type="text" class="form-control form-control-sm BranchName" placeholder="Branch Name" autocomplete="off"> </td>
+                                <td> <label class="col-form-label-sm m-0">Account</label> </td>
+                                <td><input type="text" class="form-control form-control-sm BankAccountNo" placeholder="Bank Account No." autocomplete="off"> </td>
+                                <td> <label class="col-form-label-sm m-0">Routing</label> </td>
+                                <td><input type="text" class="form-control form-control-sm RoutingNo" placeholder="Routing No" autocomplete="off"> </td>
+                                <td> <label class="col-form-label-sm m-0">Swift</label> </td>
+                                <td><input type="text" class="form-control form-control-sm SwiftNo" placeholder="SwiftNo" autocomplete="off"> </td>
+                                <td class="text-center">
+                                    <input type="button" class="btn btn-xs btn-sm btn-danger" onclick="RemoveBankInfoTR(this)"  id="btnRemove" value="Remove">
+                                </td>
+                            </tr>`
+        $('.tbodyBankAccount').append(tbodyTR);
+
+    }
+
+    function RemoveContactTR(that) {
+        $(that).parent().parent().remove();
+        let slno = 0;
+        $('.trSupplierDetails').each(function () {
+            debugger
+            let trCount = $(this).length;
+            slno += trCount
+            $(this).find('.slNo').text(slno);
+        })
+    }
+    function RemoveBankInfoTR(that) {
+        debugger
+        $(that).parent().parent().remove();
+        let slno = 0;
+        $('.trSupplierBankInfo').each(function () {
+            debugger
+            let trCount = $(this).length;
+            slno += trCount
+            $(this).find('.slbankInfoNo').text(slno);
+        })
+    }
+
+</script>
+
+
+
+
+
+
+
+

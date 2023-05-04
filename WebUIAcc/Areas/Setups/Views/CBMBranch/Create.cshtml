@@ -1,0 +1,246 @@
+﻿@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiForgeryToken
+@model Application.ViewModel.GBAcc.Setups.CBM_BranchVM
+@{
+    var token = antiForgeryToken.GetAndStoreTokens(Context);
+    ViewData[PageInfo.PageHeader] = "Branch";
+    ViewData[PageInfo.PageTitle] = "Branch";
+}
+
+<div class="card card-primary">
+    <form id="frmCbmBranch">
+        <input type="hidden" asp-for="BranchID" />
+        <div class="row m-0">
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0 required" asp-for="BankID"></label>
+                    <select asp-for="BankID" class="form-control form-control-sm" asp-items="Model.DDLBankList"></select>
+                    <span asp-validation-for="BankID" class="span-form-validation text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0 required" asp-for="BranchName"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="BranchName" placeholder="Branch Name" autocomplete="off">
+                    <span asp-validation-for="BranchName" class="span-form-validation text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="BranchAddress"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="BranchAddress" placeholder="BranchAddress" autocomplete="off">
+                    <span asp-validation-for="BranchAddress" class="span-form-validation "></span>
+                </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <label class="col-form-label-sm m-0">&nbsp;</label>
+                <div class="form-group" style="text-align:center">
+                    <input type="button" class="btn btn-sm btn-success" id="btnSave" value="Save">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="row m-0">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="grid">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            GetCBMBranchList();
+            $('#btnSave').click(function () {
+           
+                if ($('#frmCbmBranch').valid()) {
+                    let branchID = RtnNumber($("#BranchID").val());//
+                    let bankID = RtnNumber($("#BankID").val());
+                    let branchName = $('#BranchName').val();
+                    let branchAddress = $('#BranchAddress').val();//Abbreviation
+                obj = {
+                    BranchID: branchID,
+                    BankID: bankID,
+                    BranchName: branchName,
+                    BranchAddress: branchAddress,
+                    }
+                    debugger
+                    if (obj.BranchID>0) {
+                        HttpRequest.Ajax("PUT", '/Setups/CBMBranch/BranchUpdate', { "branchDTM": obj , '@token.HeaderName': '@token.RequestToken'}, saveSuccess);
+                } else {
+                        HttpRequest.Ajax("POST", '/Setups/CBMBranch/BranchCreate', { "branchDTM": obj , '@token.HeaderName': '@token.RequestToken'}, saveSuccess);
+                }
+            }
+        })
+    })
+
+        function saveSuccess(data) {
+            debugger
+            if (data.result == 1) {
+                $.alert.open({
+                    type: 'Success',
+                    content: data.message,
+                    callback: function () {
+                        Clear();
+                        GetCBMBranchList();
+                          $("#btnSave").val('Save');
+                        // window.location.href = '/setup/CompanyInfo/Index';
+                    }
+                });
+            }
+            else {
+                $.alert.open("error", data.message);
+            }
+        }
+
+        function GetCBMBranchList() {
+
+            var url = "/Setups/CBMBranch/GetCBMBranchList";
+
+       // var dataGridrow;
+        var dataGrid =   $("#grid").dxDataGrid({
+            dataSource: DevExpress.data.AspNet.createStore({
+                key: "BranchID",
+                loadUrl: url,
+            }),
+
+            remoteOperations: {
+                paging: true,
+                sorting: true,
+                filtering: true,
+            },
+            showColumnLines: false,
+            showRowLines: true,
+            showBorders:true,
+            paging: {
+                pageSize: 10
+            },
+            pager: {
+                showInfo: true,
+                allowedPageSizes: [10,20, 40, 100, 500],
+                showPageSizeSelector: true,
+            },
+            loadingIndicator: {
+                enabled: true
+            },
+            selection: { mode: 'single' },
+            headerFilter: { visible: false  ,allowSearch: true },
+            filterRow: { visible: false },
+            wordWrapEnabled: true,
+            columns: [
+                {
+                    dataField: "BranchID",
+                    visible: false,
+                },
+                {
+                    width: "5%",
+                    caption: "SL",
+                    alignment: 'center',
+                    cellTemplate: function (cellElement, cellInfo) {
+                        var index = dataGrid.pageIndex() * dataGrid.pageSize() + cellInfo.rowIndex + 1;
+                        cellElement.text(index)
+                    }
+
+                },
+
+
+                {
+
+                    caption: "Bank",
+                    wordWrapEnabled: false,
+                    alignment: 'center',
+                    allowFiltering: false,
+                    dataField: "BankName",
+                },
+                {
+
+                    caption: "Branch",
+                    wordWrapEnabled: false,
+                    alignment: 'center',
+                    allowFiltering: false,
+                    dataField: "BranchName",
+
+                },
+                {
+
+                    caption: "BranchAddress",
+                    wordWrapEnabled: false,
+                    alignment: 'center',
+                    allowFiltering: false,
+                    dataField: "BranchAddress",
+
+                },
+
+                {
+                    width: "10%",
+                    caption: "Action",
+                    alignment: 'center',
+                    headerCellTemplate: function (header, info) {
+                        $('<div>').html(info.column.caption).css('font-weight', 'bold').appendTo(header);
+                    },
+                    cellTemplate: function (container, options) {
+
+                        var returnText = `<button class="btn btn-xs btn-warning" > <i class="fa fa-edit" ></i></button>`;
+                        $(returnText).on('dxclick', function () {
+                            DataEdit(options.data.BranchID, options.data.BranchName, options.data.BankID, options.data.BranchAddress,);
+                        }).appendTo(container);
+
+                        var returnText = `<span>&nbsp</span><button class="btn btn-xs btn-danger" > <i class="fa fa-trash"></i></button>`;
+                        returnText = returnText + '</div>';
+                        $(returnText).on('dxclick', function () {
+                            DataDelete(options.data.BranchID);
+                        }).appendTo(container);
+
+
+                    },
+                },
+            ],
+
+          //  groupPanel: { visible: true },
+
+            height: 520,
+
+        }).dxDataGrid("instance");
+    }
+        function Clear() {
+            $("#BranchID").val('');
+            $("#BranchName").val('');
+            $('#BranchAddress').val('');
+            $('#BankID').val('');
+        }
+        function DataEdit(branchID,name,bankID,address) {
+            $("#BranchID").val(branchID);
+            $("#BranchName").val(name);
+            $('#BranchAddress').val(address);
+            $('#BankID').val(bankID);
+            $('#btnSave').val('Update');
+        }
+        function DataDelete(branchId) {
+            $.alert.open('confirm', 'Are you sure to delete this record?', function (button) {
+                if (button == 'yes') {
+                    HttpRequest.Ajax("DELETE", '/Setups/CBMBranch/BranchDataDelete', { branchID: branchId}, DeleteSuccess);
+
+                } else {
+                    return false;
+                }
+            });
+        }
+        function DeleteSuccess(data) {
+            debugger
+            if (data.result == 1) {
+                $.alert.open({
+                    type: 'Success',
+                    content: data.message,
+                    callback: function () {
+                        GetCBMBranchList();
+                    }
+                });
+            }
+            else {
+                $.alert.open("error", data.message);
+            }
+        }
+    </script>
+}

@@ -1,0 +1,34 @@
+D:\Github C#\GBangla.Acc\SSRS.Support\bin\Debug\net5.0\SSRS.Support.deps.json
+D:\Github C#\GBangla.Acc\SSRS.Support\bin\Debug\net5.0\SSRS.Support.dll
+D:\Github C#\GBangla.Acc\SSRS.Support\bin\Debug\net5.0\SSRS.Support.pdb
+D:\Github C#\GBangla.Acc\SSRS.Support\bin\Debug\net5.0\Application.dll
+D:\Github C#\GBangla.Acc\SSRS.Support\bin\Debug\net5.0\Domain.dll
+D:\Github C#\GBangla.Acc\SSRS.Support\bin\Debug\net5.0\Application.pdb
+D:\Github C#\GBangla.Acc\SSRS.Support\bin\Debug\net5.0\Domain.pdb
+D:\Github C#\GBangla.Acc\SSRS.Support\obj\Debug\net5.0\SSRS.Support.csproj.AssemblyReference.cache
+D:\Github C#\GBangla.Acc\SSRS.Support\obj\Debug\net5.0\SSRS.Support.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github C#\GBangla.Acc\SSRS.Support\obj\Debug\net5.0\SSRS.Support.AssemblyInfoInputs.cache
+D:\Github C#\GBangla.Acc\SSRS.Support\obj\Debug\net5.0\SSRS.Support.AssemblyInfo.cs
+D:\Github C#\GBangla.Acc\SSRS.Support\obj\Debug\net5.0\SSRS.Support.csproj.CoreCompileInputs.cache
+D:\Github C#\GBangla.Acc\SSRS.Support\obj\Debug\net5.0\SSRS.Support.csproj.CopyComplete
+D:\Github C#\GBangla.Acc\SSRS.Support\obj\Debug\net5.0\SSRS.Support.dll
+D:\Github C#\GBangla.Acc\SSRS.Support\obj\Debug\net5.0\refint\SSRS.Support.dll
+D:\Github C#\GBangla.Acc\SSRS.Support\obj\Debug\net5.0\SSRS.Support.pdb
+D:\Github C#\GBangla.Acc\SSRS.Support\obj\Debug\net5.0\ref\SSRS.Support.dll
+D:\Github C#\Accounts Application\SSRS.Support\bin\Debug\net5.0\SSRS.Support.deps.json
+D:\Github C#\Accounts Application\SSRS.Support\bin\Debug\net5.0\SSRS.Support.dll
+D:\Github C#\Accounts Application\SSRS.Support\bin\Debug\net5.0\SSRS.Support.pdb
+D:\Github C#\Accounts Application\SSRS.Support\bin\Debug\net5.0\Application.dll
+D:\Github C#\Accounts Application\SSRS.Support\bin\Debug\net5.0\Domain.dll
+D:\Github C#\Accounts Application\SSRS.Support\bin\Debug\net5.0\Application.pdb
+D:\Github C#\Accounts Application\SSRS.Support\bin\Debug\net5.0\Domain.pdb
+D:\Github C#\Accounts Application\SSRS.Support\obj\Debug\net5.0\SSRS.Support.csproj.AssemblyReference.cache
+D:\Github C#\Accounts Application\SSRS.Support\obj\Debug\net5.0\SSRS.Support.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github C#\Accounts Application\SSRS.Support\obj\Debug\net5.0\SSRS.Support.AssemblyInfoInputs.cache
+D:\Github C#\Accounts Application\SSRS.Support\obj\Debug\net5.0\SSRS.Support.AssemblyInfo.cs
+D:\Github C#\Accounts Application\SSRS.Support\obj\Debug\net5.0\SSRS.Support.csproj.CoreCompileInputs.cache
+D:\Github C#\Accounts Application\SSRS.Support\obj\Debug\net5.0\SSRS.Support.csproj.CopyComplete
+D:\Github C#\Accounts Application\SSRS.Support\obj\Debug\net5.0\SSRS.Support.dll
+D:\Github C#\Accounts Application\SSRS.Support\obj\Debug\net5.0\refint\SSRS.Support.dll
+D:\Github C#\Accounts Application\SSRS.Support\obj\Debug\net5.0\SSRS.Support.pdb
+D:\Github C#\Accounts Application\SSRS.Support\obj\Debug\net5.0\ref\SSRS.Support.dll

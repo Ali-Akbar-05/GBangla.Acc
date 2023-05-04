@@ -1,0 +1,302 @@
+﻿@using WebUIAcc.Helper
+@using Application.Common.Interfaces
+
+@*@inject ILoginUserSessionService setUserInfo
+    @{ if ((SessionData.UserMenuList.Count == 0) && User.Identity.Name != null)
+                    {
+                        var isok = await setUserInfo.SetLoginUserSession(User.Identity.Name);
+                        if (isok == 0)
+                        {
+
+                        }
+                    } }
+
+
+    @{ var userMenuList = SessionData.UserMenuList;
+        var a = 0; }*@
+
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+        <img src="~/AdminLTE-3.1.0/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        
+        <span class="brand-text font-weight-light">German Bangla</span>
+      
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                @*<img src="~/dist/img/user1-128x128.jpg" class="img-circle elevation-2" alt="User Image">*@
+                <img src="~/AdminLTE-3.1.0/dist/img/user1-128x128.jpg"/>
+            </div>
+           
+            <div class="info">
+                <a href="#" class="d-block">Alexander Pierce</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+    with font-awesome or any other icon font library -->
+
+
+                <li class="nav-item">
+                    <a href="pages/widgets.html" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Application Setup
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Setups" asp-controller="Location" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Location</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Setups" asp-controller="ChartOfAccounts" asp-action="CreateCostCenter">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cost Center</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Setups" asp-controller="ChartOfAccounts" asp-action="CreateActivityCenter">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Activity Center</p>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Setups" asp-controller="CBMBank" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Bank</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Setups" asp-controller="CBMBranch" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Bank Branch</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Setups" asp-controller="CBMBankAccount" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Bank Account</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Setups" asp-controller="CBMAcountType" asp-action="CreateAccountType">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Account Type</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Setups" asp-controller="Currency" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Currency</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Setups" asp-controller="CurrencyDetail" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Currency Rate</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Setups" asp-controller="Supplier" asp-action="Index">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Vendor</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Setups" asp-controller="Customer" asp-action="Index">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Customer</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                </li>
+                <li class="nav-item">
+                    <a href="pages/widgets.html" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Business
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Business" asp-controller="SupplierInvoiceVoucher" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Supplier Invoice Voucher</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Business" asp-controller="BankPaymentVoucher" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Bank Payment Voucher</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Business" asp-controller="BankReceiptVoucher" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Bank Receipt Voucher</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Business" asp-controller="CashReceiptVoucher" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cash Receipt Voucher</p>
+                            </a>
+                        </li>
+
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Business" asp-controller="VoucherInvoiceMap" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Voucher Invoice Map</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Business" asp-controller="ChequeBook" asp-action="Create">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cheque Book</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Business" asp-controller="ChequeBook" asp-action="Index">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cheque book List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Business" asp-controller="PrintedChequesStatus" asp-action="PrintedStatusSet">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Printed Cheques</p>
+                            </a>
+                        </li>
+                        @*<li class="nav-item">
+            <a class="nav-link" asp-area="AccReports" asp-controller="CBMReports" asp-action="CBMVoucherReport">
+                <i class="far fa-circle nav-icon"></i>
+                <p>CBM Reports</p>
+            </a>
+        </li>*@
+                    </ul>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Contact</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Privacy</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Layout</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Receive</p>
+                            </a>
+                        </li>
+                    </ul>
+                    @*<ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="" asp-action="" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Layout</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a asp-area="" asp-controller="" asp-action="" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Receive</p>
+                    </a>
+                </li>
+            </ul>*@
+                </li>
+
+                <li class="nav-item">
+                    <a href="pages/widgets.html" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Report
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="AccReports" asp-controller="CBMReports" asp-action="CBMVoucherReport">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>CBM Reports</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="AccReports" asp-controller="GeneralLedgerReport" asp-action="GeneralLedgerVoucher">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>General Ledger</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="AccReports" asp-controller="ChartOfAccounts" asp-action="ItemAccountSearch">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Item Account Search</p>
+                            </a>
+                        </li>
+
+                        
+                    </ul>
+
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

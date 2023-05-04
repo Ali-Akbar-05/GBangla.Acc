@@ -1,0 +1,265 @@
+﻿@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiForgeryToken
+@model Application.ViewModel.GBAcc.Setups.ChequeBook.Create.ChequeBookVM
+@{
+    var token = antiForgeryToken.GetAndStoreTokens(Context);
+    ViewData[PageInfo.PageHeader] = "Cheque Book";
+    ViewData[PageInfo.PageTitle] = "Cheque Book";
+}
+
+<div class="row ajt-control">
+    <form id="frmChequeBook" class="col-sm-12 col-md-12">
+        <div class="col-sm-12 col-md-12">
+            <div class="card card-success text-sm">
+                <div class="card-header text-xs">
+                    <h6 class="card-title">
+                        Account Status
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div class="row m-0">
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="BankID"></label>
+                                <select asp-for="BankID" class="form-control form-control-sm" asp-items="Model.DDLBank"></select>
+                                <span asp-validation-for="BankID" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="BranchID"></label>
+                                <select asp-for="BranchID" class="form-control form-control-sm" asp-items="Model.DDLBranch"></select>
+                                <span asp-validation-for="BranchID" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="IdentificationID"></label>
+                                <select asp-for="IdentificationID" class="form-control form-control-sm" asp-items="Model.DDLIdentification"></select>
+                                <span asp-validation-for="IdentificationID" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="AccountNumberID"></label>
+                                <select asp-for="AccountNumberID" class="form-control form-control-sm" asp-items="Model.DDLAccountNumber"></select>
+                                <span asp-validation-for="AccountNumberID" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-0">
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="CurrencyID"></label>
+                                <select asp-for="CurrencyID" class="form-control form-control-sm" asp-items="Model.DDLCurrency"></select>
+                                <span asp-validation-for="CurrencyID" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="AccountType"></label>
+                                <select disabled asp-for="AccountType" class="form-control form-control-sm" asp-items="Model.DDLAccountType"></select>
+                                <span asp-validation-for="AccountType" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="SignatoryID"></label>
+                                <select asp-for="SignatoryID" class="form-control form-control-sm" asp-items="Model.DDLSignatory"></select>
+                                <span asp-validation-for="SignatoryID" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row m-0 text-center">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <input type="button" class="btn btn-sm btn-success" onclick="AddNewSeries(this)" id="btnAddNewSeries" value="Add New Series">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card card-success text-sm seriesDiv" style="display:none">
+                @*<div class="card-header text-xs">
+                        <h6 class="card-title">Enter Cheque Numbers</h6>
+                    </div>*@
+                <div class="card-body">
+                    <div class="row m-0">
+                        <table class="table  table-sm table-responsive-sm">
+                            <thead class="text-sm-center">
+                                <tr>
+                                    <th colspan="8">Enter Cheque Numbers</th>
+                                </tr>
+                            </thead>
+                            <tbody class="SeriesTR">
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row m-0 text-center">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <input type="button" class="btn btn-sm btn-success" style="display:none" id="btnSave" value="Save">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        @*<div class="row m-0">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div id="grid">
+                    </div>
+                </div>
+            </div>*@
+    </form>
+</div>
+@section scripts{
+    <script type="text/javascript">
+    $(function () {
+        $('#BankID').change(function () {
+            let bankID = RtnNumber($('#BankID').val());
+            HttpRequest.DropDown('GET', '/Setups/CBMBankAccount/GetBranchListByBankID', { bankID: bankID }, 'BranchID')
+            $('#BranchID').trigger('change')
+        })
+        $('#BranchID').change(function () {
+            let branchId = RtnNumber($('#BranchID').val());
+            HttpRequest.DropDown('GET', '/Business/ChequeBook/GetIdentificationByBranchID', { branchID: branchId }, 'IdentificationID')
+            $('#IdentificationID').trigger('change')
+        })
+        $('#IdentificationID').change(function () {
+            let typeId = RtnNumber($('#IdentificationID').val());
+            HttpRequest.DropDown('GET', '/Business/ChequeBook/GetAccountNumberByAccountTypeID', { typeID: typeId }, 'AccountNumberID')
+            $('#AccountNumberID').trigger('change')
+        })
+        $('#AccountNumberID').change(function () {
+            let accountId = RtnNumber($('#AccountNumberID').val());
+            HttpRequest.DropDown('GET', '/Business/ChequeBook/GetCurrencyByAccountID', { accountID: accountId }, 'CurrencyID')
+        })
+
+        $("#btnSave").click(function () {
+            if ($('#frmChequeBook').valid()) {
+                let accountID = RtnNumber($("#AccountNumberID").val());
+                let ChequeBook = new Array();
+                $(".trSeries").each(function () {
+                    let thatVal = $(this);
+                    let seriesPrifix = thatVal.find('.SeriesPrefix').val();
+                    let seriesStart = thatVal.find('.SeriesStart').val();
+                    let seriesEnd = thatVal.find('.SeriesEnd').val();
+                    let chequeBookObj = {
+                        Prefix: seriesPrifix,
+                        SeriesStart: seriesStart,
+                        SeriesEnd: seriesEnd,
+                        AccountID: accountID
+
+                    }
+                    ChequeBook.push(chequeBookObj);
+                })
+                if (ValidData() == true) {
+                    if (ChequeBook.length > 0) {
+                        HttpRequest.Ajax("POST", '/Business/ChequeBook/CreateChequeBook', { "cBMChequeBook": ChequeBook, '@token.HeaderName': '@token.RequestToken' }, saveSuccess);
+                    }
+                } else {
+                    $.alert.open("error","Enter Cheque Numbers Details")
+                }
+
+
+            }
+
+
+        })
+
+
+    })
+
+        function ValidData() {
+            let isValid = false;
+            $(".trSeries").each(function () {
+                let thatVal = $(this);
+                let seriesPrifix = thatVal.find('.SeriesPrefix').val();
+                if (seriesPrifix != '') {
+                    let seriesStart = thatVal.find('.SeriesStart').val();
+                    if (seriesStart != '') {
+                        isValid = true
+                    } else {
+                        return false;
+                    }
+
+                } else {
+                    return false;
+                }
+
+
+
+            })
+            return isValid;
+        }
+    function AddNewSeries() {
+        $(".seriesDiv").show();
+        $("#btnSave").show();
+        let numberDDL = HttpRequest.DropDownOptions('GET', '/Setups/Common/DDLGetNumber' )
+        var strTR = ` <tr class="trSeries">
+                                   <td>Prefix</td>
+                                   <td><input type="text" class="form-control form-control-sm SeriesPrefix" autocomplete="off" /></td>
+                                   <td>From</td>
+                                   <td><input type="text" onkeyup="CalculatChequeBookPage(this)" class="form-control form-control-sm SeriesStart" autocomplete="off" /></td>
+                                   <td>To</td>
+                                   <td><select onchange="CalculatChequeBookPage(this)" class="form-control form-control-sm optSeries">${numberDDL}</select></td>
+                                   <td><input type="text" readonly class="form-control form-control-sm SeriesEnd" autocomplete="off" /></td>
+                                   <td><input type="button" onclick="Remove(this)" class="btn btn-danger btn-xs" value="Remove"/></td>
+                               </tr>`;
+
+        $(".SeriesTR").append(strTR);
+    }
+        function CalculatChequeBookPage(that) {
+            let total = 0;
+        let thatVal = $(that).parent().parent()
+        let startNumber = RtnNumber(thatVal.find(".SeriesStart").val())
+        let optSeries = RtnNumber(thatVal.find(".optSeries").val())
+        if (startNumber>0) {
+             total = startNumber + optSeries - 1;
+        }
+
+        thatVal.find(".SeriesEnd").val(total)
+    }
+    function Remove(that) {
+        $(that).parent().parent().remove();
+        let trLenth = 0;
+        $(".trSeries").each(function () {
+            trLenth += $(this).length;
+        })
+        if (trLenth < 1) {
+            $(".seriesDiv").hide();
+            $("#btnSave").hide();
+        }
+        }
+        function saveSuccess(data) {
+            debugger
+            if (data.result == 1) {
+                $.alert.open({
+                    type: 'Success',
+                    content: data.message,
+                    callback: function () {
+                        // Clear();
+                        //GetCBMBranchList();
+                        //$("#btnSave").val('Save');
+                        window.location.href = '/Business/ChequeBook/Create';
+                    }
+                });
+            }
+            else {
+                $.alert.open("error", data.message);
+            }
+        }
+    </script>
+}
+

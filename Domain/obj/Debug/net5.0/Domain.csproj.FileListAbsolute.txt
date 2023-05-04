@@ -1,0 +1,24 @@
+D:\Github C#\GBangla.Acc\Domain\bin\Debug\net5.0\Domain.deps.json
+D:\Github C#\GBangla.Acc\Domain\bin\Debug\net5.0\Domain.dll
+D:\Github C#\GBangla.Acc\Domain\bin\Debug\net5.0\Domain.pdb
+D:\Github C#\GBangla.Acc\Domain\obj\Debug\net5.0\Domain.csproj.AssemblyReference.cache
+D:\Github C#\GBangla.Acc\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github C#\GBangla.Acc\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+D:\Github C#\GBangla.Acc\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+D:\Github C#\GBangla.Acc\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+D:\Github C#\GBangla.Acc\Domain\obj\Debug\net5.0\Domain.dll
+D:\Github C#\GBangla.Acc\Domain\obj\Debug\net5.0\refint\Domain.dll
+D:\Github C#\GBangla.Acc\Domain\obj\Debug\net5.0\Domain.pdb
+D:\Github C#\GBangla.Acc\Domain\obj\Debug\net5.0\ref\Domain.dll
+D:\Github C#\Accounts Application\Domain\bin\Debug\net5.0\Domain.deps.json
+D:\Github C#\Accounts Application\Domain\bin\Debug\net5.0\Domain.dll
+D:\Github C#\Accounts Application\Domain\bin\Debug\net5.0\Domain.pdb
+D:\Github C#\Accounts Application\Domain\obj\Debug\net5.0\Domain.csproj.AssemblyReference.cache
+D:\Github C#\Accounts Application\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github C#\Accounts Application\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+D:\Github C#\Accounts Application\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+D:\Github C#\Accounts Application\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+D:\Github C#\Accounts Application\Domain\obj\Debug\net5.0\Domain.dll
+D:\Github C#\Accounts Application\Domain\obj\Debug\net5.0\refint\Domain.dll
+D:\Github C#\Accounts Application\Domain\obj\Debug\net5.0\Domain.pdb
+D:\Github C#\Accounts Application\Domain\obj\Debug\net5.0\ref\Domain.dll

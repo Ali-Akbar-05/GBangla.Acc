@@ -1,0 +1,175 @@
+﻿@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiForgeryToken
+
+@model Application.ViewModel.GBAcc.Setups.LocationVM
+@{
+    var token = antiForgeryToken.GetAndStoreTokens(Context);
+    ViewData[PageInfo.PageHeader] = "Location";
+    ViewData[PageInfo.PageTitle] = "Location";
+}
+<div class="card card-primary">
+    <form id="frmLocation">
+        <input type="hidden" asp-for="SrNum" />
+        <div class="row m-0">
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0 required" asp-for="LocationName"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="LocationName" placeholder=" Location Name" autocomplete="off">
+                    <span asp-validation-for="LocationName" class="span-form-validation text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="LocationDescription"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="LocationDescription" placeholder="Location Description" autocomplete="off">
+                    <span asp-validation-for="LocationDescription" class="span-form-validation"></span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="Address"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="Address" placeholder="Address" autocomplete="off">
+                    <span asp-validation-for="Address" class="span-form-validation"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row m-0">
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="PlotNo"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="PlotNo" placeholder="Plot No" autocomplete="off">
+                    <span asp-validation-for="PlotNo" class="span-form-validation"></span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="Area"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="Area" placeholder="Area" autocomplete="off">
+                    <span asp-validation-for="Area" class="span-form-validation"></span>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="City"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="City" placeholder="City" autocomplete="off">
+                    <span asp-validation-for="City" class="span-form-validation"></span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="Fax"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="Fax" placeholder="Fax" autocomplete="off">
+                    <span asp-validation-for="Fax" class="span-form-validation"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0">
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="Tel1"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="Tel1" placeholder="Telephone Number" autocomplete="off">
+                    <span asp-validation-for="Tel1" class="span-form-validation"></span>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="Tel2"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="Tel2" placeholder="Telephone Number" autocomplete="off">
+                    <span asp-validation-for="Tel2" class="span-form-validation"></span>
+                </div>
+            </div>
+
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="LocationInitials"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="LocationInitials" placeholder="Location Initials" autocomplete="off">
+                    <span asp-validation-for="LocationInitials" class="span-form-validation"></span>
+                </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <label class="col-form-label-sm m-0">&nbsp;</label>
+                <div class="form-group" style="text-align:center">
+                    <input type="button" class="btn btn-sm btn-success" id="btnSave" value="Save">
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+<div class="row m-0">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div id="grid">
+        </div>
+    </div>
+</div>
+
+@section scripts{ 
+    <script type="text/javascript">
+
+    $(function () {
+        let srNum = RtnNumber($('#SrNum').val());
+        $('#btnSave').click(function () {
+            if ($('#frmLocation').valid()) {
+                let locationName = $('#LocationName').val();
+                let locationDescription = $('#LocationDescription').val();
+                let address = $('#Address').val();
+
+                let plotNo = $('#PlotNo').val();
+                let area = $('#Area').val();
+                let city = $('#City').val();
+                let fax = $('#Fax').val();
+                let telOne = $('#Tel1').val();
+                let telTwo = $('#Tel2').val();
+                let locationInitials = $('#LocationInitials').val();
+
+                var obj = {
+                    SrNum: srNum,
+                    LocationName: locationName,
+                    LocationDescription: locationDescription,
+                    Address: address,
+                    PlotNo: plotNo,
+                    Area: area,
+                    City: city,
+                    Fax: fax,
+                    Tel1: telOne,
+                    Tel2: telTwo,
+                    LocationInitials: locationInitials
+                }
+                if (obj.SrNum > 0) {
+                    //  HttpRequest.Ajax("PUT", "/Setups/Location/Update", { 'location': obj, '@token.HeaderName': '@token.RequestToken' }, saveSuccess)
+                } else {
+
+                    HttpRequest.Ajax("POST", '/Setups/Location/LocationCreate', { "locationDTM": obj , '@token.HeaderName': '@token.RequestToken'}, saveSuccess);
+                }
+
+
+            }
+        })
+    })
+     function saveSuccess(data) {
+                debugger
+                if (data.result == 1) {
+                    $.alert.open({
+                        type: 'Success',
+                        content: data.message,
+                        callback: function () {
+                           // Clear();
+                           // $('#EstablishedDate').val('')
+                          //  $("#btnSave").val('Save');
+                           // window.location.href = '/setup/CompanyInfo/Index';
+                        }
+                    });
+                }
+                else {
+                    $.alert.open("error", data.message);
+
+                }
+            }
+    </script>
+
+
+}

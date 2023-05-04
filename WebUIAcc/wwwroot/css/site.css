@@ -1,0 +1,36 @@
+﻿.ajt-control .card {
+    margin-bottom:.25rem !important;
+}
+.ajt-control  .card-header  {
+    padding: 5px !important;
+}
+.ajt-control  .card-body {
+    padding: 0rem !important;
+}
+.ajt-control  .form-group {
+    margin-bottom: .5rem !important;
+}
+.span-form-validation {
+    font-size: 12px;
+    color: #dc3545;
+}
+
+.required:after {
+    content: " *";
+    color: red;
+}
+
+.form-control-xs1 {
+    height: calc(1em + 1rem + 2px) !important;
+    padding: .125rem .25rem !important;
+    font-size: .75rem !important;
+    line-height: 2;
+    border-radius: .2rem;
+}
+.form-control-xs2 {
+    height: calc(1em + .5rem + 2px) !important;
+    padding: .125rem .25rem !important;
+    font-size: .75rem !important;
+    line-height: 2;
+    border-radius: .2rem;
+}

@@ -1,0 +1,115 @@
+﻿
+
+@model Application.ViewModel.GBAcc.Setups.ViewComponentModel.DebitNoteVCM
+@{
+    var AccCategory = "AccCategory" + Model.SerialNo;
+    var AccSubCategory = "AccSubCategory" + Model.SerialNo;
+    var AccBroadGroup = "AccBroadGroup" + Model.SerialNo;
+    var AccNarroGroup = "AccNarroGroup" + Model.SerialNo;
+    var AccIdentification = "AccIdentification" + Model.SerialNo;
+    var AccItem = "AccItem" + Model.SerialNo;
+    // var disableS = Model.SelectedItem;
+}
+<div class="row ">
+    <div class="col-12">
+        <table class="table table-sm table-responsive-sm text-sm">
+            <thead>
+                <tr style="font-size:14px;" class="text-center">  <th width="100" colspan="3">Generate Debit Note</th> </tr>
+            </thead>
+            <tbody>
+                <tr width="100">
+                    <td width="33" class="required"> Category</td>
+                    <td width="33" class="required"> Sub Category</td>
+                    <td width="33" class="required">Broad Group</td>
+                </tr>
+                <tr width="100">
+                    <td width="33">
+                        <select asp-for="AccCategoryID" id="@AccCategory" asp-items="Model.DDLAccCategory" class="form-control form-control-xs1 @AccCategory"></select>
+                        <span asp-validation-for="AccCategoryID" class="span-form-validation "></span>
+                    </td>
+                    <td width="33">
+                        <select asp-for="SubCategoryID" id="@AccSubCategory" asp-items="Model.DDLAccSubCategory" class="form-control form-control-xs1 @AccSubCategory"></select>
+                        <span asp-validation-for="SubCategoryID" class="span-form-validation "></span>
+                    </td>
+                    <td width="33">
+                        <select asp-for="BroadGroupID" id="@AccBroadGroup" asp-items="Model.DDLAccBroadGroup" class="form-control form-control-xs1 @AccBroadGroup"></select>
+                        <span asp-validation-for="BroadGroupID" class="span-form-validation "></span>
+                    </td>
+
+                </tr>
+                <tr width="100">
+                    <td width="33" class="required">Narrow Group</td>
+                    <td width="33" class="required">Identification</td>
+                    <td width="33" class="required">Item</td>
+                </tr>
+                <tr width="100">
+                    <td width="33">
+                        <select asp-for="NarrowGroupID" id="@AccNarroGroup" asp-items="Model.DDLAccNarroGroup" class="form-control form-control-xs1 @AccNarroGroup"></select>
+                        <span asp-validation-for="NarrowGroupID" class="span-form-validation "></span>
+                    </td>
+                    <td width="33">
+                        <select asp-for="IdentificationID" id="@AccIdentification" asp-items="Model.DDLAccIdentification" class="form-control form-control-xs1 @AccIdentification"></select>
+                        <span asp-validation-for="IdentificationID" class="span-form-validation "></span>
+                    </td>
+                    <td width="33">
+                        <select asp-for="ItemID" id="@AccItem" asp-items="Model.DDLAccItem" class="form-control form-control-xs1 @AccItem"></select>
+                        <span asp-validation-for="ItemID" class="span-form-validation "></span>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#AccCategory" + '@Model.SerialNo').change(function () {
+            const AccCategoryID = this.value;
+            HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLCategoryWiseSubCategory', { CategoryID: AccCategoryID }, 'AccSubCategory'+'@Model.SerialNo', false);
+            $("#AccSubCategory" + '@Model.SerialNo').trigger("change");
+        });
+
+        $("#AccSubCategory" + '@Model.SerialNo').change(function () {
+            const SubCategoryID = this.value;
+            HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLSubCategoryWiseBroadGroup', { SubCategoryID: SubCategoryID }, 'AccBroadGroup'+'@Model.SerialNo', false);
+            $("#AccBroadGroup" + '@Model.SerialNo').trigger("change");
+        });
+
+
+        $("#AccBroadGroup" + '@Model.SerialNo').change(function () {
+            const BroadGroupID = this.value;
+            HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLBroadGroupWiseNarrowGroup', { BroadGroupID: BroadGroupID }, 'AccNarroGroup'+'@Model.SerialNo', false);
+            $("#AccNarroGroup" + '@Model.SerialNo').trigger('change');
+        });
+        $("#AccNarroGroup" + '@Model.SerialNo').change(function () {
+            const NarrowGroupID = this.value;
+            HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLNarrowGroupWiseIdentification', { NarrowGroupID: NarrowGroupID }, 'AccIdentification'+'@Model.SerialNo', false);
+            $("#AccIdentification" + '@Model.SerialNo').trigger('change');
+        });
+        $("#AccIdentification" + '@Model.SerialNo').change(function () {
+            const AccIdentification = this.value;
+            HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLIdentificationWiseItem', { IdentificationID: AccIdentification }, 'AccItem'+'@Model.SerialNo', false);
+        });
+    })
+
+
+
+
+</script>
+
+
+@*}*@
+
+
+
+
+
+
+
+
+
+

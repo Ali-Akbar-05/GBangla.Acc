@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{8F649387-11D0-42F0-9610-EA3C607AC772}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{EEDAE253-B7DE-4424-8A30-39DC53FD8E7E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{135DB8DF-62D1-495C-898B-009CEC6653F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebUIAcc", "WebUIAcc\WebUIAcc.csproj", "{0ACE40FC-3DD4-443F-8DC2-26C5976C908F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A6C555F9-ABBF-43AF-9D8A-4F9FA2FD7501}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "GBAccReport", "GBReport\GBAccReport.rptproj", "{E932A04A-19ED-4448-8961-6D2C3C1EC255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSRS.Support", "SSRS.Support\SSRS.Support.csproj", "{C7FACEFA-E7A6-4E13-9D4D-9F66D2C3817C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugLocal|Any CPU = DebugLocal|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F649387-11D0-42F0-9610-EA3C607AC772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F649387-11D0-42F0-9610-EA3C607AC772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F649387-11D0-42F0-9610-EA3C607AC772}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F649387-11D0-42F0-9610-EA3C607AC772}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{8F649387-11D0-42F0-9610-EA3C607AC772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F649387-11D0-42F0-9610-EA3C607AC772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEDAE253-B7DE-4424-8A30-39DC53FD8E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEDAE253-B7DE-4424-8A30-39DC53FD8E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEDAE253-B7DE-4424-8A30-39DC53FD8E7E}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEDAE253-B7DE-4424-8A30-39DC53FD8E7E}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{EEDAE253-B7DE-4424-8A30-39DC53FD8E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEDAE253-B7DE-4424-8A30-39DC53FD8E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{135DB8DF-62D1-495C-898B-009CEC6653F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{135DB8DF-62D1-495C-898B-009CEC6653F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{135DB8DF-62D1-495C-898B-009CEC6653F2}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{135DB8DF-62D1-495C-898B-009CEC6653F2}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{135DB8DF-62D1-495C-898B-009CEC6653F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{135DB8DF-62D1-495C-898B-009CEC6653F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ACE40FC-3DD4-443F-8DC2-26C5976C908F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ACE40FC-3DD4-443F-8DC2-26C5976C908F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ACE40FC-3DD4-443F-8DC2-26C5976C908F}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ACE40FC-3DD4-443F-8DC2-26C5976C908F}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{0ACE40FC-3DD4-443F-8DC2-26C5976C908F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ACE40FC-3DD4-443F-8DC2-26C5976C908F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E932A04A-19ED-4448-8961-6D2C3C1EC255}.Debug|Any CPU.ActiveCfg = Debug
+		{E932A04A-19ED-4448-8961-6D2C3C1EC255}.Debug|Any CPU.Build.0 = Debug
+		{E932A04A-19ED-4448-8961-6D2C3C1EC255}.Debug|Any CPU.Deploy.0 = Debug
+		{E932A04A-19ED-4448-8961-6D2C3C1EC255}.DebugLocal|Any CPU.ActiveCfg = DebugLocal
+		{E932A04A-19ED-4448-8961-6D2C3C1EC255}.DebugLocal|Any CPU.Build.0 = DebugLocal
+		{E932A04A-19ED-4448-8961-6D2C3C1EC255}.Release|Any CPU.ActiveCfg = Release
+		{E932A04A-19ED-4448-8961-6D2C3C1EC255}.Release|Any CPU.Build.0 = Release
+		{E932A04A-19ED-4448-8961-6D2C3C1EC255}.Release|Any CPU.Deploy.0 = Release
+		{C7FACEFA-E7A6-4E13-9D4D-9F66D2C3817C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7FACEFA-E7A6-4E13-9D4D-9F66D2C3817C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7FACEFA-E7A6-4E13-9D4D-9F66D2C3817C}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7FACEFA-E7A6-4E13-9D4D-9F66D2C3817C}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{C7FACEFA-E7A6-4E13-9D4D-9F66D2C3817C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7FACEFA-E7A6-4E13-9D4D-9F66D2C3817C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E932A04A-19ED-4448-8961-6D2C3C1EC255} = {A6C555F9-ABBF-43AF-9D8A-4F9FA2FD7501}
+		{C7FACEFA-E7A6-4E13-9D4D-9F66D2C3817C} = {A6C555F9-ABBF-43AF-9D8A-4F9FA2FD7501}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7FF726E-5937-4082-958C-15E9813646B4}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/germanbanglach
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Application\\Application.csproj
+		SccProjectName1 = Application
+		SccLocalPath1 = Application
+		SccProjectUniqueName2 = Domain\\Domain.csproj
+		SccProjectName2 = Domain
+		SccLocalPath2 = Domain
+		SccProjectUniqueName3 = GBReport\\GBAccReport.rptproj
+		SccProjectTopLevelParentUniqueName3 = GBangla.Acc.sln
+		SccProjectName3 = GBReport
+		SccLocalPath3 = GBReport
+		SccProjectUniqueName4 = Infrastructure\\Infrastructure.csproj
+		SccProjectName4 = Infrastructure
+		SccLocalPath4 = Infrastructure
+		SccProjectUniqueName5 = WebUIAcc\\WebUIAcc.csproj
+		SccProjectName5 = WebUIAcc
+		SccLocalPath5 = WebUIAcc
+		SccProjectUniqueName6 = SSRS.Support\\SSRS.Support.csproj
+		SccProjectTopLevelParentUniqueName6 = GBangla.Acc.sln
+		SccProjectName6 = SSRS.Support
+		SccLocalPath6 = SSRS.Support
+	EndGlobalSection
+EndGlobal

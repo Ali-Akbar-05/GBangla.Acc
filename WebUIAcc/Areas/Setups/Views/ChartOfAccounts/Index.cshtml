@@ -1,0 +1,395 @@
+﻿@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiForgeryToken
+
+@model Application.ViewModel.GBAcc.Setups.ChartOfAccounts.Index.ChartOfAccIndexVM
+@{
+    var token = antiForgeryToken.GetAndStoreTokens(Context);
+    ViewData[PageInfo.PageHeader] = "Create Chart Of Accounts";
+    ViewData[PageInfo.PageTitle] = "Create Chart Of Accounts";
+}
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-sm-12">
+        <form id="frmCreateChartOfAccounts">
+            <div class="row">
+                <input type="hidden" asp-for="AccID" />
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label class="col-form-label-sm m-0 required" asp-for="AccLevelID"></label>
+                         <select asp-for="AccLevelID" asp-items="Model.DDLAccLevel" class="form-control form-control-sm "></select>
+                        <span asp-validation-for="AccLevelID" class="span-form-validation text-danger"></span>
+                    </div>
+                </div>
+                </div>
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label class="col-form-label-sm m-0" asp-for="AccCategoryID"></label>
+                        <select asp-for="AccCategoryID" asp-items="Model.DDLAccCategory" class="form-control form-control-sm "></select>
+                        <span asp-validation-for="AccCategoryID" class="span-form-validation"></span>
+                    </div>
+                </div>
+
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 hide-Level-5">
+                    <div class="form-group">
+                        <label class="col-form-label-sm m-0" asp-for="SubCategoryID"></label>
+                        <select asp-for="SubCategoryID" asp-items="Model.DDLAccSubCategory" class="form-control form-control-sm "></select>
+                        <span asp-validation-for="SubCategoryID" class="span-form-validation"></span>
+                    </div>
+                </div>
+
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 hide-Level-6">
+                    <div class="form-group">
+                        <label class="col-form-label-sm m-0" asp-for="BroadGroupID"></label>
+                        <select asp-for="BroadGroupID" asp-items="Model.DDLAccBroadGroup" class="form-control form-control-sm "></select>
+                        <span asp-validation-for="BroadGroupID" class="span-form-validation"></span>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="row ">
+                <div class="col-sm-4 col-md-4 col-lg-4 hide-Level-7">
+                    <div class="form-group">
+                        <label class="col-form-label-sm m-0" asp-for="NarrowGroupID"></label>
+                        <select asp-for="NarrowGroupID" asp-items="Model.DDLAccNarroGroup" class="form-control form-control-sm "></select>
+                        <span asp-validation-for="NarrowGroupID" class="span-form-validation"></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 col-lg-4 hide-Level-8">
+                    <div class="form-group">
+                        <label class="col-form-label-sm m-0" asp-for="IdentificationID"></label>
+                        <select asp-for="IdentificationID" asp-items="Model.DDLAccIdentification" class="form-control form-control-sm "></select>
+                        <span asp-validation-for="IdentificationID" class="span-form-validation"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label class="col-form-label-sm m-0 required lblAccNameModerate" asp-for="AccName"></label>
+                        <input type="text" class="form-control form-control-sm " asp-for="AccName" placeholder="Enter Acc Name" autocomplete="off">
+                        <span asp-validation-for="AccName" class="span-form-validation text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row  text-center">
+                <div class="col-sm-12 col-xs-12 col-md-12">
+                    <button type="button" id="btnCOASave" class="btn btn-xs btn-primary">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row mb-1">
+        <div class="col-xs-12 col-md-12 col-sm-12 col-xs-12">
+            <div id="grid">
+            </div>
+        </div>
+ 
+</div>
+
+
+@section scripts{
+    <script type="text/javascript">
+        function clearField() {
+         //   $("#AccCategoryID").val("");
+         //   $("#SubCategoryID").val("");
+       //     $("#BroadGroupID").val("");
+            $("#NarrowGroupID").val("");
+            $("#IdentificationID").val("");
+            $("#AccName").val("");
+
+            
+
+        }
+    function accCategoryShowAndHide(hideId) {
+        for (let sl = 5; sl <= 8; sl++) {
+            if (sl >= hideId) {
+                $(`.hide-Level-${sl}`).hide();
+            } else {
+                $(`.hide-Level-${sl}`).show();
+            }
+
+        }
+        }
+
+
+    function saveAccSuccess(data) {
+        if (data.result == 1) {
+            $.alert.open("success", data.message);
+            $("#loadingImage").hide();
+            GetChartOfAccountList();
+            clearField();
+        } else {
+            $.alert.open("warning", daa.message);
+        }
+
+    }
+
+        function GetChartOfAccountList() {
+            debugger;
+         var url = "/Setups/ChartOfAccounts/GetChartOfAccountList";
+         let AccLevelID = RtnNumber($("#AccLevelID").val());
+         let ParentID = 0;
+         let Predict = $("#AccName").val();
+
+           if (AccLevelID == 5) {
+               ParentID = $("#AccCategoryID").val();
+            } else if (AccLevelID == 6) {
+                ParentID = $("#SubCategoryID").val();
+            } else if (AccLevelID == 7) {
+                ParentID = $("#BroadGroupID").val();
+            } else if (AccLevelID == 8) {
+                ParentID = $("#NarrowGroupID").val();
+            } else if (AccLevelID == 14) {
+                ParentID = $("#IdentificationID").val();
+            }
+
+
+         var reqModel = {
+             AccLevelID: AccLevelID,
+             ParentID: ParentID,
+             Predict: Predict,
+        }
+       // var dataGridrow;
+        var dataGrid =   $("#grid").dxDataGrid({
+            dataSource: DevExpress.data.AspNet.createStore({
+                key: "Serial",
+                loadUrl: url,
+                loadParams: reqModel
+            }),
+            remoteOperations: {
+                paging: true,
+                sorting: true,
+                filtering: true,
+            },
+            showColumnLines: false,
+            showRowLines: true,
+            showBorders:true,
+            paging: {
+                pageSize: 10
+            },
+            pager: {
+                showInfo: true,
+                allowedPageSizes: [10,20, 40, 100, 500],
+                showPageSizeSelector: true,
+            },
+            loadingIndicator: {
+                enabled: true
+            },
+            selection: { mode: 'single' },
+            headerFilter: { visible: false  ,allowSearch: true },
+            filterRow: { visible: false },
+            wordWrapEnabled: true,
+            columns: [
+                {
+                    dataField: "Serial",
+                    visible: false,
+                },
+                {
+                    width: "5%",
+                    caption: "SL",
+                    alignment: 'center',
+                    cellTemplate: function (cellElement, cellInfo) {
+                        var index = dataGrid.pageIndex() * dataGrid.pageSize() + cellInfo.rowIndex + 1;
+                        cellElement.text(index)
+                    }
+
+                },
+                {
+                    width: "10%",
+                    caption: "Category",
+                    alignment: 'center',
+                    allowFiltering: false,
+                    allowSorting: false,
+                    dataField: "Category",
+                },
+                {
+                    width: "12%",
+                    caption: "Sub Category",
+                    alignment: 'center',
+                   allowFiltering: true,
+                   dataField: "SubCategory",
+
+
+                },
+                {
+                    width: "12%",
+                    caption: "Broad Group",
+                    wordWrapEnabled: false,
+                    alignment: 'center',
+                    allowFiltering: false,
+                    dataField: "BroadGroup",
+                },
+                {
+                    width: "12%",
+                    caption: "Narrow Group",
+                    alignment: 'center',
+                    allowFiltering: false,
+                    dataField: "NarrowGroup",
+
+                },
+                {
+                    width: "12%",
+                    caption: "Identification",
+                    alignment: 'center',
+                    allowFiltering: false,
+                    dataField: "Identification",
+
+                },
+                {
+                    width: "15%",
+                    caption: "Item",
+                    alignment: 'center',
+                    allowFiltering: false,
+                    dataField: "Item",
+
+                },
+
+                /*
+                {
+                    width: "10%",
+                    caption: "Action",
+                    alignment: 'center',
+                    headerCellTemplate: function (header, info) {
+                        $('<div>').html(info.column.caption).css('font-weight', 'bold').appendTo(header);
+                    },
+                    cellTemplate: function (container, options) {
+
+                        var returnText = `<button class="btn btn-xs btn-warning" > <i class="fas fa-search"></i></button>`;
+                        $(returnText).on('dxclick', function () {
+                            // DataSearch(options.data.ID);<i class="fa fa-edit" ></i>
+                        }).appendTo(container);
+
+                        var returnText = `<span>&nbsp</span><button class="btn btn-xs btn-warning" > <i class="fas fa-search"></i></button>`;
+                        returnText = returnText + '</div>';
+                        $(returnText).on('dxclick', function () {
+                            //  DataSearch(options.data.ID);<i class="fa fa-trash"></i>
+                        }).appendTo(container);
+
+                        if ('isSuperAdmin' == 'True' || (!options.data.IsApprovedByAccounts && !options.data.isApproved)) {
+                            debugger;
+                            var returnText = `<span>&nbsp</span><button class="btn btn-xs btn-warning" > <i class="fa fa-edit"></i></button>`;
+                            returnText = returnText + '</div>';
+                            $(returnText).on('dxclick', function () {
+                                DataEdit(options.data.GatePassID, options.data.CategoryID);
+                            }).appendTo(container);
+
+                        }
+                    },
+                },*/
+            ],
+
+            groupPanel: { visible: true },
+          //  headerFilter: { visible: true },
+           // width:1000,
+            height: 520,
+
+        }).dxDataGrid("instance");
+    }
+
+        $(function () {
+            GetChartOfAccountList();
+
+        $("#AccLevelID").change(function () {
+            const id = this.value;
+            accCategoryShowAndHide(id);
+            var levelName = $("#AccLevelID option:selected").text();
+            var accLevelText = $(".lblAccNameModerate").html();
+            var subposition = accLevelText.indexOf("(")
+            if (subposition > 1) {
+                accLevelText = accLevelText.substring(0, subposition)
+            }
+            accLevelText = `${accLevelText} <strong class="text-danger">(${levelName})</strong>`;
+            $(".lblAccNameModerate").html(accLevelText);
+        });
+
+        $("#AccCategoryID").change(function () {
+            const AccCategoryID = this.value;
+            if (AccCategoryID && AccCategoryID > 0) {
+                HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLCategoryWiseSubCategory', { CategoryID: AccCategoryID }, 'SubCategoryID', false);
+                GetChartOfAccountList();
+            }
+        });
+            $("#SubCategoryID").change(function () {
+                const SubCategoryID = this.value;
+                if (SubCategoryID && SubCategoryID > 0) {
+                    HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLSubCategoryWiseBroadGroup', { SubCategoryID: SubCategoryID }, 'BroadGroupID', false);
+                    GetChartOfAccountList();
+                }
+            });
+            $("#BroadGroupID").change(function () {
+                const BroadGroupID = this.value;
+                if (BroadGroupID && BroadGroupID > 0) {
+                    HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLBroadGroupWiseNarrowGroup', { BroadGroupID: BroadGroupID }, 'NarrowGroupID', false);
+                    GetChartOfAccountList();
+                }
+            });
+            $("#NarrowGroupID").change(function () {
+                const NarrowGroupID = this.value;
+                if (NarrowGroupID && NarrowGroupID > 0) {
+                    HttpRequest.DropDown("GET", '/Setups/ChartOfAccounts/DDLNarrowGroupWiseIdentification', { NarrowGroupID: NarrowGroupID }, 'IdentificationID', false);
+                    GetChartOfAccountList();
+                }
+            });
+
+
+            $("#AccName").keyup(function () {
+                GetChartOfAccountList();
+            });
+
+       $("#btnCOASave").click(function () {
+                debugger;
+            const AccLevelID = $("#AccLevelID").val();
+            let ParentID = undefined;
+            const _AccName = $("#AccName").val();
+
+
+            if (!AccLevelID || isNaN(AccLevelID)) {
+                $.alert.open("error", "Select Acc Level");
+                return;
+            }
+
+            if (AccLevelID == 5) {
+                ParentID = $("#AccCategoryID").val();
+            } else if (AccLevelID == 6) {
+                ParentID = $("#SubCategoryID").val();
+            } else if (AccLevelID == 7) {
+                ParentID = $("#BroadGroupID").val();
+            } else if (AccLevelID == 8) {
+                ParentID = $("#NarrowGroupID").val();
+            } else if (AccLevelID == 14) {
+                ParentID = $("#IdentificationID").val();
+            }
+
+            if (!ParentID || ParentID === undefined) {
+                $.alert.open("error", "Select Acc Categoryes.");
+                return;
+            }
+
+            if (!_AccName || _AccName === undefined || _AccName == "" || _AccName == " ") {
+                $.alert.open("error", "Select Acc Name.");
+                return;
+            }
+
+            var finalObj = {
+                AccName : _AccName,
+                ParentID:ParentID,
+                LevelID:AccLevelID
+            }
+
+            if ('@Model.AccID' > 0) {
+                finalObj.AccID = '@Model.AccID'
+            }
+
+            HttpRequest.Ajax("POST", '/Setups/ChartOfAccounts/BasicCoaSave', { "ReqModel": finalObj, '@token.HeaderName': '@token.RequestToken' }, saveAccSuccess,null,true);
+
+
+        });
+    });
+    </script>
+
+} 

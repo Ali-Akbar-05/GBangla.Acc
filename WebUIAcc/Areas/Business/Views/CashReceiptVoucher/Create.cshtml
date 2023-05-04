@@ -1,0 +1,918 @@
+﻿@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiForgeryToken
+@model Application.ViewModel.GBAcc.Business.CashReceiptVoucher.Create.CashReceiptVoucherCreateViewModel
+
+@{
+    var token = antiForgeryToken.GetAndStoreTokens(Context);
+    ViewData[PageInfo.PageHeader] = "Cash Receipt Voucher";
+    ViewData[PageInfo.PageTitle] = "Cash Receipt Voucher";
+    //  var slCredit = 1;
+}
+<style type="text/css">
+    .select2font {
+        font-size: 10px !important;
+        width: 100%;
+    }
+
+    .table-scroll {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        margin: auto;
+        overflow: auto;
+        max-height: 350px;
+    }
+
+        .table-scroll table {
+            width: 100%;
+            min-width: 1280px;
+            margin: auto;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+    .table-wrap {
+        position: relative;
+    }
+
+    .table-scroll th,
+    .table-scroll td {
+        padding: 5px 10px;
+        /*border: 1px solid #000;*/
+        background: #fff;
+        vertical-align: top;
+    }
+
+    .table-scroll thead th {
+        background: #333;
+        color: #fff;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+    /* safari and ios need the tfoot itself to be position:sticky also */
+    .table-scroll tfoot,
+    .table-scroll tfoot th,
+    .table-scroll tfoot td {
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: 0;
+        background: #666;
+        color: #fff;
+        z-index: 4;
+    }
+</style>
+<div class="row ajt-control">
+    <form id="frmSupplierInvoiceVoucher" role="form" class="col-12">
+        <div class="col-sm-12 col-md-12 col-xs-12">
+            <div class="card card-success text-sm">
+                <div class="card-header text-xs">
+                    <h6 class="card-title">Voucher Information</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row m-0">
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="VoucherDate"></label>
+                                <input type="text" readonly class="form-control form-control-sm dateField" asp-for="VoucherDate" value="@Model.VoucherDateStr" placeholder="Voucher Date" autocomplete="off">
+                                <span asp-validation-for="VoucherDate" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="LocationID"></label><br />
+                                <select class="form-control form-control-sm select2Filter" asp-for="LocationID" asp-items="@Model.DDLLocation"></select>
+                                <span asp-validation-for="LocationID" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="CurrencyID"></label>
+                                <select class="form-control form-control-sm " asp-for="CurrencyID" asp-items="@Model.DDLCurrency"></select>
+                                <span asp-validation-for="CurrencyID" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="CurrencyRate"></label>
+                                <input type="text" class="form-control form-control-sm " asp-for="CurrencyRate" placeholder="Rate" readonly autocomplete="off">
+                                <span asp-validation-for="CurrencyRate" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-0">
+                        <div class="col-sm-9 col-md-9 col-lg-9">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="VoucherDescription"></label>
+                                <input type="text" class="form-control form-control-sm " asp-for="VoucherDescription" placeholder="Voucher Description" autocomplete="off">
+                                <span asp-validation-for="VoucherDescription" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="ReceiptTypeID"></label><br />
+                                <select class="form-control form-control-sm" asp-for="ReceiptTypeID" asp-items="@Model.DDLReceiptType"></select>
+                                <span asp-validation-for="ReceiptTypeID" class="span-form-validation "></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-success text-xs">
+                <div class="card-header text-xs">
+                    <h6 class="card-title">Credit Information </h6>
+                </div>
+                <div class="card-body">
+                    <div class="row m-0">
+                        <div class="col-5">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="CreditAccID"></label>
+                                <select class="form-control form-control-sm " asp-for="CreditAccID" asp-items="@Model.DDLCreditAcc"></select>
+                                <span asp-validation-for="CreditAccID" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="CreditCostCenterID"></label>
+                                <select class="form-control form-control-sm " asp-for="CreditCostCenterID" asp-items="@Model.DDLCreditCostCenter"></select>
+                                <span asp-validation-for="CreditCostCenterID" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="CreditActivityID"></label>
+                                <select class="form-control form-control-sm " asp-for="CreditActivityID" asp-items="@Model.DDLCreditActivity"></select>
+                                <span asp-validation-for="CreditActivityID" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                      
+                    </div>
+                  
+                   
+                </div>
+            </div>
+
+            <div class="card card-success text-xs">
+                <div class="card-header text-xs">
+                    <h6 class="card-title">Debit Information </h6>
+                </div>
+                <div class="card-body">
+                    <div class="row m-0">
+                        <div class="col-5">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="DebitAccID"></label>
+                                <select class="form-control form-control-sm " asp-for="DebitAccID" asp-items="@Model.DDLDebitAccount"></select>
+                                <span asp-validation-for="DebitAccID" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="DebitCostCenterID"></label>
+                                <select class="form-control form-control-sm " asp-for="DebitCostCenterID" asp-items="@Model.DDLDebitCostCenter"></select>
+                                <span asp-validation-for="DebitCostCenterID" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0 required" asp-for="DebitActivityID"></label>
+                                <select class="form-control form-control-sm " asp-for="DebitActivityID" asp-items="@Model.DDLDebitActivity"></select>
+                                <span asp-validation-for="DebitActivityID" class="span-form-validation text-danger"></span>
+                            </div>
+                        </div>
+                      
+                    </div>
+                   
+                    <div class="row  text-center">
+                        <div class="col-sm-12 col-xs-12 col-md-12 text-right">
+                            <button type="button" id="btnAddCreditDetails" onclick="return AddNewCreditInformation();" class="btn btn-xs btn-primary mb-1 mr-1"><i class="fas fa-plus"></i> Add Details</button>
+                        </div>
+                    </div>
+                    <div class="row m-0">
+                        <div class="col-lg-12 col-md-12 col-sm-12" style="max-height:300px; overflow:auto">
+                            <table class="table table-sm table-bordered table-responsive-sm text-center table-scroll" id="tblCreditInfo" style="font-size:12px;" width="100">
+                                <thead class="bg-dark">
+                                    <tr>
+                                        <th><input type="checkbox" class="chkAllPO" /></th>
+                                        <th>Sl</th>
+                                        <th>Narration</th>
+                                        <th>Bill No</th>
+                                        <th>Bill Date</th>
+                                        <th class="thForBTB d-none">Bill Age(Days)</th>
+                                        <th>Ref. No</th>
+                                        <th>Gross Amount</th>
+                                        @*<th class="thForBTB d-none">Bill Amount</th>*@
+                                        <th class="thForDR thDiscAdvPercent">Discount(%)</th>
+                                        <th class="thForDR thDiscAdvAmount">Discount Amount</th>
+                                        <th class="thForPAP d-none">Adv. (%)</th>
+                                        <th class="thForPAP d-none">Adv. Amount</th>
+                                        <th>Net Amount</th>
+                                        <th class="thForBTB d-none">Amount in Doller</th>
+                                        <th class="thForPAP thForBTB d-none">Payment</th>
+                                        <th class="thForPAP thForBTB d-none">Balance</th>
+                                        <th class="thForDR thAction">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyCreditInfo">
+                                </tbody>
+                                <tfoot class="bg-dark">
+                                    <tr>
+                                        <td colspan="9" class="text-right tdTotal"><b>Total</b></td>
+                                        <td id="totalPayment" class="text-right text-bold">0</td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card pr-2 text-xs">
+                <div class="card-body text-xs">
+                    <div class="form-group row ml-1 mt-1">
+                        <label asp-for="VatPercent" class="col-1 form-control-sm"></label>
+                        <div class="col-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="text" class="form-control form-control-sm" asp-for="VatPercent" autocomplete="off" onkeydown="checkDecimal(event)">
+                                </div>
+                                <div class="col-6 pl-3">
+                                    <input type="checkbox" class="form-check-input" asp-for="IsChallanProvideByParty">
+                                    <label class="form-check-label text-xs" asp-for="IsChallanProvideByParty">Party Challan</label>
+                                </div>
+                            </div>
+                        </div>
+                        <label asp-for="VatAmount" class="col-2 form-control-sm"></label>
+                        <div class="col-1">
+                            <input type="text" class="form-control form-control-sm text-right" asp-for="VatAmount" readonly>
+                        </div>
+                        <label asp-for="VatAccID" class="col-2 form-control-sm"></label>
+                        <div class="col-3">
+                            <select class="form-control form-control-sm " asp-for="VatAccID" asp-items="@Model.DDLVatAcc"></select>
+                        </div>
+                    </div>
+                    <div class="row ml-1">
+                        <label asp-for="IncomeTaxPercent" class="col-1 form-control-sm"></label>
+                        <div class="col-3">
+                            <input type="text" class="form-control col-6 form-control-sm" onkeydown="checkDecimal(event)" autocomplete="off" asp-for="IncomeTaxPercent">
+                        </div>
+                        <label asp-for="IncomeTaxAmount" class="col-2 form-control-sm"></label>
+                        <div class="col-1">
+                            <input type="text" class="form-control form-control-sm text-right" asp-for="IncomeTaxAmount" readonly>
+                        </div>
+                        <label asp-for="IncomeTaxPercentAccID" class="col-2 form-control-sm"></label>
+                        <div class="col-sm-3">
+                            <select class="form-control form-control-sm " asp-for="IncomeTaxPercentAccID" asp-items="@Model.DDLIncomeTax"></select>
+                        </div>
+                    </div>
+                    <div class="row ml-1">
+                        <div class="col-sm-7">
+                        </div>
+                        <label class="col-2 form-control-sm">Net Payment </label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control form-control-sm text-bold text-right" id="NetPayment" value="0" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row  text-center">
+                <div class="col-sm-12 col-xs-12 col-md-12 text-right">
+                    <button type="button" id="btnSave" class="btn btn-xs btn-success">Save Voucher</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        function CalculateTotalPayment() {
+
+            let total = 0;
+            let receiptTypeID = $("#ReceiptTypeID").val();
+            $('.chkIndividualPO:checkbox:checked').each(function () {
+                let that = $(this);
+                if (receiptTypeID == 4)
+                    total = total + RtnFloat(that.parent().parent().find('.NetAmount').val());
+                else
+                    total = total + RtnFloat(that.parent().parent().find('.Payment').val());
+            });
+            $("#totalPayment").html(total);
+
+            if ($("#VatPercent").val() > 0) {
+                CalculateVATAmount();
+            } else {
+                CalculateNetPayment();
+            }
+            if ($("#IncomeTaxPercent").val() > 0) {
+                CalculateTAXAmount();
+            } else {
+                CalculateNetPayment();
+            }
+
+        }
+        function CalculateBalanceAmount(that) {
+            let thatTr = $(that).parent().parent();
+            let payment = 0;
+            let amount = 0;
+             payment = RtnFloat($(that).val());
+            let receiptTypeID = $("#ReceiptTypeID").val();
+
+            if (receiptTypeID == 6)
+                amount = RtnFloat(thatTr.find('.NetAmount').val());
+            else
+                amount = RtnFloat(thatTr.find('.AdvanceAmount').val());
+
+            if (payment > amount) {
+                $(that).val($(that).val().slice(0, -1));
+            } else {
+                thatTr.find('.Balance').val((amount - payment).toFixed(2));
+            }
+            CalculateTotalPayment();
+        }
+        function CheckUncheckPO(that) {
+
+            if ($(that).is(':checked')) {
+                const Narration = $("#VoucherDescription").val();
+                $(that).parent().parent().find('.Payment').removeAttr('readonly');
+                let totalRow = $('.chkIndividualPO').length;
+                let totalChecked = $('.chkIndividualPO:checkbox:checked').length;
+                if (totalRow === totalChecked) {
+                    $(".chkAllPO").prop('checked', true);
+
+                    $(that).parent().parent().find(".Narration").val(Narration);
+                } else {
+                    $(".chkAllPO").prop('checked', false);
+                    $(that).parent().parent().find(".Narration").val(Narration);
+                    $(that).parent().parent().find('.Payment').val("");
+
+                }
+            }
+            else {
+                $(that).parent().parent().find('.Payment').val("");
+                $(that).parent().parent().find('.Payment').attr('readonly', true);
+                $(".chkAllPO").prop('checked', false);
+                $(that).parent().parent().find(".Narration").val("");
+            }
+            CalculateTotalPayment();
+        }
+        function CalculateAdvPaymentAmount(that) {
+            let thatTr = $(that).parent().parent();
+            let advPercent = RtnFloat($(that).val());
+            let grossAmount = parseFloat(thatTr.find('.GrossAmount').val());
+            if (advPercent <= 100) {
+                let advAmount = (grossAmount * advPercent) / 100;
+                thatTr.find('.AdvanceAmount').val(advAmount.toFixed(2));
+                thatTr.find('.NetAmount').val((grossAmount - advAmount).toFixed(2));
+            } else {
+                $(that).val('');
+                thatTr.find('.AdvanceAmount').val('');
+                thatTr.find('.NetAmount').val(grossAmount);
+                $.alert.open('warning', 'Percentage can\'t be more than 100')
+            }
+        }
+        function CalculateDiscountAmount(that) {
+            debugger;
+            let thatTr = $(that).parent().parent();
+            let discPercent = RtnFloat(thatTr.find('.Discount').val());
+            let grossAmount = RtnFloat(thatTr.find('.GrossAmount').val());
+            let paymentAmount = RtnFloat(thatTr.find('.Payment').val());
+            if (discPercent <= 100) {
+                let discAmount = (grossAmount * discPercent) / 100;
+                thatTr.find('.DiscountAmount').val(discAmount);
+                thatTr.find('.NetAmount').val(grossAmount - discAmount);
+                thatTr.find('.Balance').val(grossAmount - discAmount - paymentAmount);
+            } else {
+                $(that).val('');
+                thatTr.find('.DiscountAmount').val('');
+                thatTr.find('.NetAmount').val(grossAmount);
+                thatTr.find('.Balance').val(grossAmount);
+                $.alert.open('warning', 'Percentage can\'t be more than 100')
+            }
+        }
+
+        function GenerateAdvancePaymentTable(accountID) {
+            let data = HttpRequest.AjaxData("Get", '/Business/POInfo/GetPOForAdvance', { AccountID: accountID });
+            debugger;
+            if (data.length > 0) {
+                let tr = '';
+                const narration = $("#VoucherDescription").val();
+                $.each(data, function (i, v) {
+                    tr = tr + `<tr class="trAdvancePAPCreditInformation">
+                                                            <td rowspan="1" style="vertical-align:text-top"><input type="checkbox" class="chkIndividualPO" onchange="CheckUncheckPO(this)" />
+                                                                <input type='hidden' class="hdnPOID" value=${v.POID}>
+                                                                <input type='hidden' class="hdnStoreID" value=${v.StoreID}>
+                                                                <input type='hidden' class="hdnSupplierID" value=${v.SupplierID}>
+                                                            </td>
+                                                            <td class="slNo" style="width:15px">${(i + 1)}</td>
+                                                            <td><input type="text" class="form-control form-control-xs1 Narration" placeholder="Narration" autocomplete="off" value="${narration}"></td>
+                                                            <td><input type="text" class="form-control form-control-xs1 BillNo" placeholder="Bill No" autocomplete="off"></td>
+                                                            <td><input type="text" class="form-control form-control-xs1 BillDate text-center" placeholder="Bill Date" value=${v.CurrentDate} readonly></td>
+                                                            <td><input type="text" class="form-control form-control-xs1 RefNo text-center" placeholder="Ref. No" value=${v.PONo} readonly></td>
+                                                            <td><input type="text" class="form-control form-control-xs1 GrossAmount text-right text-bold" placeholder="Gross" value=${v.TotalPOAmount} readonly></td>
+                                                            <td><input type="text" class="form-control form-control-xs1 Advance text-right text-bold" placeholder="Adv. %" onkeydown="checkDecimal(event)" onkeyup="CalculateAdvPaymentAmount(this)" ></td>
+                                                            <td><input type="text" class="form-control form-control-xs1 AdvanceAmount text-right text-bold" placeholder="Adv. Amount" autocomplete="off" readonly></td>
+                                                            <td><input type="text" class="form-control form-control-xs1 NetAmount text-right text-bold" placeholder="Net" autocomplete="off" readonly></td>
+                                                            <td><input type="text" class="form-control form-control-xs1 Payment text-right text-bold" placeholder="Payment" autocomplete="off" onkeyup="CalculateBalanceAmount(this),CalculateTotalPayment()" readonly></td>
+                                                            <td><input type="text" class="form-control form-control-xs1 Balance text-right text-bold" placeholder="Balance" autocomplete="off" readonly></td>
+
+                                                        </tr>`;
+                });
+
+                $("#tbodyCreditInfo").html(tr);
+            }
+        }
+        //Bil To Bill --2
+        function GenerateBillToBillTable(accountID) {
+            let returnData = HttpRequest.AjaxData("Get", '/Business/COATransaction/APM_InvoiceForPayment', { AccountID: accountID });
+            debugger;
+            let currencyRate =  $("#CurrencyRate").val();
+            if (returnData.data.length > 0) {
+                let tr = '';
+                $.each(returnData.data, function (i, v) {
+                    if (currencyRate == 0 || currencyRate == "" || currencyRate == null) {
+                        currencyRate = v.CurrencyRate;
+                    }
+
+                    let convertedInvAmount = AmountConversionByCurrencyRate(v.Balance, currencyRate, 0);
+
+                    tr = tr + `<tr class="trBTBCreditInformation">
+                                                    <td rowspan="1" style="vertical-align:text-top"><input type="checkbox" class="chkIndividualPO" onchange="CheckUncheckPO(this)" />
+                                                        <input type='hidden' class="hdnInvoiceID" value=${v.InvoiceID}>
+                                                        <input type='hidden' class="hdnRFPID" value=${v.RFPID}>
+                                                    </td>
+                                                    <td class="slNo" style="width:15px">${(i + 1)}</td>
+                                                    <td class="p-0"><input type="text" class="form-control form-control-xs1 Narration" placeholder="Narration" autocomplete="off"></td>
+                                                    <td class="p-0"><input type="text" class="form-control form-control-xs1 BillNo" placeholder="Bill No" autocomplete="off" value=${v.InvoiceNumber} ></td>
+                                                    <td class="p-0"><input type="text" class="form-control form-control-xs1 BillDate" placeholder="Bill Date" value=${v.InvoiceDateST} readonly></td>
+                                                    <td class="p-0"><input type="text" class="form-control form-control-xs1 BillAge text-right" placeholder="Bill Age" value=${v.InvoiceAge} readonly></td>
+                                                    <td class="p-0"><input type="text" class="form-control form-control-xs1 RefNo" placeholder="Ref. No" readonly value=${v.PONum} ></td>
+                                                    <td class="p-0"><input type="text" class="form-control form-control-xs1 GrossAmount text-right text-bold" placeholder="Gross" readonly value=${convertedInvAmount} onkeyup="CalculateDiscountAmount(this)"></td>
+                                                    <td><input type="text" class="form-control form-control-xs1 Discount text-right text-bold" placeholder="Disc. %" onkeydown="checkDecimal(event)" onkeyup="CalculateDiscountAmount(this)" ></td>
+                                                    <td><input type="text" class="form-control form-control-xs1 DiscountAmount text-right text-bold" placeholder="Disc. Amt" autocomplete="off" readonly></td>
+                                                    <td><input type="text" class="form-control form-control-xs1 NetAmount text-right text-bold" placeholder="Net" autocomplete="off" readonly value=${convertedInvAmount}></td>
+                                                    <td><input type="text" class="form-control form-control-xs1 AmountInDoller text-right text-bold" placeholder="Net" autocomplete="off" value=${convertedInvAmount} readonly></td>
+                                                    <td><input type="text" class="form-control form-control-xs1 Payment text-right text-bold" placeholder="Payment" autocomplete="off" onkeyup="CalculateBalanceAmount(this),CalculateTotalPayment()" readonly></td>
+                                                    <td><input type="text" class="form-control form-control-xs1 Balance text-right text-bold" placeholder="Balance" autocomplete="off" readonly value=${convertedInvAmount}></td>
+
+                                                </tr>`;
+                });
+                $("#tbodyCreditInfo").html(tr);
+            }
+        }
+        function CalculateNetPayment() {
+
+            let totalPayment = RtnFloat($("#totalPayment").text());
+            let vatAmount = RtnFloat($("#VatAmount").val());
+            let taxAmount = RtnFloat($("#IncomeTaxAmount").val());
+            if (!vatAmount) {
+                vatAmount = 0;
+            }
+            if (!taxAmount) {
+                taxAmount = 0;
+            }
+            let netPayment = totalPayment - (vatAmount + taxAmount);
+            $("#NetPayment").val(netPayment);
+        }
+        function CalculateVATAmount() {
+            let vatAmount = 0;
+            let vatPercent = RtnFloat($("#VatPercent").val());
+            var isPartyChallan = $('input[name="IsChallanProvideByParty"]').is(':checked');
+            if (isPartyChallan == false) {
+
+                let receiptTypeID = $("#ReceiptTypeID").val();
+                $('.chkIndividualPO:checkbox:checked').each(function () {
+                    let that = $(this);
+                    let thatNetOrPaymentAmount = 0;
+                    if (receiptTypeID == 4)
+                        thatNetOrPaymentAmount = RtnFloat(that.parent().parent().find('.NetAmount').val());
+                    else
+                        thatNetOrPaymentAmount = RtnFloat(that.parent().parent().find('.Payment').val());
+
+                    vatAmount += RtnRoundNumber(thatNetOrPaymentAmount - ((thatNetOrPaymentAmount * 100) / (100 + vatPercent)));
+                });
+                $("#VatAmount").val(vatAmount);
+            } else {
+                $("#VatPercent").val(0);
+                $("#VatAmount").val(0);
+            }
+            CalculateNetPayment();
+        }
+        function CalculateTAXAmount() {
+            let taxAmount = 0;
+            let vatPercent = RtnFloat($("#VatPercent").val());
+            let taxPercent = RtnFloat($("#IncomeTaxPercent").val());
+            let receiptTypeID = $("#ReceiptTypeID").val();
+            $('.chkIndividualPO:checkbox:checked').each(function () {
+                let that = $(this);
+                let thatNetOrPaymentAmount = 0;
+                let thatVatExcludedAmount = 0;
+                if (receiptTypeID == 4)
+                    thatNetOrPaymentAmount = RtnFloat(that.parent().parent().find('.NetAmount').val());
+                else
+                    thatNetOrPaymentAmount = RtnFloat(that.parent().parent().find('.Payment').val());
+
+                thatVatExcludedAmount = RtnNumber(thatNetOrPaymentAmount - (thatNetOrPaymentAmount - ((thatNetOrPaymentAmount * 100) / (100 + vatPercent))));
+
+                taxAmount += RtnRoundNumber(thatVatExcludedAmount * (taxPercent / 100));
+            });
+
+            $("#IncomeTaxAmount").val(taxAmount);
+
+            CalculateNetPayment();
+        }
+        function AddDirectPaymentCreditInformation() {
+            let trLength = $('.trForDR').length;
+            let tbodyTR = `<tr class="trForDR">
+                                            <td><input type="checkbox" class="chkIndividualPO" onchange="CheckUncheckPO(this)" />
+                                                            <input type='hidden' class="hdnPOID" value=${0}>
+                                                </td>
+                                            <td class="slNo" style="width:15px">${trLength + 1}</td>
+                                            <td><input type="text" class="form-control form-control-xs1 Narration" placeholder="Narration" autocomplete="off"></td>
+                                            <td><input type="text" class="form-control form-control-xs1 BillNo" placeholder="Bill No" autocomplete="off"></td>
+                                            <td><input type="text" class="form-control form-control-xs1 BillDate dateField" placeholder="Bill Date" autocomplete="off"></td>
+                                            <td><input type="text" class="form-control form-control-xs1 RefNo" placeholder="Ref. No" autocomplete="off"></td>
+                                            <td><input type="text" class="form-control form-control-xs1 GrossAmount" placeholder="Gross" autocomplete="off" onkeydown="checkDecimal(event)" onkeyup="CalculateDiscountAmount(this)"></td>
+                                            <td><input type="text" class="form-control form-control-xs1 Discount" placeholder="Discount" onkeydown="checkDecimal(event)" autocomplete="off" onkeyup="CalculateDiscountAmount(this)"></td>
+                                            <td><input type="text" class="form-control form-control-xs1 DiscountAmount" placeholder="Disc.Amount" onkeydown="checkDecimal(event)" autocomplete="off"></td>
+                                            <td><input type="text" class="form-control form-control-xs1 NetAmount" onkeyup="CalculateTotalPayment()" onkeydown="checkDecimal(event)" placeholder="Net" autocomplete="off"></td>
+                                            <td><button class="btn btn-xs btn-danger" onclick="RemoveCreditTR(this)"> <i class="fa fa-trash"></i></button></td>
+                                        </tr>`;
+            $('#tbodyCreditInfo').append(tbodyTR);
+        }
+        function AddAdvancePAPCreditInformation() {
+            let trLength = $('.trAdvancePAPCreditInformation').length;
+            let tbodyTR = `<tr class="trAdvancePAPCreditInformation">
+                                                                    <td class="slNo" style="width:15px">${trLength + 1}</td>
+                                                                    <td><input type="text" class="form-control form-control-xs1 Narration" placeholder="Narration" autocomplete="off"></td>
+                                                                    <td><input type="text" class="form-control form-control-xs1 BillNo" placeholder="Bill No" autocomplete="off"></td>
+                                                                    <td><input type="text" class="form-control form-control-xs1 BillDate dateField" placeholder="Bill Date" autocomplete="off"></td>
+                                                                    <td><input type="text" class="form-control form-control-xs1 RefNo" placeholder="Ref. No" autocomplete="off"></td>
+                                                                    <td><input type="text" class="form-control form-control-xs1 GrossAmount" placeholder="Gross" autocomplete="off"></td>
+                                                                    <td><input type="text" class="form-control form-control-xs1 Discount" placeholder="Advance" autocomplete="off"></td>
+                                                                    <td><input type="text" class="form-control form-control-xs1 AdvanceAmount" placeholder="Advance. Amount" autocomplete="off"></td>
+                                                                    <td><input type="text" class="form-control form-control-xs1 NetAmount" placeholder="Net" autocomplete="off"></td>
+                                                                    <td><input type="text" class="form-control form-control-xs1 Payment" placeholder="Payment" autocomplete="off"></td>
+                                                                    <td><input type="text" class="form-control form-control-xs1 Balance" placeholder="Balance" autocomplete="off"></td>
+                                                                    <td><button class="btn btn-xs btn-danger" onclick="RemoveCreditTR(this)"> <i class="fa fa-trash"></i></button></td>
+                                                                </tr>`;
+            $('#tbodyCreditInfo').append(tbodyTR);
+        }
+        function AddNewCreditInformation() {
+            let receiptTypeID = $("#ReceiptTypeID").val();
+            if (receiptTypeID == 4 || receiptTypeID == 7) {
+                AddDirectPaymentCreditInformation();
+            } else if (receiptTypeID == 5) {
+                AddAdvancePAPCreditInformation();
+            } else {
+
+            }
+        }
+        function GetCurrencyExchangeRate() {
+            let currencyId = RtnNumber($("#CurrencyID").val());
+            $.ajax({
+                type: "GET",
+                url: "/Business/SupplierInvoiceVoucher/GetCurrencyExchangeRateByCurrencyIDQuery",
+                data: { currencyID: currencyId },
+                cache: false,
+                success: function (data) {
+                    $("#CurrencyRate").val(data);
+                }
+            });
+        }
+        function RemoveCreditTR(that) {
+            let slno = 0;
+            let trClass = '';
+            let receiptTypeID = $("#ReceiptTypeID").val();
+            if (receiptTypeID == 4 || receiptTypeID == 7) {
+                trClass = '.trForDR';
+            } else if (receiptTypeID == 5) {
+                trClass = '';
+            } else {
+
+            }
+            $(that).parent().parent().remove();
+            $(trClass).each(function () {
+                debugger
+                let trCount = $(this).length;
+                slno += trCount
+                $(this).find('.slNo').text(slno);
+            })
+
+        }
+        function GetAvaiableAdvance() {
+            let receiptTypeID = $("#ReceiptTypeID").val();
+            let accountID = $("#DebitAccID").val();
+
+            if (receiptTypeID == 6) {
+                let availableAdv = 0;
+                let returnData = HttpRequest.AjaxData("Get", '/Business/COATransaction/GetAdvanceForAdjustment', { AccountID: accountID });
+                //$.each(returnData.data, function (i, v) {
+                //    availableAdv += v.Balance;
+                //});
+                $("#AvailableAdvance").val(RtnFloat(returnData.data.TotalBalance));
+                $("#AdjustAmount").removeAttr('readonly');
+            } else {
+                $("#AdjustAmount").val('').attr('readonly', true);
+                $("#AvailableAdvance").val('').attr('readonly', true);
+            }
+        }
+
+        function GetDDLVatAcc() {
+            HttpRequest.DropDownSelect2Group('GET', '/Setups/ChartOfAccounts/DDLCoaVatItem', {}, 'VatAccID');
+        }
+        function GetDDLIncomeTaxPercentAcc() {
+            HttpRequest.DropDownSelect2Group('GET', '/Setups/ChartOfAccounts/DDLCoaITaxItem', {}, 'IncomeTaxPercentAccID');
+        }
+        $(function () {
+            $(".onlyshowBilToBill").hide();
+            $("#DebitAccID").select2();
+            $("#VatAccID").select2();
+            $("#IncomeTaxPercentAccID").select2();
+            HttpRequest.DropDownSelect2Group('GET', '/Setups/ChartOfAccounts/DDLSupplier', { ParentList: {} }, 'DebitAccID');
+            $("#CreditAccID").select2();
+            HttpRequest.DropDownSelect2Group('GET', '/Setups/ChartOfAccounts/DDLCOAItem', { ParentList: {} }, 'CreditAccID');
+            GetDDLVatAcc();
+            GetDDLIncomeTaxPercentAcc();
+
+            $("#ReceiptTypeID").change(function () {
+                $('#tbodyCreditInfo').html('');
+                const receiptTypeID = $("#ReceiptTypeID").val();
+                $(".onlyshowBilToBill").hide();
+                $("#btnAddCreditDetails").show();
+                //$(".thDiscAdvPercent").html('Discount %');
+                //$(".thDiscAdvAmount").html('Discount Amount');
+                $("#AdjustAmount").val('').attr('readonly', true);
+                $("#AvailableAdvance").val('').attr('readonly', true);
+                if (receiptTypeID == 4 || receiptTypeID == 7) {
+                    $('.thForDR').removeClass('d-none');
+                    $('.trForDR').removeClass('d-none');
+                    $('.thForPAP').addClass('d-none');
+                    $('.thForBTB').addClass('d-none');
+                    $('.tdTotal').attr("colspan", 9);
+                    AddDirectPaymentCreditInformation();
+                }
+                else if (receiptTypeID == 5) {
+                    $("#btnAddCreditDetails").hide();
+                    $('.thForDR').addClass('d-none');
+                    $('.trForDR').addClass('d-none');
+                    $('.thForBTB').addClass('d-none');
+                    $('.thForPAP').removeClass('d-none');
+                    $('.tdTotal').attr("colspan", 10);
+                    const accountID = $("#DebitAccID").val();
+                    if (accountID != "" && accountID > 0) {
+                        GenerateAdvancePaymentTable(accountID);
+                    }
+                }
+                else {
+                    $("#btnAddCreditDetails").hide();
+                    $('.thForDR').removeClass('d-none');
+                    $('.trForDR').removeClass('d-none');
+                    $('.thForPAP').addClass('d-none');
+                    $('.thForBTB').removeClass('d-none');
+                    $(".onlyshowBilToBill").show();
+                    $('.thAction').addClass('d-none');
+                    $('.tdTotal').attr("colspan", 12);
+                    //$(".thDiscAdvPercent").html('Advance %');
+                    //$(".thDiscAdvAmount").html('Advance Amount');
+                    const accountID = $("#DebitAccID").val();
+                    if (accountID != "" && accountID > 0) {
+                        GenerateBillToBillTable(accountID);
+                        GetAvaiableAdvance();
+                    }
+
+                }
+            });
+            $("#ReceiptTypeID").trigger('change');
+            $("#DebitAccID").change(function () {
+                let accountID = $("#DebitAccID").val();
+                let accountName = $("#DebitAccID option:selected").text().split(/-(.+)/)[1];
+                $("#ChequeNarration").val(accountName);
+                let receiptTypeID = $("#ReceiptTypeID").val();
+                if (accountID != "") {
+                    debugger;
+                    let returnData = HttpRequest.AjaxData("Get", '/Business/COATransaction/GetLedgerBalance', { AccBalanceType: 1, AccountID: accountID });
+                    $("#LedgerBalance").val(returnData.data.LedgerBalance);
+                    let taxData = HttpRequest.AjaxData("Get", '/Business/COATransaction/GetLedgerBalanceIncomeTax', { LedgerAmount: returnData.data.LedgerBalance });
+                    $("#IncomeTaxPercent").val(taxData.data);
+                    CalculateTAXAmount();
+                }
+                if (receiptTypeID == 5) {
+                    GenerateAdvancePaymentTable(accountID);
+                } else if (receiptTypeID == 6) {
+                    GenerateBillToBillTable(accountID);
+                }
+            });
+            $("#InstrumentTypeID").change(function () {
+
+                let instrumentTypeId = $("#InstrumentTypeID").val();
+                $("#InstrumentNo").val('');
+                if (instrumentTypeId == 1 || instrumentTypeId == 2) {
+                    $(".notDivCheque").hide()
+                    $(".divCheque").show();
+                } else {
+                    $(".divCheque").hide();
+                    $(".notDivCheque").show()
+                }
+            });
+            $('#CurrencyID').change(function () {
+                GetCurrencyExchangeRate()
+            });
+            $('#CurrencyID').trigger('change');
+            $('#DebitCostCenterID').change(function () {
+                let costCenter = RtnNumber($('#DebitCostCenterID').val());
+                HttpRequest.DropDown('GET', '/Setups/ChartOfAccounts/DDLActivity', { CostCenterID: costCenter }, 'DebitActivityID')
+            });
+            $('#CreditCostCenterID').change(function () {
+                let costCenter = RtnNumber($('#CreditCostCenterID').val());
+
+                HttpRequest.DropDown('GET', '/Setups/ChartOfAccounts/DDLActivity', { CostCenterID: costCenter }, 'CreditActivityID')
+            });
+            $(".chkAllPO").change(function () {
+                const Narration = $("#VoucherDescription").val();
+                if ($(this).is(':checked')) {
+                    $(".chkIndividualPO").prop('checked', true);
+                    $('.Payment').removeAttr('readonly');
+                    var $row = $("#tbodyCreditInfo tr");
+                    $row.find(".Narration").val(Narration);
+                }
+                else {
+                    $(".chkIndividualPO").prop('checked', false);
+                    $('.Payment').attr('readonly', true);
+                    var $row = $("#tbodyCreditInfo tr");
+                    $row.find(".Narration").val("");
+                }
+                CalculateTotalPayment();
+            });
+            $("#VatPercent").keyup(function () {
+                CalculateVATAmount();
+            });
+            $("#IncomeTaxPercent").keyup(function () {
+                CalculateTAXAmount();
+            });
+            $("#IsAdjust").change(function () {
+                let isChecked = this.checked;
+                if (isChecked && accountID > 0) {
+                    GetAvaiableAdvance();
+                }
+            })
+            $("#IsChallanProvideByParty").change(function () {
+                SetPartyChallan();
+            });
+
+           
+
+
+        });
+
+
+      
+        function AmountConversionByCurrencyRate(amount, rate, type) {
+            let returnAmount = 0;
+            if (type == 0) {
+                if (rate != 0)
+                    returnAmount = amount / rate;
+                else
+                    returnAmount = amount;
+            } else {
+                if (rate != 0)
+                    returnAmount = amount * rate;
+                else
+                    returnAmount = amount;
+            }
+            return RtnFloatUpToPrecision(returnAmount, 4)
+        }
+       
+      
+
+        //Vat Voucher
+
+        // party Challan
+
+        function SetPartyChallan() {
+            if ($('input[name="IsChallanProvideByParty"]').is(':checked')) {
+                $("#VatPercent").val(0);
+            }
+            CalculateVATAmount();
+            CalculateTAXAmount();
+        }
+        function isVoucherValid() {
+            const receiptTypeID = $("#ReceiptTypeID").val();
+            if ($("#LocationID").val() == null || $("#LocationID").val() == "") {
+                $.alert.open("warning", "Select Location Name.");
+                return false;
+            }
+            if ($("#CurrencyID").val() == null || $("#CurrencyID").val() == "") {
+                $.alert.open("warning", "Select Currency.");
+                return false;
+            }
+            if ($("#CurrencyRate").val() == null || $("#CurrencyRate").val() == "") {
+                $.alert.open("warning", "Select Currency.");
+                return false;
+            }
+            if ($("#DebitAccID").val() == null || $("#DebitAccID").val() == "") {
+                $.alert.open("warning", "Select Debit Account.");
+                return false;
+            }
+            if ($("#DebitCostCenterID").val() == null || $("#DebitCostCenterID").val() == "") {
+                $.alert.open("warning", "Select Debit Cost Center.");
+                return false;
+            }
+
+            if ($("#DebitActivityID").val() == null || $("#DebitActivityID").val() == "") {
+                $.alert.open("warning", "Select Debit Activity.");
+                return false;
+            }
+
+
+            if ($("#CreditAccID").val() == null || $("#CreditAccID").val() == "") {
+                $.alert.open("warning", "Select Credit Account.");
+                return false;
+            }
+
+            if ($("#CreditCostCenterID").val() == null || $("#CreditCostCenterID").val() == "") {
+                $.alert.open("warning", "Select Credit Cost Center.");
+                return false;
+            }
+
+            if ($("#CreditActivityID").val() == null || $("#CreditActivityID").val() == "") {
+                $.alert.open("warning", "Select Credit Activity.");
+                return false;
+            }
+            //Instrument
+            const InstrumentTypeID = $("#InstrumentTypeID").val();
+
+            if (InstrumentTypeID == null || InstrumentTypeID == "") {
+                $.alert.open("warning", "Select Instrument Type.");
+                return false;
+            }
+
+            if (InstrumentTypeID == 1 || InstrumentTypeID == 2) {
+                if ($("#ChequeNarration").val() == null || $("#ChequeNarration").val() == "") {
+                    $.alert.open("warning", "Enter Cheque Narration.");
+                    return false;
+                }
+
+                if ($("#ChequeDate").val() == null || $("#ChequeDate").val() == null) {
+                    $.alert.open("warning", "Select Cheque Date.");
+                    return false;
+                }
+            } else {
+                if ($("#InstrumentNo").val() == null || $("#InstrumentNo").val() == "") {
+                    $.alert.open("warning", "Enter Instrument No.");
+                    return false;
+                }
+            }
+            //end Instrument
+            //Vat
+            const VatPercent = $("#VatPercent").val();
+            const VatAmount = $("#VatAmount").val();
+            const VatAccID = $("#VatAccID").val();
+            if (VatPercent != null && (VatAmount != null && VatAmount>0) && (VatAccID == null || VatAccID == "")) {
+                $.alert.open("warning", "Select VAT Account.");
+                return false;
+            }
+            //End VAT
+
+            //Income Tax
+            const IncomeTaxPercent = $("#IncomeTaxPercent").val();
+            const IncomeTaxAmount = $("#IncomeTaxAmount").val();
+            const IncomeTaxPercentAccID = $("#IncomeTaxPercentAccID").val();
+            if (IncomeTaxPercent != null && (IncomeTaxAmount != null && IncomeTaxAmount>0) && (IncomeTaxPercentAccID == null || IncomeTaxPercentAccID == "")) {
+                $.alert.open("warning", "Select Income Tax Account.");
+                return false;
+            }
+            //Income Tax
+
+            //credit Tbl Length
+            const NetPayment = $("#NetPayment").val();
+            var selectedVoucherAmount = 0;
+            $('.chkIndividualPO:checkbox:checked').each(function () {
+                let that = $(this);
+                if (receiptTypeID == 4 || receiptTypeID == 7)
+                    selectedVoucherAmount = selectedVoucherAmount + RtnFloat(that.parent().parent().find('.NetAmount').val());
+                else
+                    selectedVoucherAmount = selectedVoucherAmount + RtnFloat(that.parent().parent().find('.Payment').val());
+            });
+
+            if (!selectedVoucherAmount || selectedVoucherAmount == 0) {
+                $.alert.open("warning", "Select Payment amount.");
+                return false;
+            }
+
+            selectedVoucherAmount = selectedVoucherAmount - VatAmount - IncomeTaxAmount;
+            if (selectedVoucherAmount != NetPayment) {
+                $.alert.open("warning", "Netamount is not correct.");
+                return false;
+            }
+
+            //final return;
+            return true;
+        }
+
+
+    </script>
+
+}

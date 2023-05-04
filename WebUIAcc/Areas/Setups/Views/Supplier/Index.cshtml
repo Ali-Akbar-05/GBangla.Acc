@@ -1,0 +1,165 @@
+﻿@{
+
+    ViewData[PageInfo.PageHeader] = "Supplier List";
+    ViewData[PageInfo.PageTitle] = "Index";
+    ViewData[PageInfo.btnText1] = "Create New";
+    ViewData[PageInfo.PageLink1] = "/Setups/Supplier/Create";
+    ViewData[PageInfo.btnClass1] = "btn-success";
+}
+<div class="card card-primary">
+    <br />
+    <div class="row m-0">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="grid">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+
+            GetSupplierList();
+        })
+
+        function GetSupplierList() {
+            var url = "/Setups/Supplier/GetSupplierList";
+            // var dataGridrow;
+            var dataGrid = $("#grid").dxDataGrid({
+                dataSource: DevExpress.data.AspNet.createStore({
+                    key: "SupplierID",
+                    loadUrl: url,
+                }),
+
+                remoteOperations: {
+                    paging: true,
+                    sorting: true,
+                    filtering: true,
+                },
+                showColumnLines: false,
+                showRowLines: true,
+                showBorders: true,
+                paging: {
+                    pageSize: 20
+                },
+                pager: {
+                    showInfo: true,
+                    allowedPageSizes: [ 20, 40, 100, 500],
+                    showPageSizeSelector: true,
+                },
+                loadingIndicator: {
+                    enabled: true
+                },
+                selection: { mode: 'single' },
+                headerFilter: { visible: false, allowSearch: true },
+                filterRow: { visible: true },
+                wordWrapEnabled: true,
+                columns: [
+                    {
+                        dataField: "SupplierID",
+                        visible: false,
+                    },
+                    {
+                        width: "3%",
+                        caption: "SL",
+                        alignment: 'center',
+                        cellTemplate: function (cellElement, cellInfo) {
+                            var index = dataGrid.pageIndex() * dataGrid.pageSize() + cellInfo.rowIndex + 1;
+                            cellElement.text(index)
+                        }
+
+                    },
+
+
+                    {
+                        width: "10%",
+                        caption: "Category",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: true,
+                        dataField: "AccCategory",
+                    },
+                    {
+                        width: "10%",
+                        caption: "Sub Category",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: true,
+                        dataField: "AccSubCategory",
+
+                    },
+                    {
+                        width: "15%",
+                        caption: "Broad Group",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: true,
+                        dataField: "AccBroadGroup",
+
+                    },
+                    {
+                        width: "15%",
+                        caption: "Narrow Group",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: true,
+                        dataField: "AccNarrowGroup",
+
+                    },
+                    {
+                        width: "15%",
+                        caption: "Identification",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: true,
+                        dataField: "AccIdentification",
+
+                    },
+                    {
+
+                        caption: "Supplier",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: true,
+                        dataField: "SupplierName",
+                       
+
+                    },
+
+                    {
+                        width: "8%",
+                        caption: "Action",
+                        alignment: 'center',
+                        headerCellTemplate: function (header, info) {
+                            $('<div>').html(info.column.caption).css('font-weight', 'bold').appendTo(header);
+                        },
+                        cellTemplate: function (container, options) {
+
+                            var returnText = `<a href="/Setups/Supplier/Edit?supplierID=${options.data.SupplierID}" class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></a>` //`<button class="btn btn-xs btn-warning" > <i class="fa fa-edit" ></i></button>`;
+                            $(returnText).on('dxclick', function () {
+                                //  DataEdit(options.data.BranchID, options.data.BranchName, options.data.BankID, options.data.BranchAddress,);
+                            }).appendTo(container);
+
+                            //var returnText = `<span>&nbsp</span><button class="btn btn-xs btn-danger" > <i class="fa fa-trash"></i></button>`;
+                            //returnText = returnText + '</div>';
+                            //$(returnText).on('dxclick', function () {
+                            //    //  DataDelete(options.data.BranchID);
+                            //}).appendTo(container);
+
+
+                        },
+                    },
+                ],
+
+                //  groupPanel: { visible: true },
+
+                height: 520,
+
+            }).dxDataGrid("instance");
+        }
+
+    </script>
+
+}

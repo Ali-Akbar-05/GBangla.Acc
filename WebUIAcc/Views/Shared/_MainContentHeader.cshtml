@@ -1,0 +1,44 @@
+﻿@{
+    string mainbodyMasterBtnCssClass1 = "btn-danger";
+    string mainbodyMasterBtnCssClass2 = "btn-danger";
+    if (ViewData[PageInfo.btnClass1] != null)
+    {
+        mainbodyMasterBtnCssClass1 = Convert.ToString(ViewData[PageInfo.btnClass1]);
+    }
+    if (ViewData[PageInfo.btnClass2] != null)
+    {
+        mainbodyMasterBtnCssClass2 = Convert.ToString(ViewData[PageInfo.btnClass2]);
+    }
+}
+
+
+<div class="content-header border-bottom p-1 m-1">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h5 class="m-0 text-dark">@ViewData[PageInfo.PageHeader]</h5>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+
+                    @if (ViewData[PageInfo.btnText1] != null && ViewData[PageInfo.PageLink1] != null)
+                    {
+                        <li class="breadcrumb-item"> <a class="btn btn-xs @mainbodyMasterBtnCssClass1" href="@ViewData[PageInfo.PageLink1]">@ViewData[PageInfo.btnText1]</a></li>
+
+
+                    }
+                    @if (ViewData[PageInfo.btnText2] != null && ViewData[PageInfo.PageLink2] != null)
+                    {
+                        <li class="breadcrumb-item"> <a class="btn btn-xs @mainbodyMasterBtnCssClass2" href="@ViewData[PageInfo.PageLink2]">@ViewData[PageInfo.btnText2]</a></li>
+
+
+                    }
+
+
+                    @*<li class="breadcrumb-item"><a class="btn btn-xs @mainbodyMasterBtnCssClass" href="#">Go To List</a></li>*@
+                    @*<li class="breadcrumb-item active">Dashboard v2</li>*@
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>

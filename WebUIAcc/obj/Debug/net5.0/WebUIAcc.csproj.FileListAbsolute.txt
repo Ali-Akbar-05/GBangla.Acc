@@ -1,0 +1,1024 @@
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\appsettings.Development.json
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\appsettings.json
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\WebUIAcc.exe
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\WebUIAcc.deps.json
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\WebUIAcc.runtimeconfig.json
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\WebUIAcc.runtimeconfig.dev.json
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\WebUIAcc.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\WebUIAcc.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Antiforgery.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Core.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authorization.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Authorization.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Forms.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Server.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Web.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cors.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HostFiltering.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connections.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Extensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Features.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpOverrides.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Identity.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Localization.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Localization.Routing.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Metadata.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Core.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Razor.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCaching.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCompression.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Rewrite.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Routing.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.IIS.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Session.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Common.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Core.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.StaticFiles.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.WebSockets.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.WebUtilities.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.CSharp.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Caching.Memory.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Binder.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Ini.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Json.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Xml.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Composite.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Http.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Core.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Stores.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Configuration.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Console.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Debug.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.EventLog.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.EventSource.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.TraceSource.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.ObjectPool.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Primitives.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.WebEncoders.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.JSInterop.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Net.Http.Headers.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.VisualBasic.Core.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.VisualBasic.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Win32.Primitives.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Win32.Registry.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\mscorlib.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\netstandard.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.AppContext.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Buffers.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Collections.Concurrent.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Collections.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Collections.Immutable.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Collections.NonGeneric.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Collections.Specialized.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.Annotations.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.DataAnnotations.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.EventBasedAsync.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.Primitives.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.TypeConverter.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Configuration.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Console.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Core.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Data.Common.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Data.DataSetExtensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Data.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.Contracts.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.Debug.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.EventLog.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.FileVersionInfo.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.Process.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.StackTrace.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.TextWriterTraceListener.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.Tools.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.TraceSource.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.Tracing.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Drawing.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Drawing.Primitives.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Dynamic.Runtime.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Formats.Asn1.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Globalization.Calendars.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Globalization.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Globalization.Extensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Compression.Brotli.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Compression.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Compression.FileSystem.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Compression.ZipFile.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.FileSystem.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.FileSystem.DriveInfo.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.FileSystem.Primitives.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.FileSystem.Watcher.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.IsolatedStorage.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.MemoryMappedFiles.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Pipelines.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Pipes.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.IO.UnmanagedMemoryStream.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Linq.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Linq.Expressions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Linq.Parallel.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Linq.Queryable.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Memory.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Http.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Http.Json.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.HttpListener.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Mail.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.NameResolution.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.NetworkInformation.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Ping.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Primitives.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Requests.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Security.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.ServicePoint.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Sockets.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.WebClient.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.WebHeaderCollection.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.WebProxy.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.WebSockets.Client.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Net.WebSockets.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Numerics.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Numerics.Vectors.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.ObjectModel.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.DispatchProxy.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Emit.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Emit.ILGeneration.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Emit.Lightweight.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Extensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Metadata.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Primitives.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.TypeExtensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Resources.Reader.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Resources.ResourceManager.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Resources.Writer.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.Unsafe.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.VisualC.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Extensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Handles.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.InteropServices.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Intrinsics.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Loader.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Numerics.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Serialization.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Serialization.Formatters.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Serialization.Json.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Serialization.Primitives.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Serialization.Xml.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.AccessControl.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Claims.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Algorithms.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Cng.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Csp.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Encoding.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Primitives.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.X509Certificates.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Xml.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Permissions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Principal.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Principal.Windows.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Security.SecureString.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.ServiceModel.Web.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.ServiceProcess.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Text.Encoding.CodePages.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Text.Encoding.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Text.Encoding.Extensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Text.Encodings.Web.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Text.Json.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Text.RegularExpressions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Channels.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Overlapped.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Tasks.Dataflow.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Tasks.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Tasks.Extensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Tasks.Parallel.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Thread.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.ThreadPool.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Timer.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Transactions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Transactions.Local.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.ValueTuple.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Web.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Web.HttpUtility.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Windows.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Windows.Extensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.Linq.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.ReaderWriter.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.Serialization.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.XDocument.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.XmlDocument.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.XmlSerializer.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.XPath.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.XPath.XDocument.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\refs\WindowsBase.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\WebUIAcc.Views.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\WebUIAcc.Views.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\AutoMapper.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\DevExtreme.AspNet.Data.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\EPPlus.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\FluentValidation.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Humanizer.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\MediatR.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\dotnet-aspnet-codegenerator-design.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\NetCore.AutoRegisterDi.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Snickler.EFCore.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Composition.AttributedModel.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Composition.Convention.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Composition.Hosting.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Composition.Runtime.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Composition.TypedParts.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Data.SqlClient.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Private.ServiceModel.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Runtime.Caching.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.Duplex.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.Http.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.NetTcp.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.Primitives.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.Security.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\System.Xml.XPath.XmlDocument.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Application.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Domain.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Infrastructure.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\SSRS.Support.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Application.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Infrastructure.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\SSRS.Support.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\bin\Debug\net5.0\Domain.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.csproj.AssemblyReference.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.AssemblyInfoInputs.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.AssemblyInfo.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.csproj.CoreCompileInputs.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.MvcApplicationPartsAssemblyInfo.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.MvcApplicationPartsAssemblyInfo.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.RazorAssemblyInfo.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.RazorAssemblyInfo.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\scopedcss\bundle\WebUIAcc.styles.css
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\staticwebassets\WebUIAcc.StaticWebAssets.Manifest.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\staticwebassets\WebUIAcc.StaticWebAssets.Pack.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\staticwebassets\msbuild.WebUIAcc.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\staticwebassets\msbuild.build.WebUIAcc.props
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.WebUIAcc.props
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.WebUIAcc.props
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.TagHelpers.input.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.TagHelpers.output.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.RazorCoreGenerate.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\AccReports\Views\CBMReports\CBMVoucherReport.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\AccReports\Views\ChartOfAccounts\ItemAccountSearch.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\AccReports\Views\GeneralLedgerReport\GeneralLedgerVoucher.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\BankPaymentVoucher\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\BankReceiptVoucher\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\CashReceiptVoucher\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\ChallanInvoiceMap\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\ChequeBook\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\ChequeBook\Index.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\PrintedChequesStatus\PrintedStatusSet.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\SupplierInvoiceVoucher\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\VoucherInvoiceMap\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\CBMAcountType\CreateAccountType.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\CBMBankAccount\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\CBMBank\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\CBMBranch\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\ChartOfAccounts\CreateActivityCenter.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\ChartOfAccounts\CreateCostCenter.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\ChartOfAccounts\Index.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\CurrencyDetail\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Currency\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Customer\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Customer\Index.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Location\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Supplier\Create.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Supplier\Index.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\_ViewImports.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Areas\_ViewStart.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\Components\ChartOfAccounts\ChartOfAccountsVC.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\Components\DebitNote\DebitNoteVC.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_BottomCommonJs.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_ControllerSidebarRight.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_MainContentHeader.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_MainHeader.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_MainSidebarLeft.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_TopCommonCssAndJs.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.RazorTargetAssemblyInfo.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.RazorTargetAssemblyInfo.cs
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.Views.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.csproj.CopyComplete
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\refint\WebUIAcc.dll
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.pdb
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\WebUIAcc.genruntimeconfig.cache
+D:\Github C#\GBangla.Acc\WebUIAcc\obj\Debug\net5.0\ref\WebUIAcc.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\appsettings.Development.json
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\appsettings.json
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\WebUIAcc.exe
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\WebUIAcc.deps.json
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\WebUIAcc.runtimeconfig.json
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\WebUIAcc.runtimeconfig.dev.json
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\WebUIAcc.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\WebUIAcc.pdb
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Antiforgery.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.Core.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authentication.OAuth.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authorization.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Authorization.Policy.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Authorization.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Forms.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Server.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Components.Web.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cors.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.DataProtection.Extensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HostFiltering.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Html.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connections.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Extensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Features.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpOverrides.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpsPolicy.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Identity.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Localization.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Localization.Routing.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Metadata.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Core.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Cors.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Localization.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.Razor.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.RazorPages.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Razor.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Razor.Runtime.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCaching.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.ResponseCompression.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Rewrite.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Routing.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Routing.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.HttpSys.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.IIS.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.IISIntegration.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Session.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Common.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Core.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.StaticFiles.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.WebSockets.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.AspNetCore.WebUtilities.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.CSharp.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Caching.Memory.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Binder.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.CommandLine.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Ini.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Json.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Xml.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Composite.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Http.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Core.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Identity.Stores.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Localization.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Configuration.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Console.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.Debug.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.EventLog.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.EventSource.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Logging.TraceSource.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.ObjectPool.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.Primitives.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Extensions.WebEncoders.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.JSInterop.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Net.Http.Headers.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.VisualBasic.Core.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.VisualBasic.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Win32.Primitives.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\Microsoft.Win32.Registry.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\mscorlib.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\netstandard.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.AppContext.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Buffers.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Collections.Concurrent.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Collections.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Collections.Immutable.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Collections.NonGeneric.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Collections.Specialized.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.Annotations.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.DataAnnotations.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.EventBasedAsync.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.Primitives.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.ComponentModel.TypeConverter.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Configuration.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Console.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Core.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Data.Common.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Data.DataSetExtensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Data.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.Contracts.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.Debug.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.EventLog.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.FileVersionInfo.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.Process.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.StackTrace.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.TextWriterTraceListener.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.Tools.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.TraceSource.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Diagnostics.Tracing.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Drawing.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Drawing.Primitives.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Dynamic.Runtime.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Formats.Asn1.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Globalization.Calendars.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Globalization.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Globalization.Extensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Compression.Brotli.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Compression.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Compression.FileSystem.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Compression.ZipFile.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.FileSystem.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.FileSystem.DriveInfo.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.FileSystem.Primitives.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.FileSystem.Watcher.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.IsolatedStorage.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.MemoryMappedFiles.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Pipelines.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.Pipes.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.IO.UnmanagedMemoryStream.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Linq.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Linq.Expressions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Linq.Parallel.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Linq.Queryable.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Memory.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Http.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Http.Json.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.HttpListener.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Mail.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.NameResolution.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.NetworkInformation.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Ping.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Primitives.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Requests.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Security.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.ServicePoint.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.Sockets.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.WebClient.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.WebHeaderCollection.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.WebProxy.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.WebSockets.Client.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Net.WebSockets.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Numerics.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Numerics.Vectors.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.ObjectModel.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.DispatchProxy.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Emit.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Emit.ILGeneration.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Emit.Lightweight.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Extensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Metadata.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.Primitives.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Reflection.TypeExtensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Resources.Reader.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Resources.ResourceManager.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Resources.Writer.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.Unsafe.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.CompilerServices.VisualC.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Extensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Handles.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.InteropServices.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Intrinsics.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Loader.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Numerics.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Serialization.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Serialization.Formatters.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Serialization.Json.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Serialization.Primitives.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Runtime.Serialization.Xml.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.AccessControl.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Claims.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Algorithms.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Cng.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Csp.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Encoding.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Primitives.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.X509Certificates.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Cryptography.Xml.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Permissions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Principal.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.Principal.Windows.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Security.SecureString.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.ServiceModel.Web.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.ServiceProcess.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Text.Encoding.CodePages.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Text.Encoding.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Text.Encoding.Extensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Text.Encodings.Web.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Text.Json.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Text.RegularExpressions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Channels.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Overlapped.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Tasks.Dataflow.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Tasks.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Tasks.Extensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Tasks.Parallel.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Thread.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.ThreadPool.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Threading.Timer.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Transactions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Transactions.Local.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.ValueTuple.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Web.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Web.HttpUtility.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Windows.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Windows.Extensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.Linq.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.ReaderWriter.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.Serialization.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.XDocument.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.XmlDocument.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.XmlSerializer.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.XPath.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\System.Xml.XPath.XDocument.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\refs\WindowsBase.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\WebUIAcc.Views.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\WebUIAcc.Views.pdb
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\AutoMapper.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\DevExtreme.AspNet.Data.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\EPPlus.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\FluentValidation.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Humanizer.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\MediatR.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\dotnet-aspnet-codegenerator-design.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\NetCore.AutoRegisterDi.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Snickler.EFCore.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Composition.AttributedModel.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Composition.Convention.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Composition.Hosting.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Composition.Runtime.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Composition.TypedParts.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Data.SqlClient.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Private.ServiceModel.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Runtime.Caching.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.Duplex.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.Http.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.NetTcp.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.Primitives.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.ServiceModel.Security.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\System.Xml.XPath.XmlDocument.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Application.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Domain.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Infrastructure.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\SSRS.Support.dll
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Application.pdb
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Infrastructure.pdb
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\SSRS.Support.pdb
+D:\Github C#\Accounts Application\WebUIAcc\bin\Debug\net5.0\Domain.pdb
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.csproj.AssemblyReference.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.AssemblyInfoInputs.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.AssemblyInfo.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.csproj.CoreCompileInputs.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.MvcApplicationPartsAssemblyInfo.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.MvcApplicationPartsAssemblyInfo.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.RazorAssemblyInfo.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.RazorAssemblyInfo.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\scopedcss\bundle\WebUIAcc.styles.css
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\staticwebassets\WebUIAcc.StaticWebAssets.Manifest.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\staticwebassets\WebUIAcc.StaticWebAssets.Pack.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\staticwebassets\msbuild.WebUIAcc.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\staticwebassets\msbuild.build.WebUIAcc.props
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.WebUIAcc.props
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.WebUIAcc.props
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.TagHelpers.input.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.TagHelpers.output.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.RazorCoreGenerate.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\AccReports\Views\CBMReports\CBMVoucherReport.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\AccReports\Views\ChartOfAccounts\ItemAccountSearch.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\AccReports\Views\GeneralLedgerReport\GeneralLedgerVoucher.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\BankPaymentVoucher\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\BankReceiptVoucher\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\CashReceiptVoucher\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\ChallanInvoiceMap\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\ChequeBook\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\ChequeBook\Index.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\PrintedChequesStatus\PrintedStatusSet.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\SupplierInvoiceVoucher\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Business\Views\VoucherInvoiceMap\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\CBMAcountType\CreateAccountType.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\CBMBankAccount\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\CBMBank\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\CBMBranch\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\ChartOfAccounts\CreateActivityCenter.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\ChartOfAccounts\CreateCostCenter.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\ChartOfAccounts\Index.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\CurrencyDetail\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Currency\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Customer\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Customer\Index.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Location\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Supplier\Create.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\Setups\Views\Supplier\Index.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\_ViewImports.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Areas\_ViewStart.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\Components\ChartOfAccounts\ChartOfAccountsVC.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\Components\DebitNote\DebitNoteVC.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_BottomCommonJs.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_ControllerSidebarRight.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_MainContentHeader.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_MainHeader.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_MainSidebarLeft.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_TopCommonCssAndJs.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.RazorTargetAssemblyInfo.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.RazorTargetAssemblyInfo.cs
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.Views.pdb
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.csproj.CopyComplete
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.dll
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\refint\WebUIAcc.dll
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.pdb
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\WebUIAcc.genruntimeconfig.cache
+D:\Github C#\Accounts Application\WebUIAcc\obj\Debug\net5.0\ref\WebUIAcc.dll

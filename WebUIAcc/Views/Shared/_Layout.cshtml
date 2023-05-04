@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @*<title>@ViewData[PageInfo.PageTitle] - WebMVC</title>*@
+
+    <partial name="_TopCommonCssAndJs" />
+    <partial name="_ValidationScriptsPartial" />
+
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed pace-primary">
+
+    <div class="wrapper">
+        <!-- Navbar -->
+        <partial name="_MainHeader" />
+        <!-- Navbar -->
+        <!-- Main Sidebar Container -->
+        <partial name="_MainSidebarLeft" />
+        <!-- Main Sidebar Container -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <partial name="_MainContentHeader" />
+            <!--END Content Header (Page header) -->
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div><!--/. container-fluid -->
+            </section>
+            <!--End Main content -->
+            <!-- /.content -->
+        </div>
+
+        <!-- End.content-wrapper -->
+        <!-- Control Sidebar -->
+        <partial name="_ControllerSidebarRight" />
+
+        <!-- Main Footer -->
+        <partial name="_Footer" />
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <partial name="_BottomCommonJs" />
+
+    <div class="loadingImage"></div>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        $(function () {
+         //   $(".loadingImage").show();
+        })
+    </script>
+</body>
+</html>

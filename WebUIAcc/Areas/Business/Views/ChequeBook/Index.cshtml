@@ -1,0 +1,328 @@
+﻿@model Application.ViewModel.GBAcc.Setups.ChequeBook.Create.ChequeBookVM
+@{
+
+    ViewData[PageInfo.PageHeader] = "Index";
+    ViewData[PageInfo.PageTitle] = "Index";
+}
+
+<div class="row ajt-control">
+    <form id="" class="col-sm-12 col-md-12">
+        <div class="col-sm-12 col-md-12">
+            <div class="card card-success text-sm">
+                @*<div class="card-header text-xs">
+                    <h6 class="card-title">
+                        Account Status
+                    </h6>
+                </div>*@
+                <div class="card-body">
+                    <div class="row m-0">
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="BankID"></label>
+                                <select asp-for="BankID" class="form-control form-control-sm" asp-items="Model.DDLBank"></select>
+                                @*<span asp-validation-for="BankID" class="span-form-validation text-danger"></span>*@
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="BranchID"></label>
+                                <select asp-for="BranchID" class="form-control form-control-sm" asp-items="Model.DDLBranch"></select>
+                                @*<span asp-validation-for="BranchID" class="span-form-validation text-danger"></span>*@
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="IdentificationID"></label>
+                                <select asp-for="IdentificationID" class="form-control form-control-sm" asp-items="Model.DDLIdentification"></select>
+                                @*<span asp-validation-for="IdentificationID" class="span-form-validation text-danger"></span>*@
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="AccountNumberID"></label>
+                                <select asp-for="AccountNumberID" class="form-control form-control-sm" asp-items="Model.DDLAccountNumber"></select>
+                                @*<span asp-validation-for="AccountNumberID" class="span-form-validation "></span>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-0">
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="CurrencyID"></label>
+                                <select asp-for="CurrencyID" class="form-control form-control-sm" asp-items="Model.DDLCurrency"></select>
+                                @*<span asp-validation-for="CurrencyID" class="span-form-validation text-danger"></span>*@
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label class="col-form-label-sm m-0" asp-for="Status"></label>
+                                <select asp-for="Status" class="form-control form-control-sm" asp-items="Model.DDLStatus"></select>
+                                @*<span asp-validation-for="Status" class="span-form-validation text-danger"></span>*@
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <label class="col-form-label-sm m-0 ">&nbsp;</label>
+                            <div class="form-group">
+                                <input type="button" class="btn btn-sm btn-success" id="btnShow" value="Show">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="grid">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="row m-0">
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Cheque List</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-sm table-responsive-sm" style="font-size:10px;">
+                        <thead>
+                            <tr class="text-sm-center text-xs">
+                                <th>SL</th>
+                                <th>Cheque Number</th>
+                                <th>Status</th>
+                                <th>Issue Date</th>
+                                <th>Issue Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody class="ChequeListTbody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            GetChequeBookList();
+            $('#BankID').change(function () {
+                let bankID = RtnNumber($('#BankID').val());
+                HttpRequest.DropDown('GET', '/Setups/CBMBankAccount/GetBranchListByBankID', { bankID: bankID }, 'BranchID')
+                $('#BranchID').trigger('change')
+            })
+            $('#BranchID').change(function () {
+                let branchId = RtnNumber($('#BranchID').val());
+                HttpRequest.DropDown('GET', '/Business/ChequeBook/GetIdentificationByBranchID', { branchID: branchId }, 'IdentificationID')
+                $('#IdentificationID').trigger('change')
+            })
+            $('#IdentificationID').change(function () {
+                let typeId = RtnNumber($('#IdentificationID').val());
+                HttpRequest.DropDown('GET', '/Business/ChequeBook/GetAccountNumberByAccountTypeID', { typeID: typeId }, 'AccountNumberID')
+                $('#AccountNumberID').trigger('change')
+            })
+            $('#AccountNumberID').change(function () {
+                let accountId = RtnNumber($('#AccountNumberID').val());
+                HttpRequest.DropDown('GET', '/Business/ChequeBook/GetCurrencyByAccountID', { accountID: accountId }, 'CurrencyID')
+            })
+            $("#btnShow").click(function () {
+                GetChequeBookList();
+            })
+        })
+
+        function GetChequeBookList() {
+
+            var url = "/Business/ChequeBook/GetChequeBookList";
+            let bankId = RtnNumber($('#BankID').val());
+            let branchID = RtnNumber($('#BranchID').val());
+            let identificationID = RtnNumber($('#IdentificationID').val());
+            let accountNumberID = RtnNumber($('#AccountNumberID').val());
+            let currencyID = RtnNumber($('#CurrencyID').val());
+            let status = $('#Status').val();
+            let requestModel = {
+                BankID: bankId,
+                BranchID: branchID,
+                IdentificationID: identificationID,
+                CurrencyID: currencyID,
+                AccountNumberID: accountNumberID,
+                Status: status
+            }
+
+            // var dataGridrow;
+            var dataGrid = $("#grid").dxDataGrid({
+                dataSource: DevExpress.data.AspNet.createStore({
+                    key: "ID",
+                    loadUrl: url,
+                    loadParams: requestModel
+                }),
+
+                remoteOperations: {
+                    paging: true,
+                    sorting: true,
+                    filtering: true,
+                },
+                showColumnLines: false,
+                showRowLines: true,
+                showBorders: true,
+                paging: {
+                    pageSize: 10
+                },
+                pager: {
+                    showInfo: true,
+                    allowedPageSizes: [10, 20, 40, 100, 500],
+                    showPageSizeSelector: true,
+                },
+                loadingIndicator: {
+                    enabled: true
+                },
+                selection: { mode: 'single' },
+                headerFilter: { visible: false, allowSearch: true },
+                filterRow: { visible: false },
+                wordWrapEnabled: true,
+                columns: [
+                    {
+                        dataField: "ID",
+                        visible: false,
+                    },
+                    {
+                        width: "5%",
+                        caption: "SL",
+                        alignment: 'center',
+                        cellTemplate: function (cellElement, cellInfo) {
+                            var index = dataGrid.pageIndex() * dataGrid.pageSize() + cellInfo.rowIndex + 1;
+                            cellElement.text(index)
+                        }
+
+                    },
+                  
+                    {
+
+                        caption: "Bank",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        dataField: "BankName",
+                    },
+                    {
+
+                        caption: "Account Number",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        dataField: "AccountNumber",
+                    },
+                    {
+
+                        caption: "Prefix",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        dataField: "Prefix",
+                    },
+                    {
+
+                        caption: "SeriesStart",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        dataField: "SeriesStart",
+
+                    },
+                    {
+
+                        caption: "SeriesEnd",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        dataField: "SeriesEnd",
+
+                    },
+                    {
+
+                        caption: "SerialStatus",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        dataField: "SerialStatus",
+
+                    },
+                    //
+                    {
+                        width: "10%",
+                        caption: "Action",
+                        alignment: 'center',
+                        headerCellTemplate: function (header, info) {
+                            $('<div>').html(info.column.caption).css('font-weight', 'bold').appendTo(header);
+                        },
+                        cellTemplate: function (container, options) { // <i class="fa fa-edit" ></i>
+
+                            var returnText = `<button class="btn btn-xs btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">View</button>`;
+                            $(returnText).on('dxclick', function () {
+                                DataShow(options.data.ID);
+                            }).appendTo(container);
+
+
+
+
+                        },
+                    },
+                ],
+
+                //  groupPanel: { visible: true },
+
+                height: 520,
+
+            }).dxDataGrid("instance");
+        }
+        function DataShow(id) {
+            $.ajax({
+                type: "GET",
+                url: "/Business/ChequeBook/GetChequeList",
+                data: { chequeBookID: id },
+                cache: false,
+                success: function (data) {
+                    let strTR = ``;
+                    debugger
+                    $(".ChequeListTbody").html('');
+                    if (data.length> 0) {
+                       
+                        $.each(data, function (i, v) {
+                            strTR += `<tr class="text-sm-center text-xs">
+                                        <td>${i + 1}</td>
+                                        <td>${v.ChequeNum}</td>
+                                        <td>${v.StrChequeStatus}</td>
+                                        <td>${v.StrChequeDate}</td>
+                                        <td>${v.StrChequeAmount}</td>
+                                   </tr>`;
+                        })
+                       
+                    } else {
+                        strTR = `<tr class="text-sm-center text-xs">
+                                        <td colspan="5">There is no Cheque</td>
+                                   </tr>`;
+                    }
+                    $(".ChequeListTbody").html(strTR)
+                }
+            });
+
+          
+
+           
+
+
+
+        }
+    </script>
+
+}

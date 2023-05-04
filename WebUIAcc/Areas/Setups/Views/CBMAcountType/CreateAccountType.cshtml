@@ -1,0 +1,206 @@
+﻿@model Application.ViewModel.GBAcc.Setups.CBMAcountType.CreateAccountType.AccountTypeVM
+@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiForgeryToken
+@{
+    var token = antiForgeryToken.GetAndStoreTokens(Context);
+    ViewData[PageInfo.PageHeader] = "Create Account Type";
+    ViewData[PageInfo.PageTitle] = "Account Type";
+}
+<div class="card card-primary">
+    <form id="frmAccountType">
+        <input type="hidden" asp-for="AccountTypeID" />
+        @*<input type="hidden" asp-for="pa" />*@
+
+        <div class="row m-0">
+
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0 required" asp-for="AccountTypeName"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="AccountTypeName" placeholder="Account Type" autocomplete="off">
+                    <span asp-validation-for="AccountTypeName" class="span-form-validation "></span>
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-5 col-lg-5">
+                <div class="form-group">
+                    <label class="col-form-label-sm m-0" asp-for="AccountTypeComments"></label>
+                    <input type="text" class="form-control form-control-sm " asp-for="AccountTypeComments" placeholder="Comments" autocomplete="off">
+                    <span asp-validation-for="AccountTypeComments" class="span-form-validation "></span>
+                </div>
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <label class="col-form-label-sm m-0">&nbsp;</label>
+                <div class="form-group" style="text-align:center">
+                    <input type="button" class="btn btn-sm btn-success" id="btnSave" value="Save">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="row m-0">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="grid">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+          $(function () {
+            GetAccountType();
+              $('#btnSave').click(function () {
+           
+                  if ($('#frmAccountType').valid()) {
+                      let accountTypeName = $("#AccountTypeName").val();
+                      let accountTypeComments = $("#AccountTypeComments").val();//
+                      //let costCenter = $('#CostCenter').val();
+                      let accountTypeID = RtnNumber($("#AccountTypeID").val());
+
+                obj = {
+                    AccountTypeID: accountTypeID,
+                    AccountTypeName: accountTypeName,
+                    AccountTypeComments: accountTypeComments
+                }
+                      if (obj.AccountTypeID>0) {
+                          HttpRequest.Ajax("PUT", '/Setups/CBMAcountType/UpdateAccountType', { "cBMAcountTypeDTM": obj , '@token.HeaderName': '@token.RequestToken'}, saveSuccess);
+                } else {
+                          HttpRequest.Ajax("POST", '/Setups/CBMAcountType/SaveAccountType', { "cBMAcountTypeDTM": obj , '@token.HeaderName': '@token.RequestToken'}, saveSuccess);
+                }
+            }
+        })
+          })
+        function saveSuccess(data) {
+            debugger
+            if (data.result == 1) {
+                $.alert.open({
+                    type: 'Success',
+                    content: data.message,
+                    callback: function () {
+                        Clear();
+                        GetAccountType();
+                        $("#btnSave").val('Save');
+                        // window.location.href = '/setup/CompanyInfo/Index';
+                    }
+                });
+            }
+            else {
+                $.alert.open("error", data.message);
+            }
+        }
+
+        function GetAccountType() {
+
+            var url = "/Setups/CBMAcountType/GetAccountType";
+
+            var dataGrid = $("#grid").dxDataGrid({
+                dataSource: DevExpress.data.AspNet.createStore({
+                    key: "AccountTypeID",
+                    loadUrl: url,
+                   // loadParams: requestModel
+                }),
+
+                remoteOperations: {
+                    paging: true,
+                    sorting: true,
+                    filtering: true,
+                },
+                showColumnLines: false,
+                showRowLines: true,
+                showBorders: true,
+                paging: {
+                    pageSize: 10
+                },
+                pager: {
+                    showInfo: true,
+                    allowedPageSizes: [10, 20, 40, 100, 500],
+                    showPageSizeSelector: true,
+                },
+                loadingIndicator: {
+                    enabled: true
+                },
+                selection: { mode: 'single' },
+                headerFilter: { visible: false, allowSearch: true },
+                filterRow: { visible: false },
+                wordWrapEnabled: true,
+                columns: [
+                    {
+                        dataField: "AccountTypeID",
+                        visible: false,
+                    },
+                    {
+                        width: "5%",
+                        caption: "SL",
+                        alignment: 'center',
+                        cellTemplate: function (cellElement, cellInfo) {
+                            var index = dataGrid.pageIndex() * dataGrid.pageSize() + cellInfo.rowIndex + 1;
+                            cellElement.text(index)
+                        }
+
+                    },
+
+                    {
+
+                        caption: "Bank Balances",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        dataField: "AccNarroGroup",
+
+                    },
+                    {
+
+                        caption: "Account Type",
+                        wordWrapEnabled: false,
+                        alignment: 'center',
+                        allowFiltering: false,
+                        dataField: "AccountTypeName",
+                    },
+
+                   
+
+                    {
+                        width: "10%",
+                        caption: "Action",
+                        alignment: 'center',
+                        headerCellTemplate: function (header, info) {
+                            $('<div>').html(info.column.caption).css('font-weight', 'bold').appendTo(header);
+                        },
+                        cellTemplate: function (container, options) {
+
+                            var returnText = `<button class="btn btn-xs btn-warning" > <i class="fa fa-edit" ></i></button>`;
+                            $(returnText).on('dxclick', function () {
+                                DataEdit(options.data.AccountTypeID, options.data.AccountTypeName, options.data.AccountTypeComments );
+                            }).appendTo(container);
+
+                            //var returnText = `<span>&nbsp</span><button class="btn btn-xs btn-danger" > <i class="fa fa-trash"></i></button>`;
+                            //returnText = returnText + '</div>';
+                            //$(returnText).on('dxclick', function () {
+                            //   // DataDelete(options.data.BankID);
+                            //}).appendTo(container);
+
+
+                        },
+                    },
+                ],
+
+                //  groupPanel: { visible: true },
+
+                height: 520,
+
+            }).dxDataGrid("instance");
+        }
+        function Clear() {
+            $("#AccountTypeName").val('');
+            $('#AccountTypeComments').val('');
+
+        }
+        function DataEdit(accountTypeID, accountTypeName, accountTypeComments) {
+            $("#AccountTypeID").val(accountTypeID)
+            $("#AccountTypeName").val(accountTypeName);
+            $('#AccountTypeComments').val(accountTypeComments);
+            $("#btnSave").val('Update');
+        }
+    </script>
+
+}
